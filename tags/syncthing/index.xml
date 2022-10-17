@@ -20,16 +20,5 @@ $ adb devices * daemon not running; starting now at tcp:5037 * daemon started su
 $ adb tcpip 5555 ## 如果出现下面错误，请打开 网络ADB调试 和 开启USB文件传输模式 error: insufficient permissions for device See [http://developer.</description>
     </item>
     
-    <item>
-      <title>Git 自动化部署网站</title>
-      <link>https://twor.me/posts/git_auto_web/</link>
-      <pubDate>Wed, 05 Jun 2019 09:58:53 +0800</pubDate>
-      
-      <guid>https://twor.me/posts/git_auto_web/</guid>
-      <description>安装配置Git服务端 $ sudo yum install git $ sudo adduser git $ su git $ cd $ mkdir .ssh &amp;amp;&amp;amp; chmod 700 .ssh $ touch .ssh/authorized_keys &amp;amp;&amp;amp; chmod 600 .ssh/authorized_keys 写入SSH公匙 接着，我们需要为系统用户 git 的 authorized_keys 文件添加一些开发者 SSH 公钥。
-$ vim .ssh/authorized_keys $ #写入SSH公匙 创建仓库 现在我们来为开发者新建一个空仓库。可以借助带 --bare 选项的 git init 命令来做到这一点，该命令在初始化仓库时不会创建工作目录：
-$ cd /srv/git $ mkdir project.git $ cd project.git $ git init --bare Initialized empty Git repository in /srv/git/project.git/ 禁用git用户shell登录 需要注意的是，目前所有（获得授权的）开发者用户都能以系统用户 git 的身份登录服务器从而获得一个普通 shell。 如果你想对此加以限制，则需要修改 /etc/passwd 文件中（git 用户所对应）的 shell 值。</description>
-    </item>
-    
   </channel>
 </rss>

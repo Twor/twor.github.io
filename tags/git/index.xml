@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>git on Twor</title>
+    <title>Git on Twor</title>
     <link>https://twor.me/tags/git/</link>
-    <description>Recent content in git on Twor</description>
+    <description>Recent content in Git on Twor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 05 Jun 2019 13:58:53 +0800</lastBuildDate><atom:link href="https://twor.me/tags/git/index.xml" rel="self" type="application/rss+xml" />
@@ -23,6 +23,17 @@ $ git filter-branch --force --index-filter &amp;#39;git rm -r --cached --ignore-
 $ git clone git@github.com:*/flutter.git 增加源分支(被自己fork的项目)地址到自己git项目远程分支列表中，将原来的仓库命名为upstream
 $ git remote add upstream git@github.com:flutter/flutter.git 核实远程分支列表（optional）
 $ git remote -v origin git@github.com:*/flutter.git (fetch) origin git@github.com:*/flutter.git (push) upstream git@github.com:flutter/flutter.git (fetch) upstream git@github.com:flutter/flutter.git (push) ## 核实后，发现不如意，想删除，可以用 git remote remove name ## name 为远程分支的命名，如上面例子，可以删除 upstream ## git remote remove upstream ## 或者直接删除之前fork的原始分支 origin ## git remote remove origin (直接删除了原始分支后，再fork， ## 也能达到更新了最新代码的需求，后面的步骤就不用了。) fetch源分支的新版本到本地</description>
+    </item>
+    
+    <item>
+      <title>Git 自动化部署网站</title>
+      <link>https://twor.me/posts/git_auto_web/</link>
+      <pubDate>Wed, 05 Jun 2019 09:58:53 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/git_auto_web/</guid>
+      <description>安装配置Git服务端 $ sudo yum install git $ sudo adduser git $ su git $ cd $ mkdir .ssh &amp;amp;&amp;amp; chmod 700 .ssh $ touch .ssh/authorized_keys &amp;amp;&amp;amp; chmod 600 .ssh/authorized_keys 写入SSH公匙 接着，我们需要为系统用户 git 的 authorized_keys 文件添加一些开发者 SSH 公钥。
+$ vim .ssh/authorized_keys $ #写入SSH公匙 创建仓库 现在我们来为开发者新建一个空仓库。可以借助带 --bare 选项的 git init 命令来做到这一点，该命令在初始化仓库时不会创建工作目录：
+$ cd /srv/git $ mkdir project.git $ cd project.git $ git init --bare Initialized empty Git repository in /srv/git/project.git/ 禁用git用户shell登录 需要注意的是，目前所有（获得授权的）开发者用户都能以系统用户 git 的身份登录服务器从而获得一个普通 shell。 如果你想对此加以限制，则需要修改 /etc/passwd 文件中（git 用户所对应）的 shell 值。</description>
     </item>
     
   </channel>

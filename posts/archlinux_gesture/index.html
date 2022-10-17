@@ -1,0 +1,481 @@
+<head>
+    <meta charset="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Twor</title>
+
+    
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/prism.css">
+    <link type="text/css" rel="stylesheet" href="/css/zoom.css">
+    <link type="text/css" rel="stylesheet" href="/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/css/all.css">
+
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="logo">
+                    <div class="header-logo">
+                        
+                        
+                        
+                        <a id="btn-menu" href="javascript:isMenu()">
+
+                            
+                            <span class="bars"><i class="fas fa-chevron-right"></i></i></span>
+                            
+                        </a>
+                        <a href="javascript:isMenu1();">
+                            
+                            <span id="menu-1" class="bf"><i class="fas fa-bars"></i></span>
+                            
+                        </a>
+                        <a href="/index.xml">
+                            
+                            <span id="menu-2" class="bf"><i class="fas fa-rss"></i></span>
+                            
+                        </a>
+
+                        <a href="javascript:isMenu3();">
+                            
+                            <span id="menu-3" class="bf"><i class="fas fa-search"></i></span>
+                            
+                        </a>
+                    </div>
+                    <div id="menu-page">
+                        <a href="/">
+                            <li>博文</li>
+                        </a><a href="/about">
+                            <li>关于</li>
+                        </a>
+                    </div>
+                    <div id="search-box">
+                        <input type="text" name="s" id="menu-search" class="inputValue" placeholder="Type something~" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><div class="container-fluid">
+    <div class="row">
+        <div id="main" class="col-12 clearfix" role="main">
+            <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                <h1 style="text-align:right;" class="post-title" itemprop="name headline">ArchLinux 触摸板手势调教</h1>
+                <div class="post-content" itemprop="articleBody">
+                    <h2 id="wiki">WIKI</h2>
+<p>比不上 Mac 的强大，简单的自定义，适合自己舒适就好。</p>
+<ul>
+<li>OS：Archlinux</li>
+<li>WM：i3wm</li>
+</ul>
+<p>首先看一看wiki</p>
+<blockquote>
+<p>警告: <code>xf86-input-synaptics</code> 已经停止维护，请尽量使用 <code>libinput</code>。如果想要在 Xorg 上 安装 <code>libinput</code>，使用 <code>xf86-input-libinput</code> 包。此包允许 libinput 在 X 上作为驱动使用。此驱动会代替 <code>evdev</code> 和 <code>synaptics</code> 运行</p>
+</blockquote>
+<p>所以我们就需要安装 <code>xf86-input-libinput</code> 包</p>
+<h2 id="安装触摸板驱动">安装触摸板驱动</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S xf86-input-libinput
+</span></span></code></pre></div><p>自定义配置文件应放在 <code>/etc/X11/xorg.conf.d/</code> 中，并且通常选择被广泛使用的命名模式 <code>30-touchpad.conf</code> 作为文件名</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vim /etc/X11/xorg.conf.d/30-touchpad.conf
+</span></span></code></pre></div><pre tabindex="0"><code class="language-conf" data-lang="conf">Section &#34;InputClass&#34;
+    Identifier &#34;touchpad&#34;
+    Driver &#34;libinput&#34;
+    MatchIsTouchpad &#34;on&#34;
+    Option &#34;Tapping&#34; &#34;on&#34;
+    Option &#34;TappingButtonMap&#34; &#34;lmr&#34;
+EndSection
+</code></pre><p>写入配置之后记得重新启动一下</p>
+<h2 id="配置触摸板手势">配置触摸板手势</h2>
+<h3 id="安装配置-libinput-gestures">安装配置 <code>libinput-gestures</code></h3>
+<p>要使用 <code>libinput-gestures</code>, 请安装 <code>libinput-gestures</code>。 你能使用很多系统级别的手势操作，也能自定义配置文件。详情请看 <a href="https://github.com/bulletmark/libinput-gestures/blob/master/README.md">README</a> 。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S libinput-gestures
+</span></span></code></pre></div><p>libinput-gestures的文档中说了：必须是input组的成员才能具有读取触摸板设备的权限，所以需要添加用户到input</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo gpasswd -a $USER input
+</span></span></code></pre></div><p>退出登录后生效（或者重启）</p>
+<h3 id="安装配置-xdotool-wmctrl">安装配置 <code>xdotool wmctrl</code></h3>
+<p>然后安装需要的包</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S xdotool wmctrl
+</span></span></code></pre></div><p>写入配置文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim .config/libinput-gestures.conf
+</span></span></code></pre></div><pre tabindex="0"><code class="language-conf" data-lang="conf">gesture swipe left 4 xdotool key super+Ctrl+Left # 4指左划: 切换到左侧工作区
+gesture swipe right 4 xdotool key super+Ctrl+Right # 4指右划: 切换到右侧工作区
+gesture swipe up 4 xdotool key super+s # 4指上划: 堆叠窗口
+gesture swipe down 4 xdotool key super+d # 4指下划: 还原窗口
+gesture pinch in 4 xdotool key super+r # 4指捏: 调整窗口大小
+
+gesture swipe left 3 xdotool key super+Shift+Left # 3指左划: 窗口移动到左边
+gesture swipe right 3 xdotool key super+Shift+Right # 3指右划: 窗口移动到右边
+gesture swipe up 3 xdotool key super+Shift+space # 3指下划: 浮动切换
+gesture swipe down 3 xdotool key super+Shift+space # 3指上划: 浮动切换
+gesture pinch in 3 xdotool key super+Shift+q # 3指捏: 关闭窗口
+
+gesture pinch in 2 xdotool key ctrl+minus # 2指捏: 缩小
+gesture pinch out 2 xdotool key ctrl+plus # 2指张: 放大%
+</code></pre><p>这里可以根据自己的习惯来搭配，然后启动<code>ibinput-gestures</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>libinput-gestures-setup autostart
+</span></span><span style="display:flex;"><span>libinput-gestures-setup start
+</span></span></code></pre></div><h2 id="演示">演示</h2>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    
+    <style type="text/css">
+        .aspect-ratio {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 75%;
+        }
+
+        .aspect-ratio iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="aspect-ratio">
+        <iframe
+            src="https://player.bilibili.com/player.html?bvid=BV1Jy4y1h7DS&page=10"
+            scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
+            sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts">
+        </iframe>
+        
+        
+    </div>
+</body>
+
+</html>
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+    
+          <div
+            id="page-scrollspy" class="toc-nav">
+
+            <li class="nav-item pb-3 catalog">
+                <span class="font-weight-bold mb-2">- CATALOG - </span>
+            </li>
+
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#wiki">
+                        WIKI
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%ae%89%e8%a3%85%e8%a7%a6%e6%91%b8%e6%9d%bf%e9%a9%b1%e5%8a%a8">
+                        安装触摸板驱动
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e9%85%8d%e7%bd%ae%e8%a7%a6%e6%91%b8%e6%9d%bf%e6%89%8b%e5%8a%bf">
+                        配置触摸板手势
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%ae%89%e8%a3%85%e9%85%8d%e7%bd%ae-libinput-gestures">
+                        安装配置 libinput-gestures
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%ae%89%e8%a3%85%e9%85%8d%e7%bd%ae-xdotool-wmctrl">
+                        安装配置 xdotool wmctrl
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e6%bc%94%e7%a4%ba">
+                        演示
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            
+            
+            
+            </div>
+            
+
+            </div>
+            
+            
+<script src="https://utteranc.es/client.js" repo="Twor/blog-comment"
+    issue-term="pathname" theme="github-light" crossorigin="anonymous"
+    async>
+    </script>
+<footer id="footer" role="contentinfo">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                &copy; 2022 <a href="https://twor.me/">Twor
+                </a>.
+                <a target="_blank" href="https://gohugo.io">Hugo</a> & <a target="_blank"
+                    href="https://github.com/Twor/hugo-angus">Angus</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/prism.js"></script>
+<script src="/js/zoom-vanilla.min.js"></script>
+<script src="/js/fuse.js"></script> 
+<script src="/js/search.js"></script>
+<script>
+    var str = "TW|OR".split('').reverse().join('');
+    for (i = 0; i < str.length; i++) {
+        if (str.charAt(i) == '|') {
+            $('<a href="https:\/\/twor.me\/"><span class="w">' + str.charAt(i) + '</span></a>').prependTo($(".header-logo"));
+        } else {
+            $('<span class="b">' + str.charAt(i) + '</span>').prependTo($(".header-logo"));
+        }
+
+    }
+    ""
+    var b = document.getElementsByClassName('b');
+    var w = document.getElementsByClassName('w');
+    var menupgMargin = (b.length + w.length + 1) * 28;
+    var srhboxMargin = (b.length + w.length + 4) * 28;
+    var menusrhWidth = (b.length + w.length - 1) * 28;
+    document.getElementById('menu-page').style['margin-left'] = menupgMargin + 'px';
+    document.getElementById('search-box').style['margin-left'] = srhboxMargin + 'px';
+    document.getElementById('menu-search').style['width'] = menusrhWidth + 'px';
+    if (menusrhWidth < 140) {
+        document.getElementById('menu-search').setAttribute('placeholder', 'Search~');
+    }
+    ""
+
+    $(document).ready(function () {
+        $("#menu-search").keydown(function (e) {
+            if (e.keyCode == 13) {
+                var searchString = $("#menu-search").val();
+                var url = "https:\/\/twor.me\/" + "search?s=" + searchString;
+                window.location.href = url;
+            }
+        });
+    });
+
+    function isMenu() {
+        if (document.getElementById('menu-1').style.display == 'inline') {
+            $('#search-box').fadeOut(200);
+            $('#menu-page').fadeOut(200);
+            $('#menu-1').fadeOut(500);
+            $('#menu-2').fadeOut(400);
+            $('#menu-3').fadeOut(300);
+        } else {
+            $('#menu-1').fadeIn(150);
+            $('#menu-2').fadeIn(150);
+            $('#menu-3').fadeIn(150);
+        }
+    }
+
+    function isMenu1() {
+        if (document.getElementById('menu-page').style.display == 'block') {
+            $('#menu-page').fadeOut(400);
+        } else {
+            $('#menu-page').fadeIn(400);
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    function isMenu3() {
+        if (document.getElementById('search-box').style.display == 'block') {
+            $('#search-box').fadeOut(400);
+        } else {
+            $('#search-box').fadeIn(400);
+        }
+    }
+
+    function Search404() {
+        $('#menu-1').fadeIn(150);
+        $('#menu-2').fadeIn(150);
+        $('#menu-3').fadeIn(150);
+        $('#search-box').fadeIn(300);
+    }
+
+
+
+    
+
+    function footerPosition() {
+        $("footer").removeClass("fixed-bottom");
+        var contentHeight = document.body.scrollHeight,
+            winHeight = window.innerHeight;
+        if (document.getElementsByClassName("post-content")[0]) {
+            var winImgNum = document.getElementsByClassName("post-content")[0].getElementsByTagName("img").length;
+        } else {
+            var winImgNum = 0;
+        }
+        if (!(contentHeight > winHeight) && winImgNum == 0) {
+            $("footer").addClass("fixed-bottom");
+        }
+    }
+    footerPosition();
+    $(window).resize(footerPosition);
+</script>
+<script>
+
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+</script>
+
+</body>
+
+</html>

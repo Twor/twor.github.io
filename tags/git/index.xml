@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Twor</title>
+    <link>https://twor.me/tags/git/</link>
+    <description>Recent content in git on Twor</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Jun 2019 13:58:53 +0800</lastBuildDate><atom:link href="https://twor.me/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git命令进阶—删除隐私 同步fork pull request 和merge</title>
+      <link>https://twor.me/posts/git_bash_tip/</link>
+      <pubDate>Wed, 05 Jun 2019 13:58:53 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/git_bash_tip/</guid>
+      <description>在开发的时候，为了测试数据，总会连接一些数据库、服务器、API之类，提交的时候就会不小心泄漏我们的SSH key、密码或者token之类的东西，所以有必要掌握 Git删除隐私。
+删除隐私 错误的做法：如果发现不小心上传了隐私信息，修改或删除相应的文件 原因：git是可以查看历史提交的，所以只需要查看历史提交，相应的隐私信息还是会暴露
+删厍？当我没说
+git filter-branch 所有的历史记录中删除某个文件/文件夹 yourfilepath 就是需要删除的那个文件/文件夹
+$ git filter-branch --force --index-filter &amp;#39;git rm -r --cached --ignore-unmatch yourfilepath&amp;#39; --prune-empty --tag-name-filter cat -- --all $ git push origin master --force 此时再看看 git log 应该是没有该文件的信息了。
+请参考：https://docs.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository
+同步fork代码 clone fork的分支到本地
+$ git clone git@github.com:*/flutter.git 增加源分支(被自己fork的项目)地址到自己git项目远程分支列表中，将原来的仓库命名为upstream
+$ git remote add upstream git@github.com:flutter/flutter.git 核实远程分支列表（optional）
+$ git remote -v origin git@github.com:*/flutter.git (fetch) origin git@github.com:*/flutter.git (push) upstream git@github.com:flutter/flutter.git (fetch) upstream git@github.com:flutter/flutter.git (push) ## 核实后，发现不如意，想删除，可以用 git remote remove name ## name 为远程分支的命名，如上面例子，可以删除 upstream ## git remote remove upstream ## 或者直接删除之前fork的原始分支 origin ## git remote remove origin (直接删除了原始分支后，再fork， ## 也能达到更新了最新代码的需求，后面的步骤就不用了。) fetch源分支的新版本到本地</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,657 @@
+<head>
+    <meta charset="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Twor</title>
+
+    
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/prism.css">
+    <link type="text/css" rel="stylesheet" href="/css/zoom.css">
+    <link type="text/css" rel="stylesheet" href="/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/css/all.css">
+
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="logo">
+                    <div class="header-logo">
+                        
+                        
+                        
+                        <a id="btn-menu" href="javascript:isMenu()">
+
+                            
+                            <span class="bars"><i class="fas fa-chevron-right"></i></i></span>
+                            
+                        </a>
+                        <a href="javascript:isMenu1();">
+                            
+                            <span id="menu-1" class="bf"><i class="fas fa-bars"></i></span>
+                            
+                        </a>
+                        <a href="/index.xml">
+                            
+                            <span id="menu-2" class="bf"><i class="fas fa-rss"></i></span>
+                            
+                        </a>
+
+                        <a href="javascript:isMenu3();">
+                            
+                            <span id="menu-3" class="bf"><i class="fas fa-search"></i></span>
+                            
+                        </a>
+                    </div>
+                    <div id="menu-page">
+                        <a href="/">
+                            <li>博文</li>
+                        </a><a href="/about">
+                            <li>关于</li>
+                        </a>
+                    </div>
+                    <div id="search-box">
+                        <input type="text" name="s" id="menu-search" class="inputValue" placeholder="Type something~" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><div class="container-fluid">
+    <div class="row">
+        <div id="main" class="col-12 clearfix" role="main">
+            <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                <h1 style="text-align:right;" class="post-title" itemprop="name headline">WSL(Windows Subsystem for Linux)安装archlinux，并配置图形化界面</h1>
+                <div class="post-content" itemprop="articleBody">
+                    <h3 id="开启wsl"><strong>开启wsl</strong></h3>
+<p>Windows功能 &raquo; 勾选<code>适用于Linux的Windows子系统</code> ，重启生效。</p>
+<h3 id="下载安装-arch-wsl"><strong>下载安装 Arch WSL</strong></h3>
+<p>这里是作者的安装教程：<a href="https://github.com/yuk7/ArchWSL/wiki">https://github.com/yuk7/ArchWSL/wiki</a></p>
+<p>我选择的是传统方式安装 (不使用 AppX 方式)：</p>
+<ol>
+<li>在 <a href="https://github.com/yuk7/ArchWSL/releases">Release</a> 下载最新版的 <code>Arch.zip</code></li>
+<li>解压到 C 盘根目录，(一定要在 C 盘，其他位置也可以)，但是你要有该目录的读写权限，所以不能放到 <code>Program Files</code> 等目录中。</li>
+<li>双击解压好的 <code>Arch.exe</code> 进行安装，这个 <strong>.exe 的名字</strong> 就是要创建的 <strong>WSL 实例的名字</strong>，改不同的名字就能创建多个 Arch WSL。</li>
+</ol>
+<p>安装好之后，进行配置。</p>
+<h3 id="arch-linux-软件仓库国内镜像"><strong>Arch Linux 软件仓库国内镜像</strong></h3>
+<p>编辑 <code>/etc/pacman.d/mirrorlist</code>，里面有注释了的 <code>China</code> 的镜像，（放在上面优先级高）</p>
+<p><img src="https://toipc-my.sharepoint.com/personal/toipc_twor_me/_layouts/15/download.aspx?UniqueId=cf4ec571-1eb2-46ed-ac19-6f9265abaa1d&amp;Translate=false&amp;tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvdG9pcGMtbXkuc2hhcmVwb2ludC5jb21AYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU4MTIxMjY3OSIsImV4cCI6IjE1ODEyMTYyNzkiLCJlbmRwb2ludHVybCI6InFBU2RmeDFLdk00TzJJVXJIQ0wwTFNRc0dKbzNmUEtLTXROdWtaR09KTFU9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNDIiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik5qaGxNREl6WkRjdE5HVmxZaTAwTW1ZNExXSTJOVFV0WmpJMVkySXhNRFJpTmpjdyIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJZMlptWTJVeFlqY3ROV015WlMwME5EUm1MV0l3Tm1VdFpHVm1aVEV4TmpWbFpqZ3giLCJhcHBfZGlzcGxheW5hbWUiOiJvbmVfc2NmIiwiZmFtaWx5X25hbWUiOiJ0b2lwYyIsImFwcGlkIjoiNGRhM2U3ZjItYmY2ZC00NjdjLWFhZjAtNTc4MDc4ZjBiZjdjIiwidGlkIjoiYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwidXBuIjoidG9pcGNAdHdvci5tZSIsInB1aWQiOiIxMDAzMjAwMDk4RjYxMjM0IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDA5OGY2MTIzNEBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.aVgxNUtEc0s5VjNjSERlTFl5aWdzMkFYMVEyUUZ0Nko1NENKZWExVzBzUT0&amp;ApiVersion=2.0" alt="https://toipc-my.sharepoint.com/personal/toipc_twor_me/_layouts/15/download.aspx?UniqueId=cf4ec571-1eb2-46ed-ac19-6f9265abaa1d&amp;Translate=false&amp;tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvdG9pcGMtbXkuc2hhcmVwb2ludC5jb21AYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU4MTIxMjY3OSIsImV4cCI6IjE1ODEyMTYyNzkiLCJlbmRwb2ludHVybCI6InFBU2RmeDFLdk00TzJJVXJIQ0wwTFNRc0dKbzNmUEtLTXROdWtaR09KTFU9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNDIiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik5qaGxNREl6WkRjdE5HVmxZaTAwTW1ZNExXSTJOVFV0WmpJMVkySXhNRFJpTmpjdyIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJZMlptWTJVeFlqY3ROV015WlMwME5EUm1MV0l3Tm1VdFpHVm1aVEV4TmpWbFpqZ3giLCJhcHBfZGlzcGxheW5hbWUiOiJvbmVfc2NmIiwiZmFtaWx5X25hbWUiOiJ0b2lwYyIsImFwcGlkIjoiNGRhM2U3ZjItYmY2ZC00NjdjLWFhZjAtNTc4MDc4ZjBiZjdjIiwidGlkIjoiYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwidXBuIjoidG9pcGNAdHdvci5tZSIsInB1aWQiOiIxMDAzMjAwMDk4RjYxMjM0IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDA5OGY2MTIzNEBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.aVgxNUtEc0s5VjNjSERlTFl5aWdzMkFYMVEyUUZ0Nko1NENKZWExVzBzUT0&amp;ApiVersion=2.0"></p>
+<p>然后更新软件包缓存，执行： <code>pacman -Syyu</code></p>
+<p>其他跟镜像有关的可以看这里：<a href="https://wiki.archlinux.org/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">https://wiki.archlinux.org/index.php/Mirrors_(简体中文)</a></p>
+<h3 id="添加-archlinuxcn-源"><strong>添加 ArchlinuxCN 源</strong></h3>
+<blockquote>
+<p>Arch Linux 中文社区仓库 是由 Arch Linux 中文社区驱动的非官方用户仓库。包含中文用户常用软件、工具、字体 / 美化包等。官方仓库地址：http://repo.archlinuxcn.org</p>
+</blockquote>
+<p>使用方法：在 <code>/etc/pacman.conf</code> 文件末尾添加以下两行：</p>
+<pre tabindex="0"><code>[archlinuxcn]
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+</code></pre><p>之后安装 <code>archlinuxcn-keyring</code> 包导入 GPG key:</p>
+<pre tabindex="0"><code>pacman-key --init
+pacman-key --populate
+pacman -Syy &amp;&amp; pacman -S archlinuxcn-keyring
+</code></pre><h3 id="安装-aur-助手-yay"><strong>安装 AUR 助手 yay</strong></h3>
+<blockquote>
+<p>Arch User Repository（常被称作 AUR），是一个为 Arch 用户而生的社区驱动软件仓库。Debian/Ubuntu 用户的对应类比是 PPA。AUR 包含了不直接被 Arch Linux 官方所背书的软件。如果有人想在 Arch 上发布软件或者包，它可以通过这个社区仓库提供。这让最终用户们可以使用到比默认仓库里更多的软件。所以你该如何使用 AUR 呢？简单来说，你需要另外的工具以从 AUR 中安装软件。Arch 的包管理器 pacman 不直接支持 AUR。那些支持 AUR 的 “特殊工具” 我们称之为 AUR 助手。</p>
+</blockquote>
+<p>我们想从 AUR 仓库中安装东西时，就需要 AUR 助手，这里推荐 <code>yay</code>.</p>
+<p><img src="https://gh-card.dev/repos/Jguer/yay.svg" alt="https://gh-card.dev/repos/Jguer/yay.svg"></p>
+<pre tabindex="0"><code>pacman -S yay
+</code></pre><p>安装完 <code>yay</code>，<code>git</code> 也会被一起装好。换成国内 AUR 源:</p>
+<pre tabindex="0"><code>##yay --save --aururl &#34;地址&#34;
+yay --save --aururl https://aur.tuna.tsinghua.edu.cn
+</code></pre><p>yay 的配置文件路径： <code>~/.config/yay/config.json</code></p>
+<h3 id="创建-arch-普通用户"><strong>创建 Arch 普通用户</strong></h3>
+<p>刚安装好的 Arch 是 root 用户，为了不至于权限太大误伤系统，可以先创建一个普通用户。</p>
+<p>添加一个用户：</p>
+<pre tabindex="0"><code>useradd -m -G wheel twor
+</code></pre><p>设置用户密码：</p>
+<pre tabindex="0"><code>passwd twor
+</code></pre><p>在下一步之前，要先把默认编辑器设置成 vim，因为用不来默认的 vi…</p>
+<pre tabindex="0"><code>export EDITOR=vim
+</code></pre><p>你也可以设置成自己喜欢的编辑器。让用户可以执行 sudo 命令，这一步不能省略。使用如下系统自带命令修改 <code>sudoers</code> 文件。</p>
+<pre tabindex="0"><code>visudo
+</code></pre><p>在里面注销注释（删除前面的<code>#</code>）这一行即可：</p>
+<pre tabindex="0"><code>%wheel  ALL=(ALL)  ALL
+</code></pre><p><img src="https://toipc-my.sharepoint.com/personal/toipc_twor_me/_layouts/15/download.aspx?UniqueId=32147940-4515-4210-bc33-45da164fc7d4&amp;Translate=false&amp;tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvdG9pcGMtbXkuc2hhcmVwb2ludC5jb21AYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU4MTIxMjY3OSIsImV4cCI6IjE1ODEyMTYyNzkiLCJlbmRwb2ludHVybCI6InkxUU5sTUFZMmZkRkU4bFBhREZ2K2VXWGlYbC9XcWFQcDRmK1VSOGhZVkU9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNDIiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik5qaGxNREl6WkRjdE5HVmxZaTAwTW1ZNExXSTJOVFV0WmpJMVkySXhNRFJpTmpjdyIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJZMlptWTJVeFlqY3ROV015WlMwME5EUm1MV0l3Tm1VdFpHVm1aVEV4TmpWbFpqZ3giLCJhcHBfZGlzcGxheW5hbWUiOiJvbmVfc2NmIiwiZmFtaWx5X25hbWUiOiJ0b2lwYyIsImFwcGlkIjoiNGRhM2U3ZjItYmY2ZC00NjdjLWFhZjAtNTc4MDc4ZjBiZjdjIiwidGlkIjoiYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwidXBuIjoidG9pcGNAdHdvci5tZSIsInB1aWQiOiIxMDAzMjAwMDk4RjYxMjM0IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDA5OGY2MTIzNEBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.R014bDAzSURUL0x2VU1VRjdCenR5TGVOZjhudEkrWGgxTmUycy96bnBhND0&amp;ApiVersion=2.0" alt="https://toipc-my.sharepoint.com/personal/toipc_twor_me/_layouts/15/download.aspx?UniqueId=32147940-4515-4210-bc33-45da164fc7d4&amp;Translate=false&amp;tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvdG9pcGMtbXkuc2hhcmVwb2ludC5jb21AYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU4MTIxMjY3OSIsImV4cCI6IjE1ODEyMTYyNzkiLCJlbmRwb2ludHVybCI6InkxUU5sTUFZMmZkRkU4bFBhREZ2K2VXWGlYbC9XcWFQcDRmK1VSOGhZVkU9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNDIiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik5qaGxNREl6WkRjdE5HVmxZaTAwTW1ZNExXSTJOVFV0WmpJMVkySXhNRFJpTmpjdyIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJZMlptWTJVeFlqY3ROV015WlMwME5EUm1MV0l3Tm1VdFpHVm1aVEV4TmpWbFpqZ3giLCJhcHBfZGlzcGxheW5hbWUiOiJvbmVfc2NmIiwiZmFtaWx5X25hbWUiOiJ0b2lwYyIsImFwcGlkIjoiNGRhM2U3ZjItYmY2ZC00NjdjLWFhZjAtNTc4MDc4ZjBiZjdjIiwidGlkIjoiYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwidXBuIjoidG9pcGNAdHdvci5tZSIsInB1aWQiOiIxMDAzMjAwMDk4RjYxMjM0IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDA5OGY2MTIzNEBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.R014bDAzSURUL0x2VU1VRjdCenR5TGVOZjhudEkrWGgxTmUycy96bnBhND0&amp;ApiVersion=2.0"></p>
+<h3 id="切换-wsl-默认用户"><strong>切换 WSL 默认用户</strong></h3>
+<p>在 cmd 中打开你的安装目录：</p>
+<p><img src="https://toipc-my.sharepoint.com/personal/toipc_twor_me/_layouts/15/download.aspx?UniqueId=ddfb8540-7d53-4eb7-adc2-9df87f7a7dd4&amp;Translate=false&amp;tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvdG9pcGMtbXkuc2hhcmVwb2ludC5jb21AYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU4MTIxMTM1MCIsImV4cCI6IjE1ODEyMTQ5NTAiLCJlbmRwb2ludHVybCI6InpkQjh2a2NNWlF4WVVKcHdORW5DWjB0RTRBcDhucmZCazlZdzV1TUZLdkk9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNDIiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik1HSmhOV1k1WkRndFlqTmxPQzAwWXpreUxUZzVaRE10TkdWbE1tRmlNamRpWmpReiIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJZMlptWTJVeFlqY3ROV015WlMwME5EUm1MV0l3Tm1VdFpHVm1aVEV4TmpWbFpqZ3giLCJhcHBfZGlzcGxheW5hbWUiOiJvbmVfc2NmIiwiZmFtaWx5X25hbWUiOiJ0b2lwYyIsImFwcGlkIjoiNGRhM2U3ZjItYmY2ZC00NjdjLWFhZjAtNTc4MDc4ZjBiZjdjIiwidGlkIjoiYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwidXBuIjoidG9pcGNAdHdvci5tZSIsInB1aWQiOiIxMDAzMjAwMDk4RjYxMjM0IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDA5OGY2MTIzNEBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.djR2YldWbThNMmpyOXNwUVFqNnViZGYvUkE2UUJrTzZGZGw2SExkNGdJQT0&amp;ApiVersion=2.0" alt="https://toipc-my.sharepoint.com/personal/toipc_twor_me/_layouts/15/download.aspx?UniqueId=ddfb8540-7d53-4eb7-adc2-9df87f7a7dd4&amp;Translate=false&amp;tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvdG9pcGMtbXkuc2hhcmVwb2ludC5jb21AYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU4MTIxMTM1MCIsImV4cCI6IjE1ODEyMTQ5NTAiLCJlbmRwb2ludHVybCI6InpkQjh2a2NNWlF4WVVKcHdORW5DWjB0RTRBcDhucmZCazlZdzV1TUZLdkk9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNDIiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik1HSmhOV1k1WkRndFlqTmxPQzAwWXpreUxUZzVaRE10TkdWbE1tRmlNamRpWmpReiIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJZMlptWTJVeFlqY3ROV015WlMwME5EUm1MV0l3Tm1VdFpHVm1aVEV4TmpWbFpqZ3giLCJhcHBfZGlzcGxheW5hbWUiOiJvbmVfc2NmIiwiZmFtaWx5X25hbWUiOiJ0b2lwYyIsImFwcGlkIjoiNGRhM2U3ZjItYmY2ZC00NjdjLWFhZjAtNTc4MDc4ZjBiZjdjIiwidGlkIjoiYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwidXBuIjoidG9pcGNAdHdvci5tZSIsInB1aWQiOiIxMDAzMjAwMDk4RjYxMjM0IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDA5OGY2MTIzNEBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.djR2YldWbThNMmpyOXNwUVFqNnViZGYvUkE2UUJrTzZGZGw2SExkNGdJQT0&amp;ApiVersion=2.0"></p>
+<p>执行：</p>
+<pre tabindex="0"><code>Arch.exe config --default-user artin
+</code></pre><h3 id="配置基本环境"><strong>配置基本环境</strong></h3>
+<p>安装 fakeroot、binutils 等打包基本工具</p>
+<pre tabindex="0"><code>pacman -S base-devel
+</code></pre><p>我这里会提示 <code>fakeroot</code> 被 ignore 了，选 n然后回车就好了，不输入数字的话默认会安装 <code>base-devel</code> 里的所有包。</p>
+<h3 id="安装i3"><strong>安装i3</strong></h3>
+<pre tabindex="0"><code>sudo pacman -S i3
+</code></pre><p>这里你可以选择All或者你需要的</p>
+<h3 id="配置i3"><strong>配置i3</strong></h3>
+<p><del>这里就不说了，不会的自己去教程吧</del></p>
+<h2 id="配置archlinuxwsl图形化"><strong>配置archlinux（wsl）图形化</strong></h2>
+<p>下载<a href="https://sourceforge.net/projects/vcxsrv/">vcxsrv</a>并安装（也可以使用其他Windows X Server）</p>
+<p>创建连接脚本</p>
+<pre tabindex="0"><code>mkdir .script
+vim .script/xlaunch
+</code></pre><p>写入：</p>
+<pre tabindex="0"><code>#!/bin/bash
+
+# meant to be run with `bash -c &#34;/path/to/xlaunch&#34;` when running from e.g. a Windows shortcut
+
+# explicitly needed when launching with bash -c from Windows
+export DISPLAY=:0
+#export LIBGL_ALWAYS_INDIRECT=0
+source ~/.bashrc
+#xrandr --dpi 279
+i3
+</code></pre><p>赋予执行权限</p>
+<pre tabindex="0"><code>chmod +x .script/xlaunch
+</code></pre><p>然后在Windows下创建一个脚本 <code>Archlinux.vbs</code></p>
+<pre tabindex="0"><code>&#39; vcxsrv所在路径 C:\Program Files\VcXsrv\vcxsrv.exe
+&#39; arch.exe 所在路径 C:\Arch\Arch.exe
+&#39; achlinux连接脚本所在路径 ~/.scripts/wlaunch
+Set shell = CreateObject(&#34;WScript.Shell&#34; )
+shell.Run &#34;&#34;&#34;C:\Program Files\VcXsrv\vcxsrv.exe&#34;&#34; :0 -screen 0 @1 -nodecoration -wgl&#34;
+shell.Run &#34;C:\Arch\Arch.exe run &#34;&#34;~/.scripts/wlaunch&#34;&#34;&#34;, 0
+</code></pre><p>双击运行<code>Archlinux.vbs</code> 就可以连接上了</p>
+<p><img src="https://toipc-my.sharepoint.com/personal/toipc_twor_me/_layouts/15/download.aspx?UniqueId=e171bea7-740b-4cfb-8726-0299d17d3522&amp;Translate=false&amp;tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvdG9pcGMtbXkuc2hhcmVwb2ludC5jb21AYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU4MTIxMjY3OSIsImV4cCI6IjE1ODEyMTYyNzkiLCJlbmRwb2ludHVybCI6ImlQTEw1dFdjYVU5M215ZWl5UC92VUYxSldRejNGTkQ3d1lkSjcyTkdXczg9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNDIiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik5qaGxNREl6WkRjdE5HVmxZaTAwTW1ZNExXSTJOVFV0WmpJMVkySXhNRFJpTmpjdyIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJZMlptWTJVeFlqY3ROV015WlMwME5EUm1MV0l3Tm1VdFpHVm1aVEV4TmpWbFpqZ3giLCJhcHBfZGlzcGxheW5hbWUiOiJvbmVfc2NmIiwiZmFtaWx5X25hbWUiOiJ0b2lwYyIsImFwcGlkIjoiNGRhM2U3ZjItYmY2ZC00NjdjLWFhZjAtNTc4MDc4ZjBiZjdjIiwidGlkIjoiYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwidXBuIjoidG9pcGNAdHdvci5tZSIsInB1aWQiOiIxMDAzMjAwMDk4RjYxMjM0IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDA5OGY2MTIzNEBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.eEFvaVB3SStadFhCN1NjcUhOSGdjYSs1cnhUZ3Vwa3ZCVENNczc5TzVZaz0&amp;ApiVersion=2.0" alt="https://toipc-my.sharepoint.com/personal/toipc_twor_me/_layouts/15/download.aspx?UniqueId=e171bea7-740b-4cfb-8726-0299d17d3522&amp;Translate=false&amp;tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvdG9pcGMtbXkuc2hhcmVwb2ludC5jb21AYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU4MTIxMjY3OSIsImV4cCI6IjE1ODEyMTYyNzkiLCJlbmRwb2ludHVybCI6ImlQTEw1dFdjYVU5M215ZWl5UC92VUYxSldRejNGTkQ3d1lkSjcyTkdXczg9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNDIiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik5qaGxNREl6WkRjdE5HVmxZaTAwTW1ZNExXSTJOVFV0WmpJMVkySXhNRFJpTmpjdyIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJZMlptWTJVeFlqY3ROV015WlMwME5EUm1MV0l3Tm1VdFpHVm1aVEV4TmpWbFpqZ3giLCJhcHBfZGlzcGxheW5hbWUiOiJvbmVfc2NmIiwiZmFtaWx5X25hbWUiOiJ0b2lwYyIsImFwcGlkIjoiNGRhM2U3ZjItYmY2ZC00NjdjLWFhZjAtNTc4MDc4ZjBiZjdjIiwidGlkIjoiYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwidXBuIjoidG9pcGNAdHdvci5tZSIsInB1aWQiOiIxMDAzMjAwMDk4RjYxMjM0IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDA5OGY2MTIzNEBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.eEFvaVB3SStadFhCN1NjcUhOSGdjYSs1cnhUZ3Vwa3ZCVENNczc5TzVZaz0&amp;ApiVersion=2.0"></p>
+<p>大功告成！</p>
+<p>oh-my-zsh Polybar &hellip; 剩下的自己折腾吧！</p>
+<h2 id="提示"><strong>提示</strong></h2>
+<ol>
+<li>i3在配置的时候建议使用<code>alt</code>键，因为Windows的<code>win</code>键被Windows自身热键占用</li>
+<li>Windows的文件（C盘D盘&hellip;）在 <code>/mnt</code> 文件夹内</li>
+<li>重新尝试安装（重置archlinux）<code>wsl --unregister Arch</code> 或者完全卸载wsl <code>lxrun /uninstall /full</code></li>
+<li>以后补充</li>
+</ol>
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+    
+          <div
+            id="page-scrollspy" class="toc-nav">
+
+            <li class="nav-item pb-3 catalog">
+                <span class="font-weight-bold mb-2">- CATALOG - </span>
+            </li>
+
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%bc%80%e5%90%afwsl">
+                        开启wsl
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e4%b8%8b%e8%bd%bd%e5%ae%89%e8%a3%85-arch-wsl">
+                        下载安装 Arch WSL
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#arch-linux-%e8%bd%af%e4%bb%b6%e4%bb%93%e5%ba%93%e5%9b%bd%e5%86%85%e9%95%9c%e5%83%8f">
+                        Arch Linux 软件仓库国内镜像
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e6%b7%bb%e5%8a%a0-archlinuxcn-%e6%ba%90">
+                        添加 ArchlinuxCN 源
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%ae%89%e8%a3%85-aur-%e5%8a%a9%e6%89%8b-yay">
+                        安装 AUR 助手 yay
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%88%9b%e5%bb%ba-arch-%e6%99%ae%e9%80%9a%e7%94%a8%e6%88%b7">
+                        创建 Arch 普通用户
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%88%87%e6%8d%a2-wsl-%e9%bb%98%e8%ae%a4%e7%94%a8%e6%88%b7">
+                        切换 WSL 默认用户
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e9%85%8d%e7%bd%ae%e5%9f%ba%e6%9c%ac%e7%8e%af%e5%a2%83">
+                        配置基本环境
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%ae%89%e8%a3%85i3">
+                        安装i3
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e9%85%8d%e7%bd%aei3">
+                        配置i3
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e9%85%8d%e7%bd%aearchlinuxwsl%e5%9b%be%e5%bd%a2%e5%8c%96">
+                        配置archlinux（wsl）图形化
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e6%8f%90%e7%a4%ba">
+                        提示
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            
+            
+            
+            </div>
+            
+
+            </div>
+            
+            
+<script src="https://utteranc.es/client.js" repo="Twor/blog-comment"
+    issue-term="pathname" theme="github-light" crossorigin="anonymous"
+    async>
+    </script>
+<footer id="footer" role="contentinfo">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                &copy; 2022 <a href="https://twor.me/">Twor
+                </a>.
+                <a target="_blank" href="https://gohugo.io">Hugo</a> & <a target="_blank"
+                    href="https://github.com/Twor/hugo-angus">Angus</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/prism.js"></script>
+<script src="/js/zoom-vanilla.min.js"></script>
+<script src="/js/fuse.js"></script> 
+<script src="/js/search.js"></script>
+<script>
+    var str = "TW|OR".split('').reverse().join('');
+    for (i = 0; i < str.length; i++) {
+        if (str.charAt(i) == '|') {
+            $('<a href="https:\/\/twor.me\/"><span class="w">' + str.charAt(i) + '</span></a>').prependTo($(".header-logo"));
+        } else {
+            $('<span class="b">' + str.charAt(i) + '</span>').prependTo($(".header-logo"));
+        }
+
+    }
+    ""
+    var b = document.getElementsByClassName('b');
+    var w = document.getElementsByClassName('w');
+    var menupgMargin = (b.length + w.length + 1) * 28;
+    var srhboxMargin = (b.length + w.length + 4) * 28;
+    var menusrhWidth = (b.length + w.length - 1) * 28;
+    document.getElementById('menu-page').style['margin-left'] = menupgMargin + 'px';
+    document.getElementById('search-box').style['margin-left'] = srhboxMargin + 'px';
+    document.getElementById('menu-search').style['width'] = menusrhWidth + 'px';
+    if (menusrhWidth < 140) {
+        document.getElementById('menu-search').setAttribute('placeholder', 'Search~');
+    }
+    ""
+
+    $(document).ready(function () {
+        $("#menu-search").keydown(function (e) {
+            if (e.keyCode == 13) {
+                var searchString = $("#menu-search").val();
+                var url = "https:\/\/twor.me\/" + "search?s=" + searchString;
+                window.location.href = url;
+            }
+        });
+    });
+
+    function isMenu() {
+        if (document.getElementById('menu-1').style.display == 'inline') {
+            $('#search-box').fadeOut(200);
+            $('#menu-page').fadeOut(200);
+            $('#menu-1').fadeOut(500);
+            $('#menu-2').fadeOut(400);
+            $('#menu-3').fadeOut(300);
+        } else {
+            $('#menu-1').fadeIn(150);
+            $('#menu-2').fadeIn(150);
+            $('#menu-3').fadeIn(150);
+        }
+    }
+
+    function isMenu1() {
+        if (document.getElementById('menu-page').style.display == 'block') {
+            $('#menu-page').fadeOut(400);
+        } else {
+            $('#menu-page').fadeIn(400);
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    function isMenu3() {
+        if (document.getElementById('search-box').style.display == 'block') {
+            $('#search-box').fadeOut(400);
+        } else {
+            $('#search-box').fadeIn(400);
+        }
+    }
+
+    function Search404() {
+        $('#menu-1').fadeIn(150);
+        $('#menu-2').fadeIn(150);
+        $('#menu-3').fadeIn(150);
+        $('#search-box').fadeIn(300);
+    }
+
+
+
+    
+
+    function footerPosition() {
+        $("footer").removeClass("fixed-bottom");
+        var contentHeight = document.body.scrollHeight,
+            winHeight = window.innerHeight;
+        if (document.getElementsByClassName("post-content")[0]) {
+            var winImgNum = document.getElementsByClassName("post-content")[0].getElementsByTagName("img").length;
+        } else {
+            var winImgNum = 0;
+        }
+        if (!(contentHeight > winHeight) && winImgNum == 0) {
+            $("footer").addClass("fixed-bottom");
+        }
+    }
+    footerPosition();
+    $(window).resize(footerPosition);
+</script>
+<script>
+
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,436 @@
+<head>
+    <meta charset="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Twor</title>
+
+    
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/prism.css">
+    <link type="text/css" rel="stylesheet" href="/css/zoom.css">
+    <link type="text/css" rel="stylesheet" href="/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/css/all.css">
+
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="logo">
+                    <div class="header-logo">
+                        
+                        
+                        
+                        <a id="btn-menu" href="javascript:isMenu()">
+
+                            
+                            <span class="bars"><i class="fas fa-chevron-right"></i></i></span>
+                            
+                        </a>
+                        <a href="javascript:isMenu1();">
+                            
+                            <span id="menu-1" class="bf"><i class="fas fa-bars"></i></span>
+                            
+                        </a>
+                        <a href="/index.xml">
+                            
+                            <span id="menu-2" class="bf"><i class="fas fa-rss"></i></span>
+                            
+                        </a>
+
+                        <a href="javascript:isMenu3();">
+                            
+                            <span id="menu-3" class="bf"><i class="fas fa-search"></i></span>
+                            
+                        </a>
+                    </div>
+                    <div id="menu-page">
+                        <a href="/">
+                            <li>博文</li>
+                        </a><a href="/about">
+                            <li>关于</li>
+                        </a>
+                    </div>
+                    <div id="search-box">
+                        <input type="text" name="s" id="menu-search" class="inputValue" placeholder="Type something~" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><div class="container-fluid">
+    <div class="row">
+        <div id="main" class="col-12 clearfix" role="main">
+            <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                <h1 style="text-align:right;" class="post-title" itemprop="name headline">Git 自动化部署网站</h1>
+                <div class="post-content" itemprop="articleBody">
+                    <h3 id="安装配置git服务端">安装配置Git服务端</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo yum install git
+</span></span><span style="display:flex;"><span>$ sudo adduser git
+</span></span><span style="display:flex;"><span>$ su git
+</span></span><span style="display:flex;"><span>$ cd
+</span></span><span style="display:flex;"><span>$ mkdir .ssh <span style="color:#f92672">&amp;&amp;</span> chmod <span style="color:#ae81ff">700</span> .ssh
+</span></span><span style="display:flex;"><span>$ touch .ssh/authorized_keys <span style="color:#f92672">&amp;&amp;</span> chmod <span style="color:#ae81ff">600</span> .ssh/authorized_keys
+</span></span></code></pre></div><h3 id="写入ssh公匙">写入SSH公匙</h3>
+<p>接着，我们需要为系统用户 git 的 <code>authorized_keys</code> 文件添加一些开发者 SSH 公钥。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vim .ssh/authorized_keys
+</span></span><span style="display:flex;"><span>$ <span style="color:#75715e">#写入SSH公匙</span>
+</span></span></code></pre></div><h3 id="创建仓库">创建仓库</h3>
+<p>现在我们来为开发者新建一个空仓库。可以借助带 <code>--bare</code> 选项的 <code>git init</code> 命令来做到这一点，该命令在初始化仓库时不会创建工作目录：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd /srv/git
+</span></span><span style="display:flex;"><span>$ mkdir project.git
+</span></span><span style="display:flex;"><span>$ cd project.git
+</span></span><span style="display:flex;"><span>$ git init --bare
+</span></span><span style="display:flex;"><span>Initialized empty Git repository in /srv/git/project.git/
+</span></span></code></pre></div><h3 id="禁用git用户shell登录">禁用git用户shell登录</h3>
+<p>需要注意的是，目前所有（获得授权的）开发者用户都能以系统用户 <code>git</code> 的身份登录服务器从而获得一个普通 shell。 如果你想对此加以限制，则需要修改 <code>/etc/passwd</code> 文件中（<code>git</code> 用户所对应）的 shell 值。</p>
+<p>借助一个名为 <code>git-shell</code> 的受限 shell 工具，你可以方便地将用户 <code>git</code> 的活动限制在与 Git 相关的范围内。 该工具随 Git 软件包一同提供。如果将 <code>git-shell</code> 设置为用户 <code>git</code> 的登录 shell（login shell）， 那么该用户便不能获得此服务器的普通 shell 访问权限。 若要使用 <code>git-shell</code>，需要用它替换掉 bash 或 csh，使其成为该用户的登录 shell。 为进行上述操作，首先你必须确保 <code>git-shell</code> 的完整路径名已存在于 <code>/etc/shells</code> 文件中：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cat /etc/shells <span style="color:#75715e"># see if git-shell is already in there. If not...</span>
+</span></span><span style="display:flex;"><span>$ which git-shell <span style="color:#75715e"># make sure git-shell is installed on your system.</span>
+</span></span><span style="display:flex;"><span>$ sudo -e /etc/shells <span style="color:#75715e"># and add the path to git-shell from last command</span>
+</span></span></code></pre></div><p>现在你可以使用 <code>chsh &lt;username&gt; -s &lt;shell&gt;</code> 命令修改任一系统用户的 shell：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo chsh git -s <span style="color:#66d9ef">$(</span>which git-shell<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#如果提示没有chsh这个命令，可以去/etc/passwd将目标用户的bash shell更改为所需的内容，或者安装util-linux-user这个包</span>
+</span></span></code></pre></div><p>这样，用户 <code>git</code> 就只能利用 SSH 连接对 Git 仓库进行推送和拉取操作，而不能登录机器并取得普通 shell。 如果试图登录，你会发现尝试被拒绝，像这样：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ssh git@gitserver
+</span></span><span style="display:flex;"><span>fatal: Interactive git shell is not enabled.
+</span></span><span style="display:flex;"><span>hint: ~/git-shell-commands should exist and have read and execute access.
+</span></span><span style="display:flex;"><span>Connection to gitserver closed.
+</span></span></code></pre></div><p>此时，用户仍可通过 SSH 端口转发来访问任何可达的 git 服务器。 如果你想要避免它，可编辑 <code>authorized_keys</code> 文件并在所有想要限制的公钥之前添加以下选项：</p>
+<pre tabindex="0"><code>no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty
+</code></pre><p>其结果如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cat ~/.ssh/authorized_keys
+</span></span><span style="display:flex;"><span>no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa
+</span></span><span style="display:flex;"><span>AAAAB3NzaC1yc2EAAAADAQABAAABAQCB007n/ww+ouN4gSLKssMxXnBOvf9LGt4LojG6rs6h
+</span></span><span style="display:flex;"><span>PB09j9R/T17/x4lhJA0F3FR1rP6kYBRsWj2aThGw6HXLm9/5zytK6Ztg3RPKK+4kYjh6541N
+</span></span><span style="display:flex;"><span>YsnEAZuXz0jTTyAUfrtU3Z5E003C4oxOj6H0rfIF1kKI9MAQLMdpGW1GYEIgS9EzSdfd8AcC
+</span></span></code></pre></div><p>现在，网络相关的 Git 命令依然能够正常工作，但是开发者用户已经无法得到一个普通 shell 了。 正如输出信息所提示的，你也可以在 git 用户的主目录下建立一个目录，来对 git-shell 命令进行一定程度的自定义。 比如，你可以限制掉某些本应被服务器接受的 Git 命令，或者对刚才的 SSH 拒绝登录信息进行自定义，这样，当有开发者用户以类似方式尝试登录时，便会看到你的信息。 要了解更多有关自定义 shell 的信息，请运行 <code>git help shell</code>。</p>
+<h3 id="利用git-push向服务器一键部署代码">利用git push向服务器一键部署代码</h3>
+<p>进入我们创建的项目仓库</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd /srv/git/project.git
+</span></span><span style="display:flex;"><span>$ cd hooks
+</span></span><span style="display:flex;"><span>$ vim post-receive
+</span></span></code></pre></div><p>写入如下代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>git --work-tree<span style="color:#f92672">=</span>/srv/web/xxx.com checkout -f master <span style="color:#75715e">#这个目录是代码存放目录不是仓库目录</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;The project has been successfully deployed to this server!&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ chmod +x post-receive
+</span></span></code></pre></div><p>这个挂钩本质是一个脚本，当这个文件在repo/hooks/文件夹内，名字为 <code>post-receive</code> 并且<code>linux的x属性</code>（可执行）为真的时候，git会在收到push后执行它</p>
+<p>OK！现在上传的代码会在 <code>/srv/web/xxx.com</code> 这个目录里面看见，我们只需要把网站根目录设置在这里就可以了</p>
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+    
+          <div
+            id="page-scrollspy" class="toc-nav">
+
+            <li class="nav-item pb-3 catalog">
+                <span class="font-weight-bold mb-2">- CATALOG - </span>
+            </li>
+
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%ae%89%e8%a3%85%e9%85%8d%e7%bd%aegit%e6%9c%8d%e5%8a%a1%e7%ab%af">
+                        安装配置Git服务端
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%86%99%e5%85%a5ssh%e5%85%ac%e5%8c%99">
+                        写入SSH公匙
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%88%9b%e5%bb%ba%e4%bb%93%e5%ba%93">
+                        创建仓库
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e7%a6%81%e7%94%a8git%e7%94%a8%e6%88%b7shell%e7%99%bb%e5%bd%95">
+                        禁用git用户shell登录
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%88%a9%e7%94%a8git-push%e5%90%91%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%b8%80%e9%94%ae%e9%83%a8%e7%bd%b2%e4%bb%a3%e7%a0%81">
+                        利用git push向服务器一键部署代码
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            </div>
+            
+
+            </div>
+            
+            
+<script src="https://utteranc.es/client.js" repo="Twor/blog-comment"
+    issue-term="pathname" theme="github-light" crossorigin="anonymous"
+    async>
+    </script>
+<footer id="footer" role="contentinfo">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                &copy; 2022 <a href="https://twor.me/">Twor
+                </a>.
+                <a target="_blank" href="https://gohugo.io">Hugo</a> & <a target="_blank"
+                    href="https://github.com/Twor/hugo-angus">Angus</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/prism.js"></script>
+<script src="/js/zoom-vanilla.min.js"></script>
+<script src="/js/fuse.js"></script> 
+<script src="/js/search.js"></script>
+<script>
+    var str = "TW|OR".split('').reverse().join('');
+    for (i = 0; i < str.length; i++) {
+        if (str.charAt(i) == '|') {
+            $('<a href="https:\/\/twor.me\/"><span class="w">' + str.charAt(i) + '</span></a>').prependTo($(".header-logo"));
+        } else {
+            $('<span class="b">' + str.charAt(i) + '</span>').prependTo($(".header-logo"));
+        }
+
+    }
+    ""
+    var b = document.getElementsByClassName('b');
+    var w = document.getElementsByClassName('w');
+    var menupgMargin = (b.length + w.length + 1) * 28;
+    var srhboxMargin = (b.length + w.length + 4) * 28;
+    var menusrhWidth = (b.length + w.length - 1) * 28;
+    document.getElementById('menu-page').style['margin-left'] = menupgMargin + 'px';
+    document.getElementById('search-box').style['margin-left'] = srhboxMargin + 'px';
+    document.getElementById('menu-search').style['width'] = menusrhWidth + 'px';
+    if (menusrhWidth < 140) {
+        document.getElementById('menu-search').setAttribute('placeholder', 'Search~');
+    }
+    ""
+
+    $(document).ready(function () {
+        $("#menu-search").keydown(function (e) {
+            if (e.keyCode == 13) {
+                var searchString = $("#menu-search").val();
+                var url = "https:\/\/twor.me\/" + "search?s=" + searchString;
+                window.location.href = url;
+            }
+        });
+    });
+
+    function isMenu() {
+        if (document.getElementById('menu-1').style.display == 'inline') {
+            $('#search-box').fadeOut(200);
+            $('#menu-page').fadeOut(200);
+            $('#menu-1').fadeOut(500);
+            $('#menu-2').fadeOut(400);
+            $('#menu-3').fadeOut(300);
+        } else {
+            $('#menu-1').fadeIn(150);
+            $('#menu-2').fadeIn(150);
+            $('#menu-3').fadeIn(150);
+        }
+    }
+
+    function isMenu1() {
+        if (document.getElementById('menu-page').style.display == 'block') {
+            $('#menu-page').fadeOut(400);
+        } else {
+            $('#menu-page').fadeIn(400);
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    function isMenu3() {
+        if (document.getElementById('search-box').style.display == 'block') {
+            $('#search-box').fadeOut(400);
+        } else {
+            $('#search-box').fadeIn(400);
+        }
+    }
+
+    function Search404() {
+        $('#menu-1').fadeIn(150);
+        $('#menu-2').fadeIn(150);
+        $('#menu-3').fadeIn(150);
+        $('#search-box').fadeIn(300);
+    }
+
+
+
+    
+
+    function footerPosition() {
+        $("footer").removeClass("fixed-bottom");
+        var contentHeight = document.body.scrollHeight,
+            winHeight = window.innerHeight;
+        if (document.getElementsByClassName("post-content")[0]) {
+            var winImgNum = document.getElementsByClassName("post-content")[0].getElementsByTagName("img").length;
+        } else {
+            var winImgNum = 0;
+        }
+        if (!(contentHeight > winHeight) && winImgNum == 0) {
+            $("footer").addClass("fixed-bottom");
+        }
+    }
+    footerPosition();
+    $(window).resize(footerPosition);
+</script>
+<script>
+
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+</script>
+
+</body>
+
+</html>

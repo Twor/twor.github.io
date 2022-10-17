@@ -1,0 +1,567 @@
+<head>
+    <meta charset="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Twor</title>
+
+    
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/prism.css">
+    <link type="text/css" rel="stylesheet" href="/css/zoom.css">
+    <link type="text/css" rel="stylesheet" href="/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/css/all.css">
+
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="logo">
+                    <div class="header-logo">
+                        
+                        
+                        
+                        <a id="btn-menu" href="javascript:isMenu()">
+
+                            
+                            <span class="bars"><i class="fas fa-chevron-right"></i></i></span>
+                            
+                        </a>
+                        <a href="javascript:isMenu1();">
+                            
+                            <span id="menu-1" class="bf"><i class="fas fa-bars"></i></span>
+                            
+                        </a>
+                        <a href="/index.xml">
+                            
+                            <span id="menu-2" class="bf"><i class="fas fa-rss"></i></span>
+                            
+                        </a>
+
+                        <a href="javascript:isMenu3();">
+                            
+                            <span id="menu-3" class="bf"><i class="fas fa-search"></i></span>
+                            
+                        </a>
+                    </div>
+                    <div id="menu-page">
+                        <a href="/">
+                            <li>博文</li>
+                        </a><a href="/about">
+                            <li>关于</li>
+                        </a>
+                    </div>
+                    <div id="search-box">
+                        <input type="text" name="s" id="menu-search" class="inputValue" placeholder="Type something~" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><div class="container-fluid">
+    <div class="row">
+        <div id="main" class="col-12 clearfix" role="main">
+            <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                <h1 style="text-align:right;" class="post-title" itemprop="name headline">Oh-my-zsh 配置美化（vscode乱码解决）</h1>
+                <div class="post-content" itemprop="articleBody">
+                    <h3 id="安装-zsh-oh-my-zsh-git">安装 zsh oh-my-zsh-git</h3>
+<pre tabindex="0"><code>pacaur -S zsh oh-my-zsh-git
+</code></pre><h3 id="修改用户shell">修改用户shell</h3>
+<pre tabindex="0"><code>chsh -l
+chsh -s /usr/bin/zsh
+</code></pre><h3 id="安装powerlevel9k-主题">安装<strong>Powerlevel9k 主题</strong></h3>
+<pre tabindex="0"><code>$ sudo git clone https://github.com/bhilburn/powerlevel9k.git /usr/share/oh-my-zsh/themes/powerlevel9k
+</code></pre><h3 id="安装nerd-fonts-hack字体">安装<strong>Nerd Fonts Hack字体</strong></h3>
+<pre tabindex="0"><code>pacaur -S nerd-fonts-hack
+</code></pre><h3 id="zshrc-配置copy">.zshrc 配置（copy）</h3>
+<pre tabindex="0"><code># Path to your oh-my-zsh installation.
+ZSH=/usr/share/oh-my-zsh/
+
+export DEFAULT_USER=&#34;fernando&#34;
+export TERM=&#34;xterm-256color&#34;
+export ZSH=/usr/share/oh-my-zsh
+
+ZSH_THEME=&#34;powerlevel9k/powerlevel9k&#34;
+POWERLEVEL9K_MODE=&#34;nerdfont-complete&#34;
+source $ZSH/themes/powerlevel9k/powerlevel9k.zsh-theme
+
+POWERLEVEL9K_FOLDER_ICON=&#34;&#34;
+POWERLEVEL9K_HOME_SUB_ICON=&#34;$(print_icon &#34;HOME_ICON&#34;)&#34;
+POWERLEVEL9K_DIR_PATH_SEPARATOR=&#34; $(print_icon &#34;LEFT_SUBSEGMENT_SEPARATOR&#34;) &#34;
+
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
+
+POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=true
+
+POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND=&#39;black&#39;
+POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND=&#39;178&#39;
+POWERLEVEL9K_NVM_BACKGROUND=&#34;238&#34;
+POWERLEVEL9K_NVM_FOREGROUND=&#34;green&#34;
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND=&#34;blue&#34;
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND=&#34;015&#34;
+
+POWERLEVEL9K_TIME_BACKGROUND=&#39;255&#39;
+#POWERLEVEL9K_COMMAND_TIME_FOREGROUND=&#39;gray&#39;
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=&#39;245&#39;
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=&#39;black&#39;
+
+POWERLEVEL9K_TIME_FORMAT=&#34;%D{%H:%M}&#34;
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir dir_writable vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs command_execution_time time)
+POWERLEVEL9K_SHOW_CHANGESET=true
+
+HYPHEN_INSENSITIVE=&#34;true&#34;
+COMPLETION_WAITING_DOTS=&#34;true&#34;
+# /!\ do not use with zsh-autosuggestions
+
+plugins=(archlinux
+	asdf
+	bundler
+	docker
+	jsontools
+	vscode
+	web-search
+	k
+	tig
+	gitfast
+	colored-man-pages
+	colorize
+	command-not-found
+	cp
+	dirhistory
+	autojump
+	sudo
+	zsh-syntax-highlighting)
+# /!\ zsh-syntax-highlighting and then zsh-autosuggestions must be at the end
+
+source $ZSH/oh-my-zsh.sh
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+typeset -gA ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[cursor]=&#39;bold&#39;
+
+ZSH_HIGHLIGHT_STYLES[alias]=&#39;fg=green,bold&#39;
+ZSH_HIGHLIGHT_STYLES[suffix-alias]=&#39;fg=green,bold&#39;
+ZSH_HIGHLIGHT_STYLES[builtin]=&#39;fg=green,bold&#39;
+ZSH_HIGHLIGHT_STYLES[function]=&#39;fg=green,bold&#39;
+ZSH_HIGHLIGHT_STYLES[command]=&#39;fg=green,bold&#39;
+ZSH_HIGHLIGHT_STYLES[precommand]=&#39;fg=green,bold&#39;
+ZSH_HIGHLIGHT_STYLES[hashed-command]=&#39;fg=green,bold&#39;
+
+rule () {
+	print -Pn &#39;%F{blue}&#39;
+	local columns=$(tput cols)
+	for ((i=1; i&lt;=columns; i++)); do
+	   printf &#34;\u2588&#34;
+	done
+	print -P &#39;%f&#39;
+}
+
+function _my_clear() {
+	echo
+	rule
+	zle clear-screen
+}
+zle -N _my_clear
+bindkey &#39;^l&#39; _my_clear
+
+# Ctrl-O opens zsh at the current location, and on exit, cd into ranger&#39;s last location.
+ranger-cd() {
+	tempfile=$(mktemp)
+	ranger --choosedir=&#34;$tempfile&#34; &#34;${@:-$(pwd)}&#34; &lt; $TTY
+	test -f &#34;$tempfile&#34; &amp;&amp;
+	if [ &#34;$(cat -- &#34;$tempfile&#34;)&#34; != &#34;$(echo -n `pwd`)&#34; ]; then
+	cd -- &#34;$(cat &#34;$tempfile&#34;)&#34;
+	fi
+	rm -f -- &#34;$tempfile&#34;
+	# hacky way of transferring over previous command and updating the screen
+	VISUAL=true zle edit-command-line
+}
+zle -N ranger-cd
+bindkey &#39;^o&#39; ranger-cd
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+DISABLE_AUTO_UPDATE=&#34;true&#34;
+
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
+
+source $ZSH/oh-my-zsh.sh
+</code></pre><h3 id="添加插件配置">添加插件配置</h3>
+<pre tabindex="0"><code>plugins=(archlinux asdf bundler docker jsontools vscode web-search k tig gitfast colored-man colorize
+command-not-found cp dirhistory autojump sudo zsh-syntax-highlighting)
+</code></pre><h3 id="vscode终端乱码">vscode终端乱码</h3>
+<ul>
+<li>修改配置文件</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span> <span style="color:#e6db74">&#34;terminal.integrated.fontFamily&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;&#39;Source Code Pro for Powerline&#39;, &#39;Hack Nerd Font&#39;&#34;</span>
+</span></span></code></pre></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+    
+          <div
+            id="page-scrollspy" class="toc-nav">
+
+            <li class="nav-item pb-3 catalog">
+                <span class="font-weight-bold mb-2">- CATALOG - </span>
+            </li>
+
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%ae%89%e8%a3%85-zsh-oh-my-zsh-git">
+                        安装 zsh oh-my-zsh-git
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e4%bf%ae%e6%94%b9%e7%94%a8%e6%88%b7shell">
+                        修改用户shell
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%ae%89%e8%a3%85powerlevel9k-%e4%b8%bb%e9%a2%98">
+                        安装Powerlevel9k 主题
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%ae%89%e8%a3%85nerd-fonts-hack%e5%ad%97%e4%bd%93">
+                        安装Nerd Fonts Hack字体
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#zshrc-%e9%85%8d%e7%bd%aecopy">
+                        .zshrc 配置（copy）
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e6%b7%bb%e5%8a%a0%e6%8f%92%e4%bb%b6%e9%85%8d%e7%bd%ae">
+                        添加插件配置
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#vscode%e7%bb%88%e7%ab%af%e4%b9%b1%e7%a0%81">
+                        vscode终端乱码
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            </div>
+            
+
+            </div>
+            
+            
+<script src="https://utteranc.es/client.js" repo="Twor/blog-comment"
+    issue-term="pathname" theme="github-light" crossorigin="anonymous"
+    async>
+    </script>
+<footer id="footer" role="contentinfo">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                &copy; 2022 <a href="https://twor.me/">Twor
+                </a>.
+                <a target="_blank" href="https://gohugo.io">Hugo</a> & <a target="_blank"
+                    href="https://github.com/Twor/hugo-angus">Angus</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/prism.js"></script>
+<script src="/js/zoom-vanilla.min.js"></script>
+<script src="/js/fuse.js"></script> 
+<script src="/js/search.js"></script>
+<script>
+    var str = "TW|OR".split('').reverse().join('');
+    for (i = 0; i < str.length; i++) {
+        if (str.charAt(i) == '|') {
+            $('<a href="https:\/\/twor.me\/"><span class="w">' + str.charAt(i) + '</span></a>').prependTo($(".header-logo"));
+        } else {
+            $('<span class="b">' + str.charAt(i) + '</span>').prependTo($(".header-logo"));
+        }
+
+    }
+    ""
+    var b = document.getElementsByClassName('b');
+    var w = document.getElementsByClassName('w');
+    var menupgMargin = (b.length + w.length + 1) * 28;
+    var srhboxMargin = (b.length + w.length + 4) * 28;
+    var menusrhWidth = (b.length + w.length - 1) * 28;
+    document.getElementById('menu-page').style['margin-left'] = menupgMargin + 'px';
+    document.getElementById('search-box').style['margin-left'] = srhboxMargin + 'px';
+    document.getElementById('menu-search').style['width'] = menusrhWidth + 'px';
+    if (menusrhWidth < 140) {
+        document.getElementById('menu-search').setAttribute('placeholder', 'Search~');
+    }
+    ""
+
+    $(document).ready(function () {
+        $("#menu-search").keydown(function (e) {
+            if (e.keyCode == 13) {
+                var searchString = $("#menu-search").val();
+                var url = "https:\/\/twor.me\/" + "search?s=" + searchString;
+                window.location.href = url;
+            }
+        });
+    });
+
+    function isMenu() {
+        if (document.getElementById('menu-1').style.display == 'inline') {
+            $('#search-box').fadeOut(200);
+            $('#menu-page').fadeOut(200);
+            $('#menu-1').fadeOut(500);
+            $('#menu-2').fadeOut(400);
+            $('#menu-3').fadeOut(300);
+        } else {
+            $('#menu-1').fadeIn(150);
+            $('#menu-2').fadeIn(150);
+            $('#menu-3').fadeIn(150);
+        }
+    }
+
+    function isMenu1() {
+        if (document.getElementById('menu-page').style.display == 'block') {
+            $('#menu-page').fadeOut(400);
+        } else {
+            $('#menu-page').fadeIn(400);
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    function isMenu3() {
+        if (document.getElementById('search-box').style.display == 'block') {
+            $('#search-box').fadeOut(400);
+        } else {
+            $('#search-box').fadeIn(400);
+        }
+    }
+
+    function Search404() {
+        $('#menu-1').fadeIn(150);
+        $('#menu-2').fadeIn(150);
+        $('#menu-3').fadeIn(150);
+        $('#search-box').fadeIn(300);
+    }
+
+
+
+    
+
+    function footerPosition() {
+        $("footer").removeClass("fixed-bottom");
+        var contentHeight = document.body.scrollHeight,
+            winHeight = window.innerHeight;
+        if (document.getElementsByClassName("post-content")[0]) {
+            var winImgNum = document.getElementsByClassName("post-content")[0].getElementsByTagName("img").length;
+        } else {
+            var winImgNum = 0;
+        }
+        if (!(contentHeight > winHeight) && winImgNum == 0) {
+            $("footer").addClass("fixed-bottom");
+        }
+    }
+    footerPosition();
+    $(window).resize(footerPosition);
+</script>
+<script>
+
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+</script>
+
+</body>
+
+</html>

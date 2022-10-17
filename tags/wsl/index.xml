@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WSL on Twor</title>
+    <link>https://twor.me/tags/wsl/</link>
+    <description>Recent content in WSL on Twor</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Jun 2019 13:58:53 +0800</lastBuildDate><atom:link href="https://twor.me/tags/wsl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WSL(Windows Subsystem for Linux)安装archlinux，并配置图形化界面</title>
+      <link>https://twor.me/posts/wsl_archlinux_gui/</link>
+      <pubDate>Wed, 05 Jun 2019 13:58:53 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/wsl_archlinux_gui/</guid>
+      <description>开启wsl Windows功能 &amp;raquo; 勾选适用于Linux的Windows子系统 ，重启生效。
+下载安装 Arch WSL 这里是作者的安装教程：https://github.com/yuk7/ArchWSL/wiki
+我选择的是传统方式安装 (不使用 AppX 方式)：
+在 Release 下载最新版的 Arch.zip 解压到 C 盘根目录，(一定要在 C 盘，其他位置也可以)，但是你要有该目录的读写权限，所以不能放到 Program Files 等目录中。 双击解压好的 Arch.exe 进行安装，这个 .exe 的名字 就是要创建的 WSL 实例的名字，改不同的名字就能创建多个 Arch WSL。 安装好之后，进行配置。
+Arch Linux 软件仓库国内镜像 编辑 /etc/pacman.d/mirrorlist，里面有注释了的 China 的镜像，（放在上面优先级高）
+然后更新软件包缓存，执行： pacman -Syyu
+其他跟镜像有关的可以看这里：https://wiki.archlinux.org/index.php/Mirrors_(简体中文)
+添加 ArchlinuxCN 源 Arch Linux 中文社区仓库 是由 Arch Linux 中文社区驱动的非官方用户仓库。包含中文用户常用软件、工具、字体 / 美化包等。官方仓库地址：http://repo.archlinuxcn.org
+使用方法：在 /etc/pacman.conf 文件末尾添加以下两行：
+[archlinuxcn] Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch 之后安装 archlinuxcn-keyring 包导入 GPG key:</description>
+    </item>
+    
+  </channel>
+</rss>

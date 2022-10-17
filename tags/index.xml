@@ -5,6 +5,79 @@
     <link>https://twor.me/tags/</link>
     <description>Recent content in Tags on Twor</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://twor.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Mar 2021 23:58:53 +0800</lastBuildDate><atom:link href="https://twor.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://twor.me/tags/linux/</link>
+      <pubDate>Sun, 21 Mar 2021 23:58:53 +0800</pubDate>
+      
+      <guid>https://twor.me/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scrcpy</title>
+      <link>https://twor.me/tags/scrcpy/</link>
+      <pubDate>Sat, 07 Mar 2020 13:58:53 +0800</pubDate>
+      
+      <guid>https://twor.me/tags/scrcpy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>syncthing</title>
+      <link>https://twor.me/tags/syncthing/</link>
+      <pubDate>Sat, 07 Mar 2020 13:58:53 +0800</pubDate>
+      
+      <guid>https://twor.me/tags/syncthing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://twor.me/tags/git/</link>
+      <pubDate>Wed, 05 Jun 2019 13:58:53 +0800</pubDate>
+      
+      <guid>https://twor.me/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Oh-my-zsh</title>
+      <link>https://twor.me/tags/oh-my-zsh/</link>
+      <pubDate>Wed, 05 Jun 2019 13:58:53 +0800</pubDate>
+      
+      <guid>https://twor.me/tags/oh-my-zsh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://twor.me/tags/windows/</link>
+      <pubDate>Wed, 05 Jun 2019 13:58:53 +0800</pubDate>
+      
+      <guid>https://twor.me/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WSL</title>
+      <link>https://twor.me/tags/wsl/</link>
+      <pubDate>Wed, 05 Jun 2019 13:58:53 +0800</pubDate>
+      
+      <guid>https://twor.me/tags/wsl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zsh</title>
+      <link>https://twor.me/tags/zsh/</link>
+      <pubDate>Wed, 05 Jun 2019 13:58:53 +0800</pubDate>
+      
+      <guid>https://twor.me/tags/zsh/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

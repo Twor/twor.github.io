@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oh-my-zsh on Twor</title>
+    <link>https://twor.me/tags/oh-my-zsh/</link>
+    <description>Recent content in Oh-my-zsh on Twor</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Jun 2019 13:58:53 +0800</lastBuildDate><atom:link href="https://twor.me/tags/oh-my-zsh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oh-my-zsh 配置美化（vscode乱码解决）</title>
+      <link>https://twor.me/posts/oh-my-zsh_config/</link>
+      <pubDate>Wed, 05 Jun 2019 13:58:53 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/oh-my-zsh_config/</guid>
+      <description>安装 zsh oh-my-zsh-git pacaur -S zsh oh-my-zsh-git 修改用户shell chsh -l chsh -s /usr/bin/zsh 安装Powerlevel9k 主题 $ sudo git clone https://github.com/bhilburn/powerlevel9k.git /usr/share/oh-my-zsh/themes/powerlevel9k 安装Nerd Fonts Hack字体 pacaur -S nerd-fonts-hack .zshrc 配置（copy） # Path to your oh-my-zsh installation. ZSH=/usr/share/oh-my-zsh/ export DEFAULT_USER=&amp;#34;fernando&amp;#34; export TERM=&amp;#34;xterm-256color&amp;#34; export ZSH=/usr/share/oh-my-zsh ZSH_THEME=&amp;#34;powerlevel9k/powerlevel9k&amp;#34; POWERLEVEL9K_MODE=&amp;#34;nerdfont-complete&amp;#34; source $ZSH/themes/powerlevel9k/powerlevel9k.zsh-theme POWERLEVEL9K_FOLDER_ICON=&amp;#34;&amp;#34; POWERLEVEL9K_HOME_SUB_ICON=&amp;#34;$(print_icon &amp;#34;HOME_ICON&amp;#34;)&amp;#34; POWERLEVEL9K_DIR_PATH_SEPARATOR=&amp;#34; $(print_icon &amp;#34;LEFT_SUBSEGMENT_SEPARATOR&amp;#34;) &amp;#34; POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0 POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=true POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND=&amp;#39;black&amp;#39; POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND=&amp;#39;178&amp;#39; POWERLEVEL9K_NVM_BACKGROUND=&amp;#34;238&amp;#34; POWERLEVEL9K_NVM_FOREGROUND=&amp;#34;green&amp;#34; POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND=&amp;#34;blue&amp;#34; POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND=&amp;#34;015&amp;#34; POWERLEVEL9K_TIME_BACKGROUND=&amp;#39;255&amp;#39; #POWERLEVEL9K_COMMAND_TIME_FOREGROUND=&amp;#39;gray&amp;#39; POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=&amp;#39;245&amp;#39; POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=&amp;#39;black&amp;#39; POWERLEVEL9K_TIME_FORMAT=&amp;#34;%D{%H:%M}&amp;#34; POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir dir_writable vcs) POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs command_execution_time time) POWERLEVEL9K_SHOW_CHANGESET=true HYPHEN_INSENSITIVE=&amp;#34;true&amp;#34; COMPLETION_WAITING_DOTS=&amp;#34;true&amp;#34; # /!</description>
+    </item>
+    
+    <item>
+      <title>Windows上安装ngixn php并添加服务自启动</title>
+      <link>https://twor.me/posts/windows_nginx_php/</link>
+      <pubDate>Tue, 05 Mar 2019 13:58:53 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/windows_nginx_php/</guid>
+      <description>环境准备 Nginx
+php
+winsw
+安装Ngixn服务 把下载的winsw放入ngixn安装文件夹，重命名为nginx-service.exe,新建nginx-service.xml,写入配置
+&amp;lt;service&amp;gt; &amp;lt;id&amp;gt;nginxsvc&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;Nginx&amp;lt;/name&amp;gt; &amp;lt;description&amp;gt;Nginx Web Server service.&amp;lt;/description&amp;gt; &amp;lt;executable&amp;gt;c:\nginx\nginx.exe&amp;lt;/executable&amp;gt; &amp;lt;logpath&amp;gt;c:\nginx\logs\&amp;lt;/logpath&amp;gt; &amp;lt;logmode&amp;gt;roll&amp;lt;/logmode&amp;gt; &amp;lt;depend&amp;gt;phpsvc&amp;lt;/depend&amp;gt; &amp;lt;startargument&amp;gt;-p&amp;lt;/startargument&amp;gt; &amp;lt;startargument&amp;gt;c:\nginx&amp;lt;/startargument&amp;gt; &amp;lt;stopexecutable&amp;gt;c:\nginx\nginx.exe&amp;lt;/stopexecutable&amp;gt; &amp;lt;stopargument&amp;gt;-p&amp;lt;/stopargument&amp;gt; &amp;lt;stopargument&amp;gt;c:\nginx&amp;lt;/stopargument&amp;gt; &amp;lt;stopargument&amp;gt;-s&amp;lt;/stopargument&amp;gt; &amp;lt;stopargument&amp;gt;stop&amp;lt;/stopargument&amp;gt; &amp;lt;/service&amp;gt; 以管理员身份打开cmd，运行
+cd \c:\svc\nginx nginx-service.exe install 安装PHP服务
+winsw改为php-service.exe,放入php安装文件夹，写入配置php-service.xml
+&amp;lt;service&amp;gt; &amp;lt;id&amp;gt;phpsvc&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;PHP&amp;lt;/name&amp;gt; &amp;lt;description&amp;gt;PHP-FCGI service.&amp;lt;/description&amp;gt; &amp;lt;executable&amp;gt;c:\php\php-cgi.exe&amp;lt;/executable&amp;gt; &amp;lt;logpath&amp;gt;c:\php\logs\&amp;lt;/logpath&amp;gt; &amp;lt;logmode&amp;gt;roll&amp;lt;/logmode&amp;gt; &amp;lt;depend&amp;gt;&amp;lt;/depend&amp;gt; &amp;lt;startargument&amp;gt;-b&amp;lt;/startargument&amp;gt; &amp;lt;startargument&amp;gt;127.0.0.1:9123&amp;lt;/startargument&amp;gt; &amp;lt;startargument&amp;gt;-c&amp;lt;/startargument&amp;gt; &amp;lt;startargument&amp;gt;C:\php\php.ini&amp;lt;/startargument&amp;gt; &amp;lt;/service&amp;gt; 以管理员身份打开cmd，运行
+cd \c:\svc\php php-service.exe install 修改nginx.conf
+worker_processes 1; events { worker_connections 1024; } http { include mime.types; default_type application/octet-stream; sendfile on; keepalive_timeout 65; server { listen 80; server_name localhost; location / { root html; index index.</description>
+    </item>
+    
+  </channel>
+</rss>

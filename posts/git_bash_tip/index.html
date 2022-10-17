@@ -1,0 +1,609 @@
+<head>
+    <meta charset="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Twor</title>
+
+    
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/prism.css">
+    <link type="text/css" rel="stylesheet" href="/css/zoom.css">
+    <link type="text/css" rel="stylesheet" href="/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/css/all.css">
+
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="logo">
+                    <div class="header-logo">
+                        
+                        
+                        
+                        <a id="btn-menu" href="javascript:isMenu()">
+
+                            
+                            <span class="bars"><i class="fas fa-chevron-right"></i></i></span>
+                            
+                        </a>
+                        <a href="javascript:isMenu1();">
+                            
+                            <span id="menu-1" class="bf"><i class="fas fa-bars"></i></span>
+                            
+                        </a>
+                        <a href="/index.xml">
+                            
+                            <span id="menu-2" class="bf"><i class="fas fa-rss"></i></span>
+                            
+                        </a>
+
+                        <a href="javascript:isMenu3();">
+                            
+                            <span id="menu-3" class="bf"><i class="fas fa-search"></i></span>
+                            
+                        </a>
+                    </div>
+                    <div id="menu-page">
+                        <a href="/">
+                            <li>博文</li>
+                        </a><a href="/about">
+                            <li>关于</li>
+                        </a>
+                    </div>
+                    <div id="search-box">
+                        <input type="text" name="s" id="menu-search" class="inputValue" placeholder="Type something~" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><div class="container-fluid">
+    <div class="row">
+        <div id="main" class="col-12 clearfix" role="main">
+            <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                <h1 style="text-align:right;" class="post-title" itemprop="name headline">Git命令进阶—删除隐私 同步fork pull request 和merge</h1>
+                <div class="post-content" itemprop="articleBody">
+                    <p>在开发的时候，为了测试数据，总会连接一些数据库、服务器、API之类，提交的时候就会不小心泄漏我们的SSH key、密码或者token之类的东西，所以有必要掌握 Git删除隐私。</p>
+<h3 id="删除隐私">删除隐私</h3>
+<h4 id="错误的做法如果发现不小心上传了隐私信息修改或删除相应的文件">错误的做法：如果发现不小心上传了隐私信息，修改或删除相应的文件</h4>
+<p>原因：git是可以查看历史提交的，所以只需要查看历史提交，相应的隐私信息还是会暴露</p>
+<p><del>删厍？当我没说</del></p>
+<h4 id="git-filter-branch">git filter-branch</h4>
+<p>所有的历史记录中删除某个文件/文件夹 <code>yourfilepath</code> 就是需要删除的那个文件/文件夹</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git filter-branch --force --index-filter <span style="color:#e6db74">&#39;git rm -r --cached --ignore-unmatch yourfilepath&#39;</span> --prune-empty --tag-name-filter cat -- --all
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ git push origin master --force
+</span></span></code></pre></div><p>此时再看看 <code>git log</code> 应该是没有该文件的信息了。</p>
+<p>请参考：<a href="https://docs.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository">https://docs.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository</a></p>
+<h3 id="同步fork代码">同步fork代码</h3>
+<ol>
+<li>
+<p>clone fork的分支到本地</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git clone git@github.com:*/flutter.git
+</span></span></code></pre></div></li>
+<li>
+<p>增加源分支(被自己fork的项目)地址到自己git项目远程分支列表中，将原来的仓库命名为upstream</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git remote add upstream git@github.com:flutter/flutter.git
+</span></span></code></pre></div></li>
+<li>
+<p>核实远程分支列表（optional）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git remote -v
+</span></span><span style="display:flex;"><span>origin git@github.com:*/flutter.git <span style="color:#f92672">(</span>fetch<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>origin git@github.com:*/flutter.git <span style="color:#f92672">(</span>push<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>upstream git@github.com:flutter/flutter.git <span style="color:#f92672">(</span>fetch<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>upstream git@github.com:flutter/flutter.git <span style="color:#f92672">(</span>push<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 核实后，发现不如意，想删除，可以用 git remote remove name</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## name 为远程分支的命名，如上面例子，可以删除 upstream</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## git remote remove upstream</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 或者直接删除之前fork的原始分支 origin</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## git remote remove origin (直接删除了原始分支后，再fork，</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 也能达到更新了最新代码的需求，后面的步骤就不用了。)</span>
+</span></span></code></pre></div></li>
+<li>
+<p>fetch源分支的新版本到本地</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git fetch upstream
+</span></span></code></pre></div></li>
+<li>
+<p>合并两个版本的代码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git merge upstream/master
+</span></span></code></pre></div></li>
+<li>
+<p>将合并后的代码push到github上自己的fork中去</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git push origin master
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 如果要强制：</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## git push origin --force</span>
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="pull-request">pull request</h3>
+<h4 id="提交更改">提交更改</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git add <span style="color:#e6db74">&#39;filename&#39;</span>
+</span></span><span style="display:flex;"><span>$ git commit -m <span style="color:#e6db74">&#39;text&#39;</span>
+</span></span><span style="display:flex;"><span>$ git push origin master
+</span></span></code></pre></div><h4 id="发起pull-request">发起pull request</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">## 需要安装 Github CLI</span>
+</span></span><span style="display:flex;"><span>$ gh pr create
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Creating pull request <span style="color:#66d9ef">for</span> master into master in Twor/dotfile
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>! warning: could not compute title or body defaults: could not find any commits between master and master
+</span></span><span style="display:flex;"><span>? Title zh_CN <span style="color:#75715e">## 填写你提交的内容</span>
+</span></span><span style="display:flex;"><span>? Body &lt;Received&gt; <span style="color:#75715e">## 说明</span>
+</span></span><span style="display:flex;"><span>? What<span style="color:#960050;background-color:#1e0010">&#39;</span>s next?  <span style="color:#f92672">[</span>Use arrows to move, type to filter<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>&gt; Submit
+</span></span><span style="display:flex;"><span>  Continue in browser
+</span></span><span style="display:flex;"><span>  Add metadata
+</span></span><span style="display:flex;"><span>  Cancel
+</span></span><span style="display:flex;"><span>// .....
+</span></span></code></pre></div><h3 id="merge">merge</h3>
+<h4 id="查看pr的状态">查看pr的状态</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ gh pr status
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Relevant pull requests in Twor/dotfile
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Current branch
+</span></span><span style="display:flex;"><span>  There is no pull request associated with <span style="color:#f92672">[</span>master<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Created by you
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">#1  README.md [Catclerk:master]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Requesting a code review from you
+</span></span><span style="display:flex;"><span>  You have no pull requests to review
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ gh pr merge &lt;ID&gt; -m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Notice: authentication required
+</span></span><span style="display:flex;"><span>Press Enter to open github.com in your browser...
+</span></span><span style="display:flex;"><span>Authentication complete. Press Enter to <span style="color:#66d9ef">continue</span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>✔ Merged pull request <span style="color:#75715e">#1 (README.md)</span>
+</span></span><span style="display:flex;"><span>✔ Deleted branch master
+</span></span></code></pre></div><p>小坑： Github CLI 还不支持多用户，当你要切换用户时，去删除配置文件 <code>.config/gh/hosts.yml</code> 里面的内容 。</p>
+<p>还可以查看issue等等其他操作</p>
+<ul>
+<li>gh issue list</li>
+<li>gh issue view <!-- raw HTML omitted -->       //但是这会在浏览器打开</li>
+</ul>
+<p>更多命令：<a href="https://cli.github.com/manual/">https://cli.github.com/manual/</a></p>
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+    
+          <div
+            id="page-scrollspy" class="toc-nav">
+
+            <li class="nav-item pb-3 catalog">
+                <span class="font-weight-bold mb-2">- CATALOG - </span>
+            </li>
+
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%88%a0%e9%99%a4%e9%9a%90%e7%a7%81">
+                        删除隐私
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e9%94%99%e8%af%af%e7%9a%84%e5%81%9a%e6%b3%95%e5%a6%82%e6%9e%9c%e5%8f%91%e7%8e%b0%e4%b8%8d%e5%b0%8f%e5%bf%83%e4%b8%8a%e4%bc%a0%e4%ba%86%e9%9a%90%e7%a7%81%e4%bf%a1%e6%81%af%e4%bf%ae%e6%94%b9%e6%88%96%e5%88%a0%e9%99%a4%e7%9b%b8%e5%ba%94%e7%9a%84%e6%96%87%e4%bb%b6">
+                        错误的做法：如果发现不小心上传了隐私信息，修改或删除相应的文件
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#git-filter-branch">
+                        git filter-branch
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%90%8c%e6%ad%a5fork%e4%bb%a3%e7%a0%81">
+                        同步fork代码
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#pull-request">
+                        pull request
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e6%8f%90%e4%ba%a4%e6%9b%b4%e6%94%b9">
+                        提交更改
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%8f%91%e8%b5%b7pull-request">
+                        发起pull request
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#merge">
+                        merge
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e6%9f%a5%e7%9c%8bpr%e7%9a%84%e7%8a%b6%e6%80%81">
+                        查看pr的状态
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            </div>
+            
+
+            </div>
+            
+            
+<script src="https://utteranc.es/client.js" repo="Twor/blog-comment"
+    issue-term="pathname" theme="github-light" crossorigin="anonymous"
+    async>
+    </script>
+<footer id="footer" role="contentinfo">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                &copy; 2022 <a href="https://twor.me/">Twor
+                </a>.
+                <a target="_blank" href="https://gohugo.io">Hugo</a> & <a target="_blank"
+                    href="https://github.com/Twor/hugo-angus">Angus</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/prism.js"></script>
+<script src="/js/zoom-vanilla.min.js"></script>
+<script src="/js/fuse.js"></script> 
+<script src="/js/search.js"></script>
+<script>
+    var str = "TW|OR".split('').reverse().join('');
+    for (i = 0; i < str.length; i++) {
+        if (str.charAt(i) == '|') {
+            $('<a href="https:\/\/twor.me\/"><span class="w">' + str.charAt(i) + '</span></a>').prependTo($(".header-logo"));
+        } else {
+            $('<span class="b">' + str.charAt(i) + '</span>').prependTo($(".header-logo"));
+        }
+
+    }
+    ""
+    var b = document.getElementsByClassName('b');
+    var w = document.getElementsByClassName('w');
+    var menupgMargin = (b.length + w.length + 1) * 28;
+    var srhboxMargin = (b.length + w.length + 4) * 28;
+    var menusrhWidth = (b.length + w.length - 1) * 28;
+    document.getElementById('menu-page').style['margin-left'] = menupgMargin + 'px';
+    document.getElementById('search-box').style['margin-left'] = srhboxMargin + 'px';
+    document.getElementById('menu-search').style['width'] = menusrhWidth + 'px';
+    if (menusrhWidth < 140) {
+        document.getElementById('menu-search').setAttribute('placeholder', 'Search~');
+    }
+    ""
+
+    $(document).ready(function () {
+        $("#menu-search").keydown(function (e) {
+            if (e.keyCode == 13) {
+                var searchString = $("#menu-search").val();
+                var url = "https:\/\/twor.me\/" + "search?s=" + searchString;
+                window.location.href = url;
+            }
+        });
+    });
+
+    function isMenu() {
+        if (document.getElementById('menu-1').style.display == 'inline') {
+            $('#search-box').fadeOut(200);
+            $('#menu-page').fadeOut(200);
+            $('#menu-1').fadeOut(500);
+            $('#menu-2').fadeOut(400);
+            $('#menu-3').fadeOut(300);
+        } else {
+            $('#menu-1').fadeIn(150);
+            $('#menu-2').fadeIn(150);
+            $('#menu-3').fadeIn(150);
+        }
+    }
+
+    function isMenu1() {
+        if (document.getElementById('menu-page').style.display == 'block') {
+            $('#menu-page').fadeOut(400);
+        } else {
+            $('#menu-page').fadeIn(400);
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    function isMenu3() {
+        if (document.getElementById('search-box').style.display == 'block') {
+            $('#search-box').fadeOut(400);
+        } else {
+            $('#search-box').fadeIn(400);
+        }
+    }
+
+    function Search404() {
+        $('#menu-1').fadeIn(150);
+        $('#menu-2').fadeIn(150);
+        $('#menu-3').fadeIn(150);
+        $('#search-box').fadeIn(300);
+    }
+
+
+
+    
+
+    function footerPosition() {
+        $("footer").removeClass("fixed-bottom");
+        var contentHeight = document.body.scrollHeight,
+            winHeight = window.innerHeight;
+        if (document.getElementsByClassName("post-content")[0]) {
+            var winImgNum = document.getElementsByClassName("post-content")[0].getElementsByTagName("img").length;
+        } else {
+            var winImgNum = 0;
+        }
+        if (!(contentHeight > winHeight) && winImgNum == 0) {
+            $("footer").addClass("fixed-bottom");
+        }
+    }
+    footerPosition();
+    $(window).resize(footerPosition);
+</script>
+<script>
+
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+</script>
+
+</body>
+
+</html>

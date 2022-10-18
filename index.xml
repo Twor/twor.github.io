@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Twor</title>
@@ -6,21 +7,107 @@
     <description>Recent content on Twor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Mar 2021 23:58:53 +0800</lastBuildDate><atom:link href="https://twor.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Mar 2021 23:58:53 +0800</lastBuildDate>
+    
+        <atom:link href="https://twor.me/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>ArchLinux 触摸板手势调教</title>
       <link>https://twor.me/posts/archlinux_gesture/</link>
       <pubDate>Sun, 21 Mar 2021 23:58:53 +0800</pubDate>
       
       <guid>https://twor.me/posts/archlinux_gesture/</guid>
-      <description>WIKI 比不上 Mac 的强大，简单的自定义，适合自己舒适就好。
-OS：Archlinux WM：i3wm 首先看一看wiki
-警告: xf86-input-synaptics 已经停止维护，请尽量使用 libinput。如果想要在 Xorg 上 安装 libinput，使用 xf86-input-libinput 包。此包允许 libinput 在 X 上作为驱动使用。此驱动会代替 evdev 和 synaptics 运行
-所以我们就需要安装 xf86-input-libinput 包
-安装触摸板驱动 sudo pacman -S xf86-input-libinput 自定义配置文件应放在 /etc/X11/xorg.conf.d/ 中，并且通常选择被广泛使用的命名模式 30-touchpad.conf 作为文件名
-sudo vim /etc/X11/xorg.conf.d/30-touchpad.conf Section &amp;#34;InputClass&amp;#34; Identifier &amp;#34;touchpad&amp;#34; Driver &amp;#34;libinput&amp;#34; MatchIsTouchpad &amp;#34;on&amp;#34; Option &amp;#34;Tapping&amp;#34; &amp;#34;on&amp;#34; Option &amp;#34;TappingButtonMap&amp;#34; &amp;#34;lmr&amp;#34; EndSection 写入配置之后记得重新启动一下
-配置触摸板手势 安装配置 libinput-gestures 要使用 libinput-gestures, 请安装 libinput-gestures。 你能使用很多系统级别的手势操作，也能自定义配置文件。详情请看 README 。
-sudo pacman -S libinput-gestures libinput-gestures的文档中说了：必须是input组的成员才能具有读取触摸板设备的权限，所以需要添加用户到input</description>
+      <description>&lt;h2 id=&#34;wiki&#34;&gt;WIKI&lt;/h2&gt;
+&lt;p&gt;比不上 Mac 的强大，简单的自定义，适合自己舒适就好。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OS：Archlinux&lt;/li&gt;
+&lt;li&gt;WM：i3wm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;首先看一看wiki&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;警告: &lt;code&gt;xf86-input-synaptics&lt;/code&gt; 已经停止维护，请尽量使用 &lt;code&gt;libinput&lt;/code&gt;。如果想要在 Xorg 上 安装 &lt;code&gt;libinput&lt;/code&gt;，使用 &lt;code&gt;xf86-input-libinput&lt;/code&gt; 包。此包允许 libinput 在 X 上作为驱动使用。此驱动会代替 &lt;code&gt;evdev&lt;/code&gt; 和 &lt;code&gt;synaptics&lt;/code&gt; 运行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以我们就需要安装 &lt;code&gt;xf86-input-libinput&lt;/code&gt; 包&lt;/p&gt;
+&lt;h2 id=&#34;安装触摸板驱动&#34;&gt;安装触摸板驱动&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -S xf86-input-libinput
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;自定义配置文件应放在 &lt;code&gt;/etc/X11/xorg.conf.d/&lt;/code&gt; 中，并且通常选择被广泛使用的命名模式 &lt;code&gt;30-touchpad.conf&lt;/code&gt; 作为文件名&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo vim /etc/X11/xorg.conf.d/30-touchpad.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-conf&#34; data-lang=&#34;conf&#34;&gt;Section &amp;#34;InputClass&amp;#34;
+    Identifier &amp;#34;touchpad&amp;#34;
+    Driver &amp;#34;libinput&amp;#34;
+    MatchIsTouchpad &amp;#34;on&amp;#34;
+    Option &amp;#34;Tapping&amp;#34; &amp;#34;on&amp;#34;
+    Option &amp;#34;TappingButtonMap&amp;#34; &amp;#34;lmr&amp;#34;
+EndSection
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;写入配置之后记得重新启动一下&lt;/p&gt;
+&lt;h2 id=&#34;配置触摸板手势&#34;&gt;配置触摸板手势&lt;/h2&gt;
+&lt;h3 id=&#34;安装配置-libinput-gestures&#34;&gt;安装配置 &lt;code&gt;libinput-gestures&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;要使用 &lt;code&gt;libinput-gestures&lt;/code&gt;, 请安装 &lt;code&gt;libinput-gestures&lt;/code&gt;。 你能使用很多系统级别的手势操作，也能自定义配置文件。详情请看 &lt;a href=&#34;https://github.com/bulletmark/libinput-gestures/blob/master/README.md&#34;&gt;README&lt;/a&gt; 。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -S libinput-gestures
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;libinput-gestures的文档中说了：必须是input组的成员才能具有读取触摸板设备的权限，所以需要添加用户到input&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo gpasswd -a $USER input
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;退出登录后生效（或者重启）&lt;/p&gt;
+&lt;h3 id=&#34;安装配置-xdotool-wmctrl&#34;&gt;安装配置 &lt;code&gt;xdotool wmctrl&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;然后安装需要的包&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -S xdotool wmctrl
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;写入配置文件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim .config/libinput-gestures.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-conf&#34; data-lang=&#34;conf&#34;&gt;gesture swipe left 4 xdotool key super+Ctrl+Left # 4指左划: 切换到左侧工作区
+gesture swipe right 4 xdotool key super+Ctrl+Right # 4指右划: 切换到右侧工作区
+gesture swipe up 4 xdotool key super+s # 4指上划: 堆叠窗口
+gesture swipe down 4 xdotool key super+d # 4指下划: 还原窗口
+gesture pinch in 4 xdotool key super+r # 4指捏: 调整窗口大小
+
+gesture swipe left 3 xdotool key super+Shift+Left # 3指左划: 窗口移动到左边
+gesture swipe right 3 xdotool key super+Shift+Right # 3指右划: 窗口移动到右边
+gesture swipe up 3 xdotool key super+Shift+space # 3指下划: 浮动切换
+gesture swipe down 3 xdotool key super+Shift+space # 3指上划: 浮动切换
+gesture pinch in 3 xdotool key super+Shift+q # 3指捏: 关闭窗口
+
+gesture pinch in 2 xdotool key ctrl+minus # 2指捏: 缩小
+gesture pinch out 2 xdotool key ctrl+plus # 2指张: 放大%
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这里可以根据自己的习惯来搭配，然后启动&lt;code&gt;ibinput-gestures&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;libinput-gestures-setup autostart
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;libinput-gestures-setup start
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;演示&#34;&gt;演示&lt;/h2&gt;
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    
+    &lt;style type=&#34;text/css&#34;&gt;
+        .aspect-ratio {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 75%;
+        }
+
+        .aspect-ratio iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&#34;aspect-ratio&#34;&gt;
+        &lt;iframe
+            src=&#34;https://player.bilibili.com/player.html?bvid=BV1Jy4y1h7DS&amp;page=10&#34;
+            scrolling=&#34;no&#34; border=&#34;0&#34; frameborder=&#34;no&#34; framespacing=&#34;0&#34; allowfullscreen=&#34;true&#34;
+            sandbox=&#34;allow-top-navigation allow-same-origin allow-forms allow-scripts&#34;&gt;
+        &lt;/iframe&gt;
+        
+        
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</description>
     </item>
     
     <item>
@@ -29,11 +116,73 @@ sudo pacman -S libinput-gestures libinput-gestures的文档中说了：必须是
       <pubDate>Sat, 07 Mar 2020 13:58:53 +0800</pubDate>
       
       <guid>https://twor.me/posts/linux_android/</guid>
-      <description>本文以ArchLinux为例
-手机控制 Scrcpy 安装 Scrcpy $ sudo pacman -S scrcpy #pacman会安装依赖包 android-tools #其他发行版如果没有请自行安装 查看设备ID 首先用数据线连接上你的电脑和手机，在终端输入 adb devices 查看设备ID，其中 4dcb9ad5 为设备ID
-$ adb devices * daemon not running; starting now at tcp:5037 * daemon started successfully List of devices attached 4dcb9ad5	no permissions; see [http://developer.android.com/tools/device.html] 连接控制手机 $ sudo -b scrcpy -s 4dcb9ad5 --turn-screen-off ## 在后台并让手机保持熄屏运行 --turn-screen-off 让手机保持熄屏状态 如果不出意外，你的电脑应该可以直接显示和控制你的手机，但是这样手机就没法离电脑太远，如果你想要自由活动，往下看。
-保持手机和电脑在同一局域网，使用 adb tcpip 5555 命令。如果出现错误请打开 网络ADB调试 和 开启USB文件传输模式
-$ adb tcpip 5555 ## 如果出现下面错误，请打开 网络ADB调试 和 开启USB文件传输模式 error: insufficient permissions for device See [http://developer.</description>
+      <description>&lt;p&gt;本文以ArchLinux为例&lt;/p&gt;
+&lt;h3 id=&#34;手机控制-scrcpy&#34;&gt;手机控制 &lt;code&gt;Scrcpy&lt;/code&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;安装-scrcpy&#34;&gt;安装 &lt;code&gt;Scrcpy&lt;/code&gt;&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo pacman -S scrcpy
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#pacman会安装依赖包 android-tools&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#其他发行版如果没有请自行安装&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;查看设备id&#34;&gt;查看设备ID&lt;/h4&gt;
+&lt;p&gt;首先用数据线连接上你的电脑和手机，在终端输入 &lt;code&gt;adb devices&lt;/code&gt; 查看设备ID，其中 4dcb9ad5 为设备ID&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ adb devices
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;* daemon not running; starting now at tcp:5037
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;* daemon started successfully
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;List of devices attached
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;4dcb9ad5	no permissions; see &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;http://developer.android.com/tools/device.html&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;连接控制手机&#34;&gt;连接控制手机&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo -b scrcpy -s 4dcb9ad5 --turn-screen-off
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## 在后台并让手机保持熄屏运行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--turn-screen-off&lt;/code&gt; 让手机保持熄屏状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果不出意外，你的电脑应该可以直接显示和控制你的手机，但是这样手机就没法离电脑太远，如果你想要自由活动，往下看。&lt;/p&gt;
+&lt;p&gt;保持手机和电脑在同一局域网，使用 &lt;code&gt;adb tcpip 5555&lt;/code&gt; 命令。如果出现错误请打开 &lt;code&gt;网络ADB调试&lt;/code&gt; 和 &lt;code&gt;开启USB文件传输模式&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ adb tcpip &lt;span style=&#34;color:#ae81ff&#34;&gt;5555&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## 如果出现下面错误，请打开 网络ADB调试 和 开启USB文件传输模式&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;error: insufficient permissions &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; device
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;See &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;http://developer.android.com/tools/device.html&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; more information
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ adb tcpip &lt;span style=&#34;color:#ae81ff&#34;&gt;5555&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## 再试一次就成功了&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;restarting in TCP mode port: &lt;span style=&#34;color:#ae81ff&#34;&gt;5555&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ adb connect 192.168.1.3:5555
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## 成功连接手机 192.168.1.3 是你手机的ip&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;connected to 192.168.1.3:5555
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ scrcpy -s 192.168.1.3:5555 --turn-screen-off
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## 使用scrcpy控制你的手机&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;![aZWT41.png](&lt;a href=&#34;https://s1.ax1x.com/2020/07/29/aZWT41.png&#34;&gt;https://s1.ax1x.com/2020/07/29/aZWT41.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;数据线和WIFI的优势劣势&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据线：可以小范围移动手机，但是传输画面比WIFI&lt;/li&gt;
+&lt;li&gt;WiFI：可以移动手机，自由活动。但是传输画面不是很好&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;使用情况&#34;&gt;使用情况&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;可以双向复制/粘贴&lt;/li&gt;
+&lt;li&gt;可以使用电脑键盘打字聊天&lt;/li&gt;
+&lt;li&gt;基本满足日常水群，刷朋友圈&lt;/li&gt;
+&lt;li&gt;无法电脑截图分享（往下看）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;文件同步&#34;&gt;文件同步&lt;/h3&gt;
+&lt;h4 id=&#34;安装-syncthing&#34;&gt;安装 &lt;code&gt;syncthing&lt;/code&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;电脑&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo pacman -S syncthing
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;手机&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://syncthing.net/downloads/&#34;&gt;https://syncthing.net/downloads/&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;开启同步&#34;&gt;开启同步&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ systemctl start syncthing
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ systemctl enable syncthing
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;手机打开即可&lt;/p&gt;
+&lt;h4 id=&#34;配置-syncthing&#34;&gt;配置 &lt;code&gt;syncthing&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;自己找摸索一下，找教程看一下，去B站搜，都有教程的&lt;/p&gt;
+&lt;p&gt;把电脑截图保存的位置和手机文件夹同步一下，这样你电脑截图的图片就会自动同步到你的手机。这样就可以在手机分享你电脑的截图了&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -42,16 +191,110 @@ $ adb tcpip 5555 ## 如果出现下面错误，请打开 网络ADB调试 和 开
       <pubDate>Wed, 05 Jun 2019 13:58:53 +0800</pubDate>
       
       <guid>https://twor.me/posts/git_bash_tip/</guid>
-      <description>在开发的时候，为了测试数据，总会连接一些数据库、服务器、API之类，提交的时候就会不小心泄漏我们的SSH key、密码或者token之类的东西，所以有必要掌握 Git删除隐私。
-删除隐私 错误的做法：如果发现不小心上传了隐私信息，修改或删除相应的文件 原因：git是可以查看历史提交的，所以只需要查看历史提交，相应的隐私信息还是会暴露
-删厍？当我没说
-git filter-branch 所有的历史记录中删除某个文件/文件夹 yourfilepath 就是需要删除的那个文件/文件夹
-$ git filter-branch --force --index-filter &amp;#39;git rm -r --cached --ignore-unmatch yourfilepath&amp;#39; --prune-empty --tag-name-filter cat -- --all $ git push origin master --force 此时再看看 git log 应该是没有该文件的信息了。
-请参考：https://docs.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository
-同步fork代码 clone fork的分支到本地
-$ git clone git@github.com:*/flutter.git 增加源分支(被自己fork的项目)地址到自己git项目远程分支列表中，将原来的仓库命名为upstream
-$ git remote add upstream git@github.com:flutter/flutter.git 核实远程分支列表（optional）
-$ git remote -v origin git@github.com:*/flutter.git (fetch) origin git@github.com:*/flutter.git (push) upstream git@github.com:flutter/flutter.git (fetch) upstream git@github.com:flutter/flutter.git (push) ## 核实后，发现不如意，想删除，可以用 git remote remove name ## name 为远程分支的命名，如上面例子，可以删除 upstream ## git remote remove upstream ## 或者直接删除之前fork的原始分支 origin ## git remote remove origin (直接删除了原始分支后，再fork， ## 也能达到更新了最新代码的需求，后面的步骤就不用了。) fetch源分支的新版本到本地</description>
+      <description>&lt;p&gt;在开发的时候，为了测试数据，总会连接一些数据库、服务器、API之类，提交的时候就会不小心泄漏我们的SSH key、密码或者token之类的东西，所以有必要掌握 Git删除隐私。&lt;/p&gt;
+&lt;h3 id=&#34;删除隐私&#34;&gt;删除隐私&lt;/h3&gt;
+&lt;h4 id=&#34;错误的做法如果发现不小心上传了隐私信息修改或删除相应的文件&#34;&gt;错误的做法：如果发现不小心上传了隐私信息，修改或删除相应的文件&lt;/h4&gt;
+&lt;p&gt;原因：git是可以查看历史提交的，所以只需要查看历史提交，相应的隐私信息还是会暴露&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;删厍？当我没说&lt;/del&gt;&lt;/p&gt;
+&lt;h4 id=&#34;git-filter-branch&#34;&gt;git filter-branch&lt;/h4&gt;
+&lt;p&gt;所有的历史记录中删除某个文件/文件夹 &lt;code&gt;yourfilepath&lt;/code&gt; 就是需要删除的那个文件/文件夹&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git filter-branch --force --index-filter &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;git rm -r --cached --ignore-unmatch yourfilepath&amp;#39;&lt;/span&gt; --prune-empty --tag-name-filter cat -- --all
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git push origin master --force
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此时再看看 &lt;code&gt;git log&lt;/code&gt; 应该是没有该文件的信息了。&lt;/p&gt;
+&lt;p&gt;请参考：&lt;a href=&#34;https://docs.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository&#34;&gt;https://docs.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;同步fork代码&#34;&gt;同步fork代码&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;clone fork的分支到本地&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git clone git@github.com:*/flutter.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;增加源分支(被自己fork的项目)地址到自己git项目远程分支列表中，将原来的仓库命名为upstream&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git remote add upstream git@github.com:flutter/flutter.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;核实远程分支列表（optional）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git remote -v
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;origin git@github.com:*/flutter.git &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;fetch&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;origin git@github.com:*/flutter.git &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;push&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;upstream git@github.com:flutter/flutter.git &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;fetch&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;upstream git@github.com:flutter/flutter.git &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;push&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## 核实后，发现不如意，想删除，可以用 git remote remove name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## name 为远程分支的命名，如上面例子，可以删除 upstream&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## git remote remove upstream&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## 或者直接删除之前fork的原始分支 origin&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## git remote remove origin (直接删除了原始分支后，再fork，&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## 也能达到更新了最新代码的需求，后面的步骤就不用了。)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;fetch源分支的新版本到本地&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git fetch upstream
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;合并两个版本的代码&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git merge upstream/master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将合并后的代码push到github上自己的fork中去&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git push origin master
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## 如果要强制：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## git push origin --force&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;pull-request&#34;&gt;pull request&lt;/h3&gt;
+&lt;h4 id=&#34;提交更改&#34;&gt;提交更改&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git add &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;filename&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git commit -m &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;text&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git push origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;发起pull-request&#34;&gt;发起pull request&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## 需要安装 Github CLI&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ gh pr create
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Creating pull request &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; master into master in Twor/dotfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;! warning: could not compute title or body defaults: could not find any commits between master and master
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;? Title zh_CN &lt;span style=&#34;color:#75715e&#34;&gt;## 填写你提交的内容&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;? Body &amp;lt;Received&amp;gt; &lt;span style=&#34;color:#75715e&#34;&gt;## 说明&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;? What&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;s next?  &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;Use arrows to move, type to filter&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt; Submit
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Continue in browser
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Add metadata
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Cancel
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// .....
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;merge&#34;&gt;merge&lt;/h3&gt;
+&lt;h4 id=&#34;查看pr的状态&#34;&gt;查看pr的状态&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ gh pr status
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Relevant pull requests in Twor/dotfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Current branch
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  There is no pull request associated with &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;master&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Created by you
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;#1  README.md [Catclerk:master]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Requesting a code review from you
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  You have no pull requests to review
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ gh pr merge &amp;lt;ID&amp;gt; -m
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Notice: authentication required
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Press Enter to open github.com in your browser...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Authentication complete. Press Enter to &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;✔ Merged pull request &lt;span style=&#34;color:#75715e&#34;&gt;#1 (README.md)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;✔ Deleted branch master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;小坑： Github CLI 还不支持多用户，当你要切换用户时，去删除配置文件 &lt;code&gt;.config/gh/hosts.yml&lt;/code&gt; 里面的内容 。&lt;/p&gt;
+&lt;p&gt;还可以查看issue等等其他操作&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;gh issue list&lt;/li&gt;
+&lt;li&gt;gh issue view &lt;!-- raw HTML omitted --&gt;       //但是这会在浏览器打开&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;更多命令：&lt;a href=&#34;https://cli.github.com/manual/&#34;&gt;https://cli.github.com/manual/&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -60,7 +303,140 @@ $ git remote -v origin git@github.com:*/flutter.git (fetch) origin git@github.co
       <pubDate>Wed, 05 Jun 2019 13:58:53 +0800</pubDate>
       
       <guid>https://twor.me/posts/oh-my-zsh_config/</guid>
-      <description>安装 zsh oh-my-zsh-git pacaur -S zsh oh-my-zsh-git 修改用户shell chsh -l chsh -s /usr/bin/zsh 安装Powerlevel9k 主题 $ sudo git clone https://github.com/bhilburn/powerlevel9k.git /usr/share/oh-my-zsh/themes/powerlevel9k 安装Nerd Fonts Hack字体 pacaur -S nerd-fonts-hack .zshrc 配置（copy） # Path to your oh-my-zsh installation. ZSH=/usr/share/oh-my-zsh/ export DEFAULT_USER=&amp;#34;fernando&amp;#34; export TERM=&amp;#34;xterm-256color&amp;#34; export ZSH=/usr/share/oh-my-zsh ZSH_THEME=&amp;#34;powerlevel9k/powerlevel9k&amp;#34; POWERLEVEL9K_MODE=&amp;#34;nerdfont-complete&amp;#34; source $ZSH/themes/powerlevel9k/powerlevel9k.zsh-theme POWERLEVEL9K_FOLDER_ICON=&amp;#34;&amp;#34; POWERLEVEL9K_HOME_SUB_ICON=&amp;#34;$(print_icon &amp;#34;HOME_ICON&amp;#34;)&amp;#34; POWERLEVEL9K_DIR_PATH_SEPARATOR=&amp;#34; $(print_icon &amp;#34;LEFT_SUBSEGMENT_SEPARATOR&amp;#34;) &amp;#34; POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0 POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=true POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND=&amp;#39;black&amp;#39; POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND=&amp;#39;178&amp;#39; POWERLEVEL9K_NVM_BACKGROUND=&amp;#34;238&amp;#34; POWERLEVEL9K_NVM_FOREGROUND=&amp;#34;green&amp;#34; POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND=&amp;#34;blue&amp;#34; POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND=&amp;#34;015&amp;#34; POWERLEVEL9K_TIME_BACKGROUND=&amp;#39;255&amp;#39; #POWERLEVEL9K_COMMAND_TIME_FOREGROUND=&amp;#39;gray&amp;#39; POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=&amp;#39;245&amp;#39; POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=&amp;#39;black&amp;#39; POWERLEVEL9K_TIME_FORMAT=&amp;#34;%D{%H:%M}&amp;#34; POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir dir_writable vcs) POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs command_execution_time time) POWERLEVEL9K_SHOW_CHANGESET=true HYPHEN_INSENSITIVE=&amp;#34;true&amp;#34; COMPLETION_WAITING_DOTS=&amp;#34;true&amp;#34; # /!</description>
+      <description>&lt;h3 id=&#34;安装-zsh-oh-my-zsh-git&#34;&gt;安装 zsh oh-my-zsh-git&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pacaur -S zsh oh-my-zsh-git
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;修改用户shell&#34;&gt;修改用户shell&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;chsh -l
+chsh -s /usr/bin/zsh
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;安装powerlevel9k-主题&#34;&gt;安装&lt;strong&gt;Powerlevel9k 主题&lt;/strong&gt;&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ sudo git clone https://github.com/bhilburn/powerlevel9k.git /usr/share/oh-my-zsh/themes/powerlevel9k
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;安装nerd-fonts-hack字体&#34;&gt;安装&lt;strong&gt;Nerd Fonts Hack字体&lt;/strong&gt;&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pacaur -S nerd-fonts-hack
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;zshrc-配置copy&#34;&gt;.zshrc 配置（copy）&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Path to your oh-my-zsh installation.
+ZSH=/usr/share/oh-my-zsh/
+
+export DEFAULT_USER=&amp;#34;fernando&amp;#34;
+export TERM=&amp;#34;xterm-256color&amp;#34;
+export ZSH=/usr/share/oh-my-zsh
+
+ZSH_THEME=&amp;#34;powerlevel9k/powerlevel9k&amp;#34;
+POWERLEVEL9K_MODE=&amp;#34;nerdfont-complete&amp;#34;
+source $ZSH/themes/powerlevel9k/powerlevel9k.zsh-theme
+
+POWERLEVEL9K_FOLDER_ICON=&amp;#34;&amp;#34;
+POWERLEVEL9K_HOME_SUB_ICON=&amp;#34;$(print_icon &amp;#34;HOME_ICON&amp;#34;)&amp;#34;
+POWERLEVEL9K_DIR_PATH_SEPARATOR=&amp;#34; $(print_icon &amp;#34;LEFT_SUBSEGMENT_SEPARATOR&amp;#34;) &amp;#34;
+
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
+
+POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=true
+
+POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND=&amp;#39;black&amp;#39;
+POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND=&amp;#39;178&amp;#39;
+POWERLEVEL9K_NVM_BACKGROUND=&amp;#34;238&amp;#34;
+POWERLEVEL9K_NVM_FOREGROUND=&amp;#34;green&amp;#34;
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND=&amp;#34;blue&amp;#34;
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND=&amp;#34;015&amp;#34;
+
+POWERLEVEL9K_TIME_BACKGROUND=&amp;#39;255&amp;#39;
+#POWERLEVEL9K_COMMAND_TIME_FOREGROUND=&amp;#39;gray&amp;#39;
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=&amp;#39;245&amp;#39;
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=&amp;#39;black&amp;#39;
+
+POWERLEVEL9K_TIME_FORMAT=&amp;#34;%D{%H:%M}&amp;#34;
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir dir_writable vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs command_execution_time time)
+POWERLEVEL9K_SHOW_CHANGESET=true
+
+HYPHEN_INSENSITIVE=&amp;#34;true&amp;#34;
+COMPLETION_WAITING_DOTS=&amp;#34;true&amp;#34;
+# /!\ do not use with zsh-autosuggestions
+
+plugins=(archlinux
+	asdf
+	bundler
+	docker
+	jsontools
+	vscode
+	web-search
+	k
+	tig
+	gitfast
+	colored-man-pages
+	colorize
+	command-not-found
+	cp
+	dirhistory
+	autojump
+	sudo
+	zsh-syntax-highlighting)
+# /!\ zsh-syntax-highlighting and then zsh-autosuggestions must be at the end
+
+source $ZSH/oh-my-zsh.sh
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+typeset -gA ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[cursor]=&amp;#39;bold&amp;#39;
+
+ZSH_HIGHLIGHT_STYLES[alias]=&amp;#39;fg=green,bold&amp;#39;
+ZSH_HIGHLIGHT_STYLES[suffix-alias]=&amp;#39;fg=green,bold&amp;#39;
+ZSH_HIGHLIGHT_STYLES[builtin]=&amp;#39;fg=green,bold&amp;#39;
+ZSH_HIGHLIGHT_STYLES[function]=&amp;#39;fg=green,bold&amp;#39;
+ZSH_HIGHLIGHT_STYLES[command]=&amp;#39;fg=green,bold&amp;#39;
+ZSH_HIGHLIGHT_STYLES[precommand]=&amp;#39;fg=green,bold&amp;#39;
+ZSH_HIGHLIGHT_STYLES[hashed-command]=&amp;#39;fg=green,bold&amp;#39;
+
+rule () {
+	print -Pn &amp;#39;%F{blue}&amp;#39;
+	local columns=$(tput cols)
+	for ((i=1; i&amp;lt;=columns; i++)); do
+	   printf &amp;#34;\u2588&amp;#34;
+	done
+	print -P &amp;#39;%f&amp;#39;
+}
+
+function _my_clear() {
+	echo
+	rule
+	zle clear-screen
+}
+zle -N _my_clear
+bindkey &amp;#39;^l&amp;#39; _my_clear
+
+# Ctrl-O opens zsh at the current location, and on exit, cd into ranger&amp;#39;s last location.
+ranger-cd() {
+	tempfile=$(mktemp)
+	ranger --choosedir=&amp;#34;$tempfile&amp;#34; &amp;#34;${@:-$(pwd)}&amp;#34; &amp;lt; $TTY
+	test -f &amp;#34;$tempfile&amp;#34; &amp;amp;&amp;amp;
+	if [ &amp;#34;$(cat -- &amp;#34;$tempfile&amp;#34;)&amp;#34; != &amp;#34;$(echo -n `pwd`)&amp;#34; ]; then
+	cd -- &amp;#34;$(cat &amp;#34;$tempfile&amp;#34;)&amp;#34;
+	fi
+	rm -f -- &amp;#34;$tempfile&amp;#34;
+	# hacky way of transferring over previous command and updating the screen
+	VISUAL=true zle edit-command-line
+}
+zle -N ranger-cd
+bindkey &amp;#39;^o&amp;#39; ranger-cd
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+DISABLE_AUTO_UPDATE=&amp;#34;true&amp;#34;
+
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
+
+source $ZSH/oh-my-zsh.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;添加插件配置&#34;&gt;添加插件配置&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;plugins=(archlinux asdf bundler docker jsontools vscode web-search k tig gitfast colored-man colorize
+command-not-found cp dirhistory autojump sudo zsh-syntax-highlighting)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;vscode终端乱码&#34;&gt;vscode终端乱码&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;修改配置文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;terminal.integrated.fontFamily&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#39;Source Code Pro for Powerline&amp;#39;, &amp;#39;Hack Nerd Font&amp;#39;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -69,16 +445,108 @@ $ git remote -v origin git@github.com:*/flutter.git (fetch) origin git@github.co
       <pubDate>Wed, 05 Jun 2019 13:58:53 +0800</pubDate>
       
       <guid>https://twor.me/posts/wsl_archlinux_gui/</guid>
-      <description>开启wsl Windows功能 &amp;raquo; 勾选适用于Linux的Windows子系统 ，重启生效。
-下载安装 Arch WSL 这里是作者的安装教程：https://github.com/yuk7/ArchWSL/wiki
-我选择的是传统方式安装 (不使用 AppX 方式)：
-在 Release 下载最新版的 Arch.zip 解压到 C 盘根目录，(一定要在 C 盘，其他位置也可以)，但是你要有该目录的读写权限，所以不能放到 Program Files 等目录中。 双击解压好的 Arch.exe 进行安装，这个 .exe 的名字 就是要创建的 WSL 实例的名字，改不同的名字就能创建多个 Arch WSL。 安装好之后，进行配置。
-Arch Linux 软件仓库国内镜像 编辑 /etc/pacman.d/mirrorlist，里面有注释了的 China 的镜像，（放在上面优先级高）
-然后更新软件包缓存，执行： pacman -Syyu
-其他跟镜像有关的可以看这里：https://wiki.archlinux.org/index.php/Mirrors_(简体中文)
-添加 ArchlinuxCN 源 Arch Linux 中文社区仓库 是由 Arch Linux 中文社区驱动的非官方用户仓库。包含中文用户常用软件、工具、字体 / 美化包等。官方仓库地址：http://repo.archlinuxcn.org
-使用方法：在 /etc/pacman.conf 文件末尾添加以下两行：
-[archlinuxcn] Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch 之后安装 archlinuxcn-keyring 包导入 GPG key:</description>
+      <description>&lt;h3 id=&#34;开启wsl&#34;&gt;&lt;strong&gt;开启wsl&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Windows功能 &amp;raquo; 勾选&lt;code&gt;适用于Linux的Windows子系统&lt;/code&gt; ，重启生效。&lt;/p&gt;
+&lt;h3 id=&#34;下载安装-arch-wsl&#34;&gt;&lt;strong&gt;下载安装 Arch WSL&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;这里是作者的安装教程：&lt;a href=&#34;https://github.com/yuk7/ArchWSL/wiki&#34;&gt;https://github.com/yuk7/ArchWSL/wiki&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我选择的是传统方式安装 (不使用 AppX 方式)：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 &lt;a href=&#34;https://github.com/yuk7/ArchWSL/releases&#34;&gt;Release&lt;/a&gt; 下载最新版的 &lt;code&gt;Arch.zip&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;解压到 C 盘根目录，(一定要在 C 盘，其他位置也可以)，但是你要有该目录的读写权限，所以不能放到 &lt;code&gt;Program Files&lt;/code&gt; 等目录中。&lt;/li&gt;
+&lt;li&gt;双击解压好的 &lt;code&gt;Arch.exe&lt;/code&gt; 进行安装，这个 &lt;strong&gt;.exe 的名字&lt;/strong&gt; 就是要创建的 &lt;strong&gt;WSL 实例的名字&lt;/strong&gt;，改不同的名字就能创建多个 Arch WSL。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;安装好之后，进行配置。&lt;/p&gt;
+&lt;h3 id=&#34;arch-linux-软件仓库国内镜像&#34;&gt;&lt;strong&gt;Arch Linux 软件仓库国内镜像&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;编辑 &lt;code&gt;/etc/pacman.d/mirrorlist&lt;/code&gt;，里面有注释了的 &lt;code&gt;China&lt;/code&gt; 的镜像，（放在上面优先级高）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://toipc-my.sharepoint.com/personal/toipc_twor_me/_layouts/15/download.aspx?UniqueId=cf4ec571-1eb2-46ed-ac19-6f9265abaa1d&amp;amp;Translate=false&amp;amp;tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvdG9pcGMtbXkuc2hhcmVwb2ludC5jb21AYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU4MTIxMjY3OSIsImV4cCI6IjE1ODEyMTYyNzkiLCJlbmRwb2ludHVybCI6InFBU2RmeDFLdk00TzJJVXJIQ0wwTFNRc0dKbzNmUEtLTXROdWtaR09KTFU9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNDIiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik5qaGxNREl6WkRjdE5HVmxZaTAwTW1ZNExXSTJOVFV0WmpJMVkySXhNRFJpTmpjdyIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJZMlptWTJVeFlqY3ROV015WlMwME5EUm1MV0l3Tm1VdFpHVm1aVEV4TmpWbFpqZ3giLCJhcHBfZGlzcGxheW5hbWUiOiJvbmVfc2NmIiwiZmFtaWx5X25hbWUiOiJ0b2lwYyIsImFwcGlkIjoiNGRhM2U3ZjItYmY2ZC00NjdjLWFhZjAtNTc4MDc4ZjBiZjdjIiwidGlkIjoiYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwidXBuIjoidG9pcGNAdHdvci5tZSIsInB1aWQiOiIxMDAzMjAwMDk4RjYxMjM0IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDA5OGY2MTIzNEBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.aVgxNUtEc0s5VjNjSERlTFl5aWdzMkFYMVEyUUZ0Nko1NENKZWExVzBzUT0&amp;amp;ApiVersion=2.0&#34; alt=&#34;https://toipc-my.sharepoint.com/personal/toipc_twor_me/_layouts/15/download.aspx?UniqueId=cf4ec571-1eb2-46ed-ac19-6f9265abaa1d&amp;amp;Translate=false&amp;amp;tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvdG9pcGMtbXkuc2hhcmVwb2ludC5jb21AYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU4MTIxMjY3OSIsImV4cCI6IjE1ODEyMTYyNzkiLCJlbmRwb2ludHVybCI6InFBU2RmeDFLdk00TzJJVXJIQ0wwTFNRc0dKbzNmUEtLTXROdWtaR09KTFU9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNDIiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik5qaGxNREl6WkRjdE5HVmxZaTAwTW1ZNExXSTJOVFV0WmpJMVkySXhNRFJpTmpjdyIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJZMlptWTJVeFlqY3ROV015WlMwME5EUm1MV0l3Tm1VdFpHVm1aVEV4TmpWbFpqZ3giLCJhcHBfZGlzcGxheW5hbWUiOiJvbmVfc2NmIiwiZmFtaWx5X25hbWUiOiJ0b2lwYyIsImFwcGlkIjoiNGRhM2U3ZjItYmY2ZC00NjdjLWFhZjAtNTc4MDc4ZjBiZjdjIiwidGlkIjoiYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwidXBuIjoidG9pcGNAdHdvci5tZSIsInB1aWQiOiIxMDAzMjAwMDk4RjYxMjM0IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDA5OGY2MTIzNEBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.aVgxNUtEc0s5VjNjSERlTFl5aWdzMkFYMVEyUUZ0Nko1NENKZWExVzBzUT0&amp;amp;ApiVersion=2.0&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后更新软件包缓存，执行： &lt;code&gt;pacman -Syyu&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;其他跟镜像有关的可以看这里：&lt;a href=&#34;https://wiki.archlinux.org/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&#34;&gt;https://wiki.archlinux.org/index.php/Mirrors_(简体中文)&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;添加-archlinuxcn-源&#34;&gt;&lt;strong&gt;添加 ArchlinuxCN 源&lt;/strong&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Arch Linux 中文社区仓库 是由 Arch Linux 中文社区驱动的非官方用户仓库。包含中文用户常用软件、工具、字体 / 美化包等。官方仓库地址：http://repo.archlinuxcn.org&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;使用方法：在 &lt;code&gt;/etc/pacman.conf&lt;/code&gt; 文件末尾添加以下两行：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[archlinuxcn]
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;之后安装 &lt;code&gt;archlinuxcn-keyring&lt;/code&gt; 包导入 GPG key:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pacman-key --init
+pacman-key --populate
+pacman -Syy &amp;amp;&amp;amp; pacman -S archlinuxcn-keyring
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;安装-aur-助手-yay&#34;&gt;&lt;strong&gt;安装 AUR 助手 yay&lt;/strong&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Arch User Repository（常被称作 AUR），是一个为 Arch 用户而生的社区驱动软件仓库。Debian/Ubuntu 用户的对应类比是 PPA。AUR 包含了不直接被 Arch Linux 官方所背书的软件。如果有人想在 Arch 上发布软件或者包，它可以通过这个社区仓库提供。这让最终用户们可以使用到比默认仓库里更多的软件。所以你该如何使用 AUR 呢？简单来说，你需要另外的工具以从 AUR 中安装软件。Arch 的包管理器 pacman 不直接支持 AUR。那些支持 AUR 的 “特殊工具” 我们称之为 AUR 助手。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我们想从 AUR 仓库中安装东西时，就需要 AUR 助手，这里推荐 &lt;code&gt;yay&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gh-card.dev/repos/Jguer/yay.svg&#34; alt=&#34;https://gh-card.dev/repos/Jguer/yay.svg&#34;&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pacman -S yay
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装完 &lt;code&gt;yay&lt;/code&gt;，&lt;code&gt;git&lt;/code&gt; 也会被一起装好。换成国内 AUR 源:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;##yay --save --aururl &amp;#34;地址&amp;#34;
+yay --save --aururl https://aur.tuna.tsinghua.edu.cn
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;yay 的配置文件路径： &lt;code&gt;~/.config/yay/config.json&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;创建-arch-普通用户&#34;&gt;&lt;strong&gt;创建 Arch 普通用户&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;刚安装好的 Arch 是 root 用户，为了不至于权限太大误伤系统，可以先创建一个普通用户。&lt;/p&gt;
+&lt;p&gt;添加一个用户：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;useradd -m -G wheel twor
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;设置用户密码：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;passwd twor
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在下一步之前，要先把默认编辑器设置成 vim，因为用不来默认的 vi…&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export EDITOR=vim
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;你也可以设置成自己喜欢的编辑器。让用户可以执行 sudo 命令，这一步不能省略。使用如下系统自带命令修改 &lt;code&gt;sudoers&lt;/code&gt; 文件。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;visudo
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在里面注销注释（删除前面的&lt;code&gt;#&lt;/code&gt;）这一行即可：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;%wheel  ALL=(ALL)  ALL
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://toipc-my.sharepoint.com/personal/toipc_twor_me/_layouts/15/download.aspx?UniqueId=32147940-4515-4210-bc33-45da164fc7d4&amp;amp;Translate=false&amp;amp;tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvdG9pcGMtbXkuc2hhcmVwb2ludC5jb21AYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU4MTIxMjY3OSIsImV4cCI6IjE1ODEyMTYyNzkiLCJlbmRwb2ludHVybCI6InkxUU5sTUFZMmZkRkU4bFBhREZ2K2VXWGlYbC9XcWFQcDRmK1VSOGhZVkU9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNDIiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik5qaGxNREl6WkRjdE5HVmxZaTAwTW1ZNExXSTJOVFV0WmpJMVkySXhNRFJpTmpjdyIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJZMlptWTJVeFlqY3ROV015WlMwME5EUm1MV0l3Tm1VdFpHVm1aVEV4TmpWbFpqZ3giLCJhcHBfZGlzcGxheW5hbWUiOiJvbmVfc2NmIiwiZmFtaWx5X25hbWUiOiJ0b2lwYyIsImFwcGlkIjoiNGRhM2U3ZjItYmY2ZC00NjdjLWFhZjAtNTc4MDc4ZjBiZjdjIiwidGlkIjoiYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwidXBuIjoidG9pcGNAdHdvci5tZSIsInB1aWQiOiIxMDAzMjAwMDk4RjYxMjM0IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDA5OGY2MTIzNEBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.R014bDAzSURUL0x2VU1VRjdCenR5TGVOZjhudEkrWGgxTmUycy96bnBhND0&amp;amp;ApiVersion=2.0&#34; alt=&#34;https://toipc-my.sharepoint.com/personal/toipc_twor_me/_layouts/15/download.aspx?UniqueId=32147940-4515-4210-bc33-45da164fc7d4&amp;amp;Translate=false&amp;amp;tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvdG9pcGMtbXkuc2hhcmVwb2ludC5jb21AYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU4MTIxMjY3OSIsImV4cCI6IjE1ODEyMTYyNzkiLCJlbmRwb2ludHVybCI6InkxUU5sTUFZMmZkRkU4bFBhREZ2K2VXWGlYbC9XcWFQcDRmK1VSOGhZVkU9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNDIiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik5qaGxNREl6WkRjdE5HVmxZaTAwTW1ZNExXSTJOVFV0WmpJMVkySXhNRFJpTmpjdyIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJZMlptWTJVeFlqY3ROV015WlMwME5EUm1MV0l3Tm1VdFpHVm1aVEV4TmpWbFpqZ3giLCJhcHBfZGlzcGxheW5hbWUiOiJvbmVfc2NmIiwiZmFtaWx5X25hbWUiOiJ0b2lwYyIsImFwcGlkIjoiNGRhM2U3ZjItYmY2ZC00NjdjLWFhZjAtNTc4MDc4ZjBiZjdjIiwidGlkIjoiYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwidXBuIjoidG9pcGNAdHdvci5tZSIsInB1aWQiOiIxMDAzMjAwMDk4RjYxMjM0IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDA5OGY2MTIzNEBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.R014bDAzSURUL0x2VU1VRjdCenR5TGVOZjhudEkrWGgxTmUycy96bnBhND0&amp;amp;ApiVersion=2.0&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;切换-wsl-默认用户&#34;&gt;&lt;strong&gt;切换 WSL 默认用户&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;在 cmd 中打开你的安装目录：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://toipc-my.sharepoint.com/personal/toipc_twor_me/_layouts/15/download.aspx?UniqueId=ddfb8540-7d53-4eb7-adc2-9df87f7a7dd4&amp;amp;Translate=false&amp;amp;tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvdG9pcGMtbXkuc2hhcmVwb2ludC5jb21AYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU4MTIxMTM1MCIsImV4cCI6IjE1ODEyMTQ5NTAiLCJlbmRwb2ludHVybCI6InpkQjh2a2NNWlF4WVVKcHdORW5DWjB0RTRBcDhucmZCazlZdzV1TUZLdkk9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNDIiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik1HSmhOV1k1WkRndFlqTmxPQzAwWXpreUxUZzVaRE10TkdWbE1tRmlNamRpWmpReiIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJZMlptWTJVeFlqY3ROV015WlMwME5EUm1MV0l3Tm1VdFpHVm1aVEV4TmpWbFpqZ3giLCJhcHBfZGlzcGxheW5hbWUiOiJvbmVfc2NmIiwiZmFtaWx5X25hbWUiOiJ0b2lwYyIsImFwcGlkIjoiNGRhM2U3ZjItYmY2ZC00NjdjLWFhZjAtNTc4MDc4ZjBiZjdjIiwidGlkIjoiYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwidXBuIjoidG9pcGNAdHdvci5tZSIsInB1aWQiOiIxMDAzMjAwMDk4RjYxMjM0IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDA5OGY2MTIzNEBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.djR2YldWbThNMmpyOXNwUVFqNnViZGYvUkE2UUJrTzZGZGw2SExkNGdJQT0&amp;amp;ApiVersion=2.0&#34; alt=&#34;https://toipc-my.sharepoint.com/personal/toipc_twor_me/_layouts/15/download.aspx?UniqueId=ddfb8540-7d53-4eb7-adc2-9df87f7a7dd4&amp;amp;Translate=false&amp;amp;tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvdG9pcGMtbXkuc2hhcmVwb2ludC5jb21AYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU4MTIxMTM1MCIsImV4cCI6IjE1ODEyMTQ5NTAiLCJlbmRwb2ludHVybCI6InpkQjh2a2NNWlF4WVVKcHdORW5DWjB0RTRBcDhucmZCazlZdzV1TUZLdkk9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNDIiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik1HSmhOV1k1WkRndFlqTmxPQzAwWXpreUxUZzVaRE10TkdWbE1tRmlNamRpWmpReiIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJZMlptWTJVeFlqY3ROV015WlMwME5EUm1MV0l3Tm1VdFpHVm1aVEV4TmpWbFpqZ3giLCJhcHBfZGlzcGxheW5hbWUiOiJvbmVfc2NmIiwiZmFtaWx5X25hbWUiOiJ0b2lwYyIsImFwcGlkIjoiNGRhM2U3ZjItYmY2ZC00NjdjLWFhZjAtNTc4MDc4ZjBiZjdjIiwidGlkIjoiYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwidXBuIjoidG9pcGNAdHdvci5tZSIsInB1aWQiOiIxMDAzMjAwMDk4RjYxMjM0IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDA5OGY2MTIzNEBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.djR2YldWbThNMmpyOXNwUVFqNnViZGYvUkE2UUJrTzZGZGw2SExkNGdJQT0&amp;amp;ApiVersion=2.0&#34;&gt;&lt;/p&gt;
+&lt;p&gt;执行：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Arch.exe config --default-user artin
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;配置基本环境&#34;&gt;&lt;strong&gt;配置基本环境&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;安装 fakeroot、binutils 等打包基本工具&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pacman -S base-devel
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我这里会提示 &lt;code&gt;fakeroot&lt;/code&gt; 被 ignore 了，选 n然后回车就好了，不输入数字的话默认会安装 &lt;code&gt;base-devel&lt;/code&gt; 里的所有包。&lt;/p&gt;
+&lt;h3 id=&#34;安装i3&#34;&gt;&lt;strong&gt;安装i3&lt;/strong&gt;&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo pacman -S i3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这里你可以选择All或者你需要的&lt;/p&gt;
+&lt;h3 id=&#34;配置i3&#34;&gt;&lt;strong&gt;配置i3&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;del&gt;这里就不说了，不会的自己去教程吧&lt;/del&gt;&lt;/p&gt;
+&lt;h2 id=&#34;配置archlinuxwsl图形化&#34;&gt;&lt;strong&gt;配置archlinux（wsl）图形化&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;下载&lt;a href=&#34;https://sourceforge.net/projects/vcxsrv/&#34;&gt;vcxsrv&lt;/a&gt;并安装（也可以使用其他Windows X Server）&lt;/p&gt;
+&lt;p&gt;创建连接脚本&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mkdir .script
+vim .script/xlaunch
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;写入：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/bash
+
+# meant to be run with `bash -c &amp;#34;/path/to/xlaunch&amp;#34;` when running from e.g. a Windows shortcut
+
+# explicitly needed when launching with bash -c from Windows
+export DISPLAY=:0
+#export LIBGL_ALWAYS_INDIRECT=0
+source ~/.bashrc
+#xrandr --dpi 279
+i3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;赋予执行权限&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;chmod +x .script/xlaunch
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后在Windows下创建一个脚本 &lt;code&gt;Archlinux.vbs&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;#39; vcxsrv所在路径 C:\Program Files\VcXsrv\vcxsrv.exe
+&amp;#39; arch.exe 所在路径 C:\Arch\Arch.exe
+&amp;#39; achlinux连接脚本所在路径 ~/.scripts/wlaunch
+Set shell = CreateObject(&amp;#34;WScript.Shell&amp;#34; )
+shell.Run &amp;#34;&amp;#34;&amp;#34;C:\Program Files\VcXsrv\vcxsrv.exe&amp;#34;&amp;#34; :0 -screen 0 @1 -nodecoration -wgl&amp;#34;
+shell.Run &amp;#34;C:\Arch\Arch.exe run &amp;#34;&amp;#34;~/.scripts/wlaunch&amp;#34;&amp;#34;&amp;#34;, 0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;双击运行&lt;code&gt;Archlinux.vbs&lt;/code&gt; 就可以连接上了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://toipc-my.sharepoint.com/personal/toipc_twor_me/_layouts/15/download.aspx?UniqueId=e171bea7-740b-4cfb-8726-0299d17d3522&amp;amp;Translate=false&amp;amp;tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvdG9pcGMtbXkuc2hhcmVwb2ludC5jb21AYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU4MTIxMjY3OSIsImV4cCI6IjE1ODEyMTYyNzkiLCJlbmRwb2ludHVybCI6ImlQTEw1dFdjYVU5M215ZWl5UC92VUYxSldRejNGTkQ3d1lkSjcyTkdXczg9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNDIiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik5qaGxNREl6WkRjdE5HVmxZaTAwTW1ZNExXSTJOVFV0WmpJMVkySXhNRFJpTmpjdyIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJZMlptWTJVeFlqY3ROV015WlMwME5EUm1MV0l3Tm1VdFpHVm1aVEV4TmpWbFpqZ3giLCJhcHBfZGlzcGxheW5hbWUiOiJvbmVfc2NmIiwiZmFtaWx5X25hbWUiOiJ0b2lwYyIsImFwcGlkIjoiNGRhM2U3ZjItYmY2ZC00NjdjLWFhZjAtNTc4MDc4ZjBiZjdjIiwidGlkIjoiYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwidXBuIjoidG9pcGNAdHdvci5tZSIsInB1aWQiOiIxMDAzMjAwMDk4RjYxMjM0IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDA5OGY2MTIzNEBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.eEFvaVB3SStadFhCN1NjcUhOSGdjYSs1cnhUZ3Vwa3ZCVENNczc5TzVZaz0&amp;amp;ApiVersion=2.0&#34; alt=&#34;https://toipc-my.sharepoint.com/personal/toipc_twor_me/_layouts/15/download.aspx?UniqueId=e171bea7-740b-4cfb-8726-0299d17d3522&amp;amp;Translate=false&amp;amp;tempauth=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvdG9pcGMtbXkuc2hhcmVwb2ludC5jb21AYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwiaXNzIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwIiwibmJmIjoiMTU4MTIxMjY3OSIsImV4cCI6IjE1ODEyMTYyNzkiLCJlbmRwb2ludHVybCI6ImlQTEw1dFdjYVU5M215ZWl5UC92VUYxSldRejNGTkQ3d1lkSjcyTkdXczg9IiwiZW5kcG9pbnR1cmxMZW5ndGgiOiIxNDIiLCJpc2xvb3BiYWNrIjoiVHJ1ZSIsImNpZCI6Ik5qaGxNREl6WkRjdE5HVmxZaTAwTW1ZNExXSTJOVFV0WmpJMVkySXhNRFJpTmpjdyIsInZlciI6Imhhc2hlZHByb29mdG9rZW4iLCJzaXRlaWQiOiJZMlptWTJVeFlqY3ROV015WlMwME5EUm1MV0l3Tm1VdFpHVm1aVEV4TmpWbFpqZ3giLCJhcHBfZGlzcGxheW5hbWUiOiJvbmVfc2NmIiwiZmFtaWx5X25hbWUiOiJ0b2lwYyIsImFwcGlkIjoiNGRhM2U3ZjItYmY2ZC00NjdjLWFhZjAtNTc4MDc4ZjBiZjdjIiwidGlkIjoiYTkzNDA2MWQtYjQwZi00MTViLThmMzctODRhZDExMWFlYmQyIiwidXBuIjoidG9pcGNAdHdvci5tZSIsInB1aWQiOiIxMDAzMjAwMDk4RjYxMjM0IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDA5OGY2MTIzNEBsaXZlLmNvbSIsInNjcCI6ImFsbGZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.eEFvaVB3SStadFhCN1NjcUhOSGdjYSs1cnhUZ3Vwa3ZCVENNczc5TzVZaz0&amp;amp;ApiVersion=2.0&#34;&gt;&lt;/p&gt;
+&lt;p&gt;大功告成！&lt;/p&gt;
+&lt;p&gt;oh-my-zsh Polybar &amp;hellip; 剩下的自己折腾吧！&lt;/p&gt;
+&lt;h2 id=&#34;提示&#34;&gt;&lt;strong&gt;提示&lt;/strong&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;i3在配置的时候建议使用&lt;code&gt;alt&lt;/code&gt;键，因为Windows的&lt;code&gt;win&lt;/code&gt;键被Windows自身热键占用&lt;/li&gt;
+&lt;li&gt;Windows的文件（C盘D盘&amp;hellip;）在 &lt;code&gt;/mnt&lt;/code&gt; 文件夹内&lt;/li&gt;
+&lt;li&gt;重新尝试安装（重置archlinux）&lt;code&gt;wsl --unregister Arch&lt;/code&gt; 或者完全卸载wsl &lt;code&gt;lxrun /uninstall /full&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;以后补充&lt;/li&gt;
+&lt;/ol&gt;
+</description>
     </item>
     
     <item>
@@ -87,9 +555,61 @@ Arch Linux 软件仓库国内镜像 编辑 /etc/pacman.d/mirrorlist，里面有
       <pubDate>Wed, 05 Jun 2019 09:58:53 +0800</pubDate>
       
       <guid>https://twor.me/posts/git_auto_web/</guid>
-      <description>安装配置Git服务端 $ sudo yum install git $ sudo adduser git $ su git $ cd $ mkdir .ssh &amp;amp;&amp;amp; chmod 700 .ssh $ touch .ssh/authorized_keys &amp;amp;&amp;amp; chmod 600 .ssh/authorized_keys 写入SSH公匙 接着，我们需要为系统用户 git 的 authorized_keys 文件添加一些开发者 SSH 公钥。
-$ vim .ssh/authorized_keys $ #写入SSH公匙 创建仓库 现在我们来为开发者新建一个空仓库。可以借助带 --bare 选项的 git init 命令来做到这一点，该命令在初始化仓库时不会创建工作目录：
-$ cd /srv/git $ mkdir project.git $ cd project.git $ git init --bare Initialized empty Git repository in /srv/git/project.git/ 禁用git用户shell登录 需要注意的是，目前所有（获得授权的）开发者用户都能以系统用户 git 的身份登录服务器从而获得一个普通 shell。 如果你想对此加以限制，则需要修改 /etc/passwd 文件中（git 用户所对应）的 shell 值。</description>
+      <description>&lt;h3 id=&#34;安装配置git服务端&#34;&gt;安装配置Git服务端&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo yum install git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo adduser git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ su git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mkdir .ssh &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;700&lt;/span&gt; .ssh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ touch .ssh/authorized_keys &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt; .ssh/authorized_keys
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;写入ssh公匙&#34;&gt;写入SSH公匙&lt;/h3&gt;
+&lt;p&gt;接着，我们需要为系统用户 git 的 &lt;code&gt;authorized_keys&lt;/code&gt; 文件添加一些开发者 SSH 公钥。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ vim .ssh/authorized_keys
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ &lt;span style=&#34;color:#75715e&#34;&gt;#写入SSH公匙&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;创建仓库&#34;&gt;创建仓库&lt;/h3&gt;
+&lt;p&gt;现在我们来为开发者新建一个空仓库。可以借助带 &lt;code&gt;--bare&lt;/code&gt; 选项的 &lt;code&gt;git init&lt;/code&gt; 命令来做到这一点，该命令在初始化仓库时不会创建工作目录：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd /srv/git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mkdir project.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd project.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git init --bare
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Initialized empty Git repository in /srv/git/project.git/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;禁用git用户shell登录&#34;&gt;禁用git用户shell登录&lt;/h3&gt;
+&lt;p&gt;需要注意的是，目前所有（获得授权的）开发者用户都能以系统用户 &lt;code&gt;git&lt;/code&gt; 的身份登录服务器从而获得一个普通 shell。 如果你想对此加以限制，则需要修改 &lt;code&gt;/etc/passwd&lt;/code&gt; 文件中（&lt;code&gt;git&lt;/code&gt; 用户所对应）的 shell 值。&lt;/p&gt;
+&lt;p&gt;借助一个名为 &lt;code&gt;git-shell&lt;/code&gt; 的受限 shell 工具，你可以方便地将用户 &lt;code&gt;git&lt;/code&gt; 的活动限制在与 Git 相关的范围内。 该工具随 Git 软件包一同提供。如果将 &lt;code&gt;git-shell&lt;/code&gt; 设置为用户 &lt;code&gt;git&lt;/code&gt; 的登录 shell（login shell）， 那么该用户便不能获得此服务器的普通 shell 访问权限。 若要使用 &lt;code&gt;git-shell&lt;/code&gt;，需要用它替换掉 bash 或 csh，使其成为该用户的登录 shell。 为进行上述操作，首先你必须确保 &lt;code&gt;git-shell&lt;/code&gt; 的完整路径名已存在于 &lt;code&gt;/etc/shells&lt;/code&gt; 文件中：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cat /etc/shells &lt;span style=&#34;color:#75715e&#34;&gt;# see if git-shell is already in there. If not...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ which git-shell &lt;span style=&#34;color:#75715e&#34;&gt;# make sure git-shell is installed on your system.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo -e /etc/shells &lt;span style=&#34;color:#75715e&#34;&gt;# and add the path to git-shell from last command&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;现在你可以使用 &lt;code&gt;chsh &amp;lt;username&amp;gt; -s &amp;lt;shell&amp;gt;&lt;/code&gt; 命令修改任一系统用户的 shell：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo chsh git -s &lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;which git-shell&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#如果提示没有chsh这个命令，可以去/etc/passwd将目标用户的bash shell更改为所需的内容，或者安装util-linux-user这个包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样，用户 &lt;code&gt;git&lt;/code&gt; 就只能利用 SSH 连接对 Git 仓库进行推送和拉取操作，而不能登录机器并取得普通 shell。 如果试图登录，你会发现尝试被拒绝，像这样：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ssh git@gitserver
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fatal: Interactive git shell is not enabled.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hint: ~/git-shell-commands should exist and have read and execute access.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Connection to gitserver closed.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此时，用户仍可通过 SSH 端口转发来访问任何可达的 git 服务器。 如果你想要避免它，可编辑 &lt;code&gt;authorized_keys&lt;/code&gt; 文件并在所有想要限制的公钥之前添加以下选项：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其结果如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cat ~/.ssh/authorized_keys
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AAAAB3NzaC1yc2EAAAADAQABAAABAQCB007n/ww+ouN4gSLKssMxXnBOvf9LGt4LojG6rs6h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PB09j9R/T17/x4lhJA0F3FR1rP6kYBRsWj2aThGw6HXLm9/5zytK6Ztg3RPKK+4kYjh6541N
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;YsnEAZuXz0jTTyAUfrtU3Z5E003C4oxOj6H0rfIF1kKI9MAQLMdpGW1GYEIgS9EzSdfd8AcC
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;现在，网络相关的 Git 命令依然能够正常工作，但是开发者用户已经无法得到一个普通 shell 了。 正如输出信息所提示的，你也可以在 git 用户的主目录下建立一个目录，来对 git-shell 命令进行一定程度的自定义。 比如，你可以限制掉某些本应被服务器接受的 Git 命令，或者对刚才的 SSH 拒绝登录信息进行自定义，这样，当有开发者用户以类似方式尝试登录时，便会看到你的信息。 要了解更多有关自定义 shell 的信息，请运行 &lt;code&gt;git help shell&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;利用git-push向服务器一键部署代码&#34;&gt;利用git push向服务器一键部署代码&lt;/h3&gt;
+&lt;p&gt;进入我们创建的项目仓库&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd /srv/git/project.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd hooks
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ vim post-receive
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;写入如下代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/sh
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;git --work-tree&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/srv/web/xxx.com checkout -f master &lt;span style=&#34;color:#75715e&#34;&gt;#这个目录是代码存放目录不是仓库目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;The project has been successfully deployed to this server!&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ chmod +x post-receive
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个挂钩本质是一个脚本，当这个文件在repo/hooks/文件夹内，名字为 &lt;code&gt;post-receive&lt;/code&gt; 并且&lt;code&gt;linux的x属性&lt;/code&gt;（可执行）为真的时候，git会在收到push后执行它&lt;/p&gt;
+&lt;p&gt;OK！现在上传的代码会在 &lt;code&gt;/srv/web/xxx.com&lt;/code&gt; 这个目录里面看见，我们只需要把网站根目录设置在这里就可以了&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -98,16 +618,83 @@ $ cd /srv/git $ mkdir project.git $ cd project.git $ git init --bare Initialized
       <pubDate>Tue, 05 Mar 2019 13:58:53 +0800</pubDate>
       
       <guid>https://twor.me/posts/windows_nginx_php/</guid>
-      <description>环境准备 Nginx
-php
-winsw
-安装Ngixn服务 把下载的winsw放入ngixn安装文件夹，重命名为nginx-service.exe,新建nginx-service.xml,写入配置
-&amp;lt;service&amp;gt; &amp;lt;id&amp;gt;nginxsvc&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;Nginx&amp;lt;/name&amp;gt; &amp;lt;description&amp;gt;Nginx Web Server service.&amp;lt;/description&amp;gt; &amp;lt;executable&amp;gt;c:\nginx\nginx.exe&amp;lt;/executable&amp;gt; &amp;lt;logpath&amp;gt;c:\nginx\logs\&amp;lt;/logpath&amp;gt; &amp;lt;logmode&amp;gt;roll&amp;lt;/logmode&amp;gt; &amp;lt;depend&amp;gt;phpsvc&amp;lt;/depend&amp;gt; &amp;lt;startargument&amp;gt;-p&amp;lt;/startargument&amp;gt; &amp;lt;startargument&amp;gt;c:\nginx&amp;lt;/startargument&amp;gt; &amp;lt;stopexecutable&amp;gt;c:\nginx\nginx.exe&amp;lt;/stopexecutable&amp;gt; &amp;lt;stopargument&amp;gt;-p&amp;lt;/stopargument&amp;gt; &amp;lt;stopargument&amp;gt;c:\nginx&amp;lt;/stopargument&amp;gt; &amp;lt;stopargument&amp;gt;-s&amp;lt;/stopargument&amp;gt; &amp;lt;stopargument&amp;gt;stop&amp;lt;/stopargument&amp;gt; &amp;lt;/service&amp;gt; 以管理员身份打开cmd，运行
-cd \c:\svc\nginx nginx-service.exe install 安装PHP服务
-winsw改为php-service.exe,放入php安装文件夹，写入配置php-service.xml
-&amp;lt;service&amp;gt; &amp;lt;id&amp;gt;phpsvc&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;PHP&amp;lt;/name&amp;gt; &amp;lt;description&amp;gt;PHP-FCGI service.&amp;lt;/description&amp;gt; &amp;lt;executable&amp;gt;c:\php\php-cgi.exe&amp;lt;/executable&amp;gt; &amp;lt;logpath&amp;gt;c:\php\logs\&amp;lt;/logpath&amp;gt; &amp;lt;logmode&amp;gt;roll&amp;lt;/logmode&amp;gt; &amp;lt;depend&amp;gt;&amp;lt;/depend&amp;gt; &amp;lt;startargument&amp;gt;-b&amp;lt;/startargument&amp;gt; &amp;lt;startargument&amp;gt;127.0.0.1:9123&amp;lt;/startargument&amp;gt; &amp;lt;startargument&amp;gt;-c&amp;lt;/startargument&amp;gt; &amp;lt;startargument&amp;gt;C:\php\php.ini&amp;lt;/startargument&amp;gt; &amp;lt;/service&amp;gt; 以管理员身份打开cmd，运行
-cd \c:\svc\php php-service.exe install 修改nginx.conf
-worker_processes 1; events { worker_connections 1024; } http { include mime.types; default_type application/octet-stream; sendfile on; keepalive_timeout 65; server { listen 80; server_name localhost; location / { root html; index index.</description>
+      <description>&lt;h3 id=&#34;环境准备&#34;&gt;环境准备&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://nginx.org/download/nginx-1.16.1.zip&#34;&gt;Nginx&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://windows.php.net/downloads/releases/php-7.4.1-Win32-vc15-x64.zip&#34;&gt;php&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/kohsuke/winsw/releases/download/winsw-v2.3.0/WinSW.NET4.exe&#34;&gt;winsw&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装ngixn服务&#34;&gt;&lt;strong&gt;安装Ngixn服务&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;把下载的winsw放入ngixn安装文件夹，重命名为&lt;code&gt;nginx-service.exe&lt;/code&gt;,新建&lt;code&gt;nginx-service.xml&lt;/code&gt;,写入配置&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;service&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;nginxsvc&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;name&amp;gt;&lt;/span&gt;Nginx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;Nginx Web Server service.&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;executable&amp;gt;&lt;/span&gt;c:\nginx\nginx.exe&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/executable&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;logpath&amp;gt;&lt;/span&gt;c:\nginx\logs\&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/logpath&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;logmode&amp;gt;&lt;/span&gt;roll&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/logmode&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;depend&amp;gt;&lt;/span&gt;phpsvc&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/depend&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;-p&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;c:\nginx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stopexecutable&amp;gt;&lt;/span&gt;c:\nginx\nginx.exe&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stopexecutable&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stopargument&amp;gt;&lt;/span&gt;-p&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stopargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stopargument&amp;gt;&lt;/span&gt;c:\nginx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stopargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stopargument&amp;gt;&lt;/span&gt;-s&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stopargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stopargument&amp;gt;&lt;/span&gt;stop&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stopargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/service&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以管理员身份打开cmd，运行&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd \c:\svc\nginx
+nginx-service.exe install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;安装PHP服务&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;winsw改为&lt;code&gt;php-service.exe&lt;/code&gt;,放入php安装文件夹，写入配置&lt;code&gt;php-service.xml&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;service&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;phpsvc&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;name&amp;gt;&lt;/span&gt;PHP&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;PHP-FCGI service.&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;executable&amp;gt;&lt;/span&gt;c:\php\php-cgi.exe&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/executable&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;logpath&amp;gt;&lt;/span&gt;c:\php\logs\&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/logpath&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;logmode&amp;gt;&lt;/span&gt;roll&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/logmode&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;depend&amp;gt;&amp;lt;/depend&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;-b&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;127.0.0.1:9123&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;-c&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;C:\php\php.ini&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/service&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以管理员身份打开cmd，运行&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd \c:\svc\php
+php-service.exe install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改&lt;code&gt;nginx.conf&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+    keepalive_timeout  65;
+
+    server {
+        listen       80;
+        server_name  localhost;
+
+        location / {
+            root   html;
+            index  index.php index.html index.htm;
+        }
+
+        location ~ \.php$ {
+            fastcgi_pass   127.0.0.1:9123;
+            fastcgi_index  index.php;
+            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+            include        fastcgi_params;
+        }
+
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -125,7 +712,8 @@ worker_processes 1; events { worker_connections 1024; } http { include mime.type
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://twor.me/about/</guid>
-      <description>Twor </description>
+      <description>&lt;h1 id=&#34;twor&#34;&gt;Twor&lt;/h1&gt;
+</description>
     </item>
     
   </channel>

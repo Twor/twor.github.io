@@ -1,0 +1,498 @@
+<head>
+    <meta charset="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Twor</title>
+
+    
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/prism.css">
+    <link type="text/css" rel="stylesheet" href="/css/zoom.css">
+    <link type="text/css" rel="stylesheet" href="/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/css/all.css">
+
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="logo">
+                    <div class="header-logo">
+                        
+                        
+                        
+                        <a id="btn-menu" href="javascript:isMenu()">
+
+                            
+                            <span class="bars"><i class="fas fa-chevron-right"></i></i></span>
+                            
+                        </a>
+                        <a href="javascript:isMenu1();">
+                            
+                            <span id="menu-1" class="bf"><i class="fas fa-bars"></i></span>
+                            
+                        </a>
+                        <a href="/index.xml">
+                            
+                            <span id="menu-2" class="bf"><i class="fas fa-rss"></i></span>
+                            
+                        </a>
+
+                        <a href="javascript:isMenu3();">
+                            
+                            <span id="menu-3" class="bf"><i class="fas fa-search"></i></span>
+                            
+                        </a>
+                    </div>
+                    <div id="menu-page">
+                        <a href="/">
+                            <li>博文</li>
+                        </a><a href="/about">
+                            <li>关于</li>
+                        </a>
+                    </div>
+                    <div id="search-box">
+                        <input type="text" name="s" id="menu-search" class="inputValue" placeholder="Type something~" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><div class="container-fluid">
+    <div class="row">
+        <div id="main" class="col-12 clearfix" role="main">
+            <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                <h1 style="text-align:right;" class="post-title" itemprop="name headline">go 安装与配置和常用命令</h1>
+                <div class="post-content" itemprop="articleBody">
+                    <h1 id="go-安装与配置">go 安装与配置</h1>
+<h3 id="安装">安装</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S go
+</span></span></code></pre></div><p><em>也可以使用<a href="https://github.com/owenthereal/goup">goup</a>安装器安装</em></p>
+<h3 id="配置">配置</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#编辑 env 文件</span>
+</span></span><span style="display:flex;"><span>vim .config/go/env
+</span></span></code></pre></div><p>添加下面内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-env" data-lang="env"><span style="display:flex;"><span>GO111MODULE<span style="color:#f92672">=</span>on                                              <span style="color:#75715e">#开启gomod</span>
+</span></span><span style="display:flex;"><span>GOPATH<span style="color:#f92672">=</span>/angus/Go                                            <span style="color:#75715e">#设置gopath</span>
+</span></span><span style="display:flex;"><span>GOPROXY<span style="color:#f92672">=</span>https://goproxy.cn,direct            <span style="color:#75715e">#设置goproxy(代理源)</span>
+</span></span></code></pre></div><p>查看环境变量</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go env
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看gomod gopath goproxy是否设置正确</span>
+</span></span></code></pre></div><h4 id="gopath">gopath</h4>
+<p>GOPATH 是 Go语言中使用的一个环境变量，它使用绝对路径提供项目的工作目录，所下载的包都保留在gopath指向的目录</p>
+<h4 id="goproxy源">goproxy源</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. 七牛 CDN</span>
+</span></span><span style="display:flex;"><span>go env -w  GOPROXY<span style="color:#f92672">=</span>https://goproxy.cn,direct
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. 阿里云</span>
+</span></span><span style="display:flex;"><span>go env -w GOPROXY<span style="color:#f92672">=</span>https://mirrors.aliyun.com/goproxy/,direct
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. 官方</span>
+</span></span><span style="display:flex;"><span>go env -w  GOPROXY<span style="color:#f92672">=</span>https://goproxy.io,direct
+</span></span></code></pre></div><h3 id="常用命令">常用命令</h3>
+<ul>
+<li>包管理</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go mod init                           <span style="color:#75715e"># 初始化包管理配置，这一步会在module根目录下生成go.mod文件</span>
+</span></span><span style="display:flex;"><span>go mod tidy                           <span style="color:#75715e"># 更新包管理配置go.mod(去掉无用module, 新增必要module)</span>
+</span></span><span style="display:flex;"><span>go get -u github.com/hashicorp/memberlist         <span style="color:#75715e"># 添加包依赖</span>
+</span></span><span style="display:flex;"><span>go mod edit -replace github.com/hashicorp/memberlist <span style="color:#f92672">=</span>&gt; github.com/pilosa/memberlist@v0.1.4-0.20190415211605-f6512523c021                     <span style="color:#75715e"># 替换依赖库。但是module中的代码扔可以原依赖库的方式使用新依赖库。</span>
+</span></span></code></pre></div><ul>
+<li>编译</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go build                                <span style="color:#75715e"># 编译当前目录所在package</span>
+</span></span><span style="display:flex;"><span>go build -o &lt;bin&gt; main.go       <span style="color:#75715e"># 编译代码并指定输出二进制文件</span>
+</span></span><span style="display:flex;"><span>go build -gcflags <span style="color:#e6db74">&#34;-N -l&#34;</span> main.go      <span style="color:#75715e"># 编译时关闭内联优化</span>
+</span></span><span style="display:flex;"><span>go clean        <span style="color:#75715e">#删除编译生成的可执行文件</span>
+</span></span></code></pre></div><ul>
+<li>测试</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 读取源码目录下面名为 *_test.go 的文件，生成并运行测试用的可执行文件</span>
+</span></span><span style="display:flex;"><span>go test ./...                      <span style="color:#75715e"># 运行module下所有单测。一个module对应一个go.mod文件</span>
+</span></span><span style="display:flex;"><span>go test .                         <span style="color:#75715e"># 运行package下所有单测。一个package对应一个目录</span>
+</span></span><span style="display:flex;"><span>go test -v .            <span style="color:#75715e"># 添加verbose信息，会输出日志等信息</span>
+</span></span><span style="display:flex;"><span>go test -run<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>&lt;regexp&gt; <span style="color:#e6db74">`</span>.          <span style="color:#75715e"># 运行符合正则表达式的的单测</span>
+</span></span><span style="display:flex;"><span>go test -bench -run<span style="color:#f92672">=</span>None           <span style="color:#75715e"># 运行基准测试</span>
+</span></span></code></pre></div><ul>
+<li>调试</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 需要安装dlv go install github.com/go-delve/delve/cmd/dlv@latest</span>
+</span></span><span style="display:flex;"><span>dlv exec &lt;bin&gt; -- arg1 arg2 ...      <span style="color:#75715e"># 调试运行binary文件</span>
+</span></span><span style="display:flex;"><span>dlv test .            <span style="color:#75715e"># 调试当前module的测试代码</span>
+</span></span><span style="display:flex;"><span>dlv attach &lt;pid&gt;         <span style="color:#75715e"># 调试正在运行的进程</span>
+</span></span><span style="display:flex;"><span>dlv core <span style="color:#e6db74">`</span>&lt;bin&gt;<span style="color:#e6db74">`</span> <span style="color:#e6db74">`</span>&lt;core&gt;<span style="color:#e6db74">`</span>    <span style="color:#75715e"># 调试core文件</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 远程调试</span>
+</span></span><span style="display:flex;"><span>dlv attach &lt;pid&gt; --headless --api-version<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --log --listen<span style="color:#f92672">=</span>:8181  <span style="color:#75715e">## server端</span>
+</span></span><span style="display:flex;"><span>dlv connect &lt;server_host&gt;:8181           <span style="color:#75715e">## client端</span>
+</span></span></code></pre></div><ul>
+<li>调优</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go tool pprof http://host:port/debug/pprof/profile  <span style="color:#75715e"># 通过net/http/pprof采集profile并下载到本地</span>
+</span></span><span style="display:flex;"><span>go tool pprof -&lt;host&gt;:&lt;port&gt; &lt;profile_file&gt;         <span style="color:#75715e"># 通过浏览器查看profile.</span>
+</span></span></code></pre></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+    
+          <div
+            id="page-scrollspy" class="toc-nav">
+
+            <li class="nav-item pb-3 catalog">
+                <span class="font-weight-bold mb-2">- CATALOG - </span>
+            </li>
+
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#go-%e5%ae%89%e8%a3%85%e4%b8%8e%e9%85%8d%e7%bd%ae">
+                        go 安装与配置
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%ae%89%e8%a3%85">
+                        安装
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e9%85%8d%e7%bd%ae">
+                        配置
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#gopath">
+                        gopath
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#goproxy%e6%ba%90">
+                        goproxy源
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4">
+                        常用命令
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            </div>
+            
+
+            </div>
+            
+            
+<script src="https://utteranc.es/client.js" repo="Twor/blog-comment"
+    issue-term="pathname" theme="github-light" crossorigin="anonymous"
+    async>
+    </script>
+<footer id="footer" role="contentinfo">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                &copy; 2022 <a href="https://twor.me/">Twor
+                </a>.
+                <a target="_blank" href="https://gohugo.io">Hugo</a> & <a target="_blank"
+                    href="https://github.com/Twor/hugo-angus">Angus</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/prism.js"></script>
+<script src="/js/zoom-vanilla.min.js"></script>
+<script src="/js/fuse.js"></script> 
+<script src="/js/search.js"></script>
+<script>
+    var str = "TW|OR".split('').reverse().join('');
+    for (i = 0; i < str.length; i++) {
+        if (str.charAt(i) == '|') {
+            $('<a href="https:\/\/twor.me\/"><span class="w">' + str.charAt(i) + '</span></a>').prependTo($(".header-logo"));
+        } else {
+            $('<span class="b">' + str.charAt(i) + '</span>').prependTo($(".header-logo"));
+        }
+
+    }
+    ""
+    var b = document.getElementsByClassName('b');
+    var w = document.getElementsByClassName('w');
+    var menupgMargin = (b.length + w.length + 1) * 28;
+    var srhboxMargin = (b.length + w.length + 4) * 28;
+    var menusrhWidth = (b.length + w.length - 1) * 28;
+    document.getElementById('menu-page').style['margin-left'] = menupgMargin + 'px';
+    document.getElementById('search-box').style['margin-left'] = srhboxMargin + 'px';
+    document.getElementById('menu-search').style['width'] = menusrhWidth + 'px';
+    if (menusrhWidth < 140) {
+        document.getElementById('menu-search').setAttribute('placeholder', 'Search~');
+    }
+    ""
+
+    $(document).ready(function () {
+        $("#menu-search").keydown(function (e) {
+            if (e.keyCode == 13) {
+                var searchString = $("#menu-search").val();
+                var url = "https:\/\/twor.me\/" + "search?s=" + searchString;
+                window.location.href = url;
+            }
+        });
+    });
+
+    function isMenu() {
+        if (document.getElementById('menu-1').style.display == 'inline') {
+            $('#search-box').fadeOut(200);
+            $('#menu-page').fadeOut(200);
+            $('#menu-1').fadeOut(500);
+            $('#menu-2').fadeOut(400);
+            $('#menu-3').fadeOut(300);
+        } else {
+            $('#menu-1').fadeIn(150);
+            $('#menu-2').fadeIn(150);
+            $('#menu-3').fadeIn(150);
+        }
+    }
+
+    function isMenu1() {
+        if (document.getElementById('menu-page').style.display == 'block') {
+            $('#menu-page').fadeOut(400);
+        } else {
+            $('#menu-page').fadeIn(400);
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    function isMenu3() {
+        if (document.getElementById('search-box').style.display == 'block') {
+            $('#search-box').fadeOut(400);
+        } else {
+            $('#search-box').fadeIn(400);
+        }
+    }
+
+    function Search404() {
+        $('#menu-1').fadeIn(150);
+        $('#menu-2').fadeIn(150);
+        $('#menu-3').fadeIn(150);
+        $('#search-box').fadeIn(300);
+    }
+
+
+
+    
+
+    function footerPosition() {
+        $("footer").removeClass("fixed-bottom");
+        var contentHeight = document.body.scrollHeight,
+            winHeight = window.innerHeight;
+        if (document.getElementsByClassName("post-content")[0]) {
+            var winImgNum = document.getElementsByClassName("post-content")[0].getElementsByTagName("img").length;
+        } else {
+            var winImgNum = 0;
+        }
+        if (!(contentHeight > winHeight) && winImgNum == 0) {
+            $("footer").addClass("fixed-bottom");
+        }
+    }
+    footerPosition();
+    $(window).resize(footerPosition);
+</script>
+<script>
+
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+</script>
+
+</body>
+
+</html>

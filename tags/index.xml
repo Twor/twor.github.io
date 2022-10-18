@@ -6,11 +6,20 @@
     <description>Recent content in Tags on Twor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 Oct 2022 16:29:35 +0800</lastBuildDate><atom:link href="https://twor.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Jun 2022 17:52:20 +0800</lastBuildDate><atom:link href="https://twor.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go</title>
+      <link>https://twor.me/tags/go/</link>
+      <pubDate>Sat, 18 Jun 2022 17:52:20 +0800</pubDate>
+      
+      <guid>https://twor.me/tags/go/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Linux</title>
       <link>https://twor.me/tags/linux/</link>
-      <pubDate>Sat, 08 Oct 2022 16:29:35 +0800</pubDate>
+      <pubDate>Sun, 08 May 2022 16:29:35 +0800</pubDate>
       
       <guid>https://twor.me/tags/linux/</guid>
       <description></description>

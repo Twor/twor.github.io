@@ -7,15 +7,90 @@
     <description>Recent content on Twor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 Oct 2022 16:29:35 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jun 2022 17:52:20 +0800</lastBuildDate>
     
         <atom:link href="https://twor.me/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>go 安装与配置和常用命令</title>
+      <link>https://twor.me/posts/go_note/</link>
+      <pubDate>Sat, 18 Jun 2022 17:52:20 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/go_note/</guid>
+      <description>&lt;h1 id=&#34;go-安装与配置&#34;&gt;go 安装与配置&lt;/h1&gt;
+&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -S go
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;也可以使用&lt;a href=&#34;https://github.com/owenthereal/goup&#34;&gt;goup&lt;/a&gt;安装器安装&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置&#34;&gt;配置&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#编辑 env 文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim .config/go/env
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;添加下面内容&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-env&#34; data-lang=&#34;env&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GO111MODULE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;on                                              &lt;span style=&#34;color:#75715e&#34;&gt;#开启gomod&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GOPATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/angus/Go                                            &lt;span style=&#34;color:#75715e&#34;&gt;#设置gopath&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GOPROXY&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;https://goproxy.cn,direct            &lt;span style=&#34;color:#75715e&#34;&gt;#设置goproxy(代理源)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看环境变量&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go env
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 查看gomod gopath goproxy是否设置正确&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;gopath&#34;&gt;gopath&lt;/h4&gt;
+&lt;p&gt;GOPATH 是 Go语言中使用的一个环境变量，它使用绝对路径提供项目的工作目录，所下载的包都保留在gopath指向的目录&lt;/p&gt;
+&lt;h4 id=&#34;goproxy源&#34;&gt;goproxy源&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 1. 七牛 CDN&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go env -w  GOPROXY&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;https://goproxy.cn,direct
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 2. 阿里云&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go env -w GOPROXY&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;https://mirrors.aliyun.com/goproxy/,direct
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 3. 官方&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go env -w  GOPROXY&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;https://goproxy.io,direct
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;常用命令&#34;&gt;常用命令&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;包管理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go mod init                           &lt;span style=&#34;color:#75715e&#34;&gt;# 初始化包管理配置，这一步会在module根目录下生成go.mod文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go mod tidy                           &lt;span style=&#34;color:#75715e&#34;&gt;# 更新包管理配置go.mod(去掉无用module, 新增必要module)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go get -u github.com/hashicorp/memberlist         &lt;span style=&#34;color:#75715e&#34;&gt;# 添加包依赖&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go mod edit -replace github.com/hashicorp/memberlist &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&amp;gt; github.com/pilosa/memberlist@v0.1.4-0.20190415211605-f6512523c021                     &lt;span style=&#34;color:#75715e&#34;&gt;# 替换依赖库。但是module中的代码扔可以原依赖库的方式使用新依赖库。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;编译&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go build                                &lt;span style=&#34;color:#75715e&#34;&gt;# 编译当前目录所在package&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go build -o &amp;lt;bin&amp;gt; main.go       &lt;span style=&#34;color:#75715e&#34;&gt;# 编译代码并指定输出二进制文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go build -gcflags &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-N -l&amp;#34;&lt;/span&gt; main.go      &lt;span style=&#34;color:#75715e&#34;&gt;# 编译时关闭内联优化&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go clean        &lt;span style=&#34;color:#75715e&#34;&gt;#删除编译生成的可执行文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;测试&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 读取源码目录下面名为 *_test.go 的文件，生成并运行测试用的可执行文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go test ./...                      &lt;span style=&#34;color:#75715e&#34;&gt;# 运行module下所有单测。一个module对应一个go.mod文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go test .                         &lt;span style=&#34;color:#75715e&#34;&gt;# 运行package下所有单测。一个package对应一个目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go test -v .            &lt;span style=&#34;color:#75715e&#34;&gt;# 添加verbose信息，会输出日志等信息&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go test -run&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;&amp;lt;regexp&amp;gt; &lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;.          &lt;span style=&#34;color:#75715e&#34;&gt;# 运行符合正则表达式的的单测&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go test -bench -run&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;None           &lt;span style=&#34;color:#75715e&#34;&gt;# 运行基准测试&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;调试&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 需要安装dlv go install github.com/go-delve/delve/cmd/dlv@latest&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dlv exec &amp;lt;bin&amp;gt; -- arg1 arg2 ...      &lt;span style=&#34;color:#75715e&#34;&gt;# 调试运行binary文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dlv test .            &lt;span style=&#34;color:#75715e&#34;&gt;# 调试当前module的测试代码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dlv attach &amp;lt;pid&amp;gt;         &lt;span style=&#34;color:#75715e&#34;&gt;# 调试正在运行的进程&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dlv core &lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;&amp;lt;bin&amp;gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;&amp;lt;core&amp;gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# 调试core文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 远程调试&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dlv attach &amp;lt;pid&amp;gt; --headless --api-version&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; --log --listen&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;:8181  &lt;span style=&#34;color:#75715e&#34;&gt;## server端&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dlv connect &amp;lt;server_host&amp;gt;:8181           &lt;span style=&#34;color:#75715e&#34;&gt;## client端&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;调优&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go tool pprof http://host:port/debug/pprof/profile  &lt;span style=&#34;color:#75715e&#34;&gt;# 通过net/http/pprof采集profile并下载到本地&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go tool pprof -&amp;lt;host&amp;gt;:&amp;lt;port&amp;gt; &amp;lt;profile_file&amp;gt;         &lt;span style=&#34;color:#75715e&#34;&gt;# 通过浏览器查看profile.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
       <title>我的 Linux 软件清单</title>
       <link>https://twor.me/posts/linux_apps/</link>
-      <pubDate>Sat, 08 Oct 2022 16:29:35 +0800</pubDate>
+      <pubDate>Sun, 08 May 2022 16:29:35 +0800</pubDate>
       
       <guid>https://twor.me/posts/linux_apps/</guid>
       <description>&lt;h4 id=&#34;nautilus&#34;&gt;Nautilus&lt;/h4&gt;

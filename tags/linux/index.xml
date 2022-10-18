@@ -6,7 +6,49 @@
     <description>Recent content in Linux on Twor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Mar 2021 23:58:53 +0800</lastBuildDate><atom:link href="https://twor.me/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Oct 2022 16:29:35 +0800</lastBuildDate><atom:link href="https://twor.me/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我的 Linux 软件清单</title>
+      <link>https://twor.me/posts/linux_apps/</link>
+      <pubDate>Sat, 08 Oct 2022 16:29:35 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/linux_apps/</guid>
+      <description>Nautilus 它是GNOME的文件管理器。比较好用，简洁图形化操作
+ranger Ranger是具有VI键绑定的控制台文件管理器
+obs-studio OBS Studio是为高效捕获，合成，编码，记录和流传输视频内容而设计的软件。
+feh 快速轻巧的图像查看器
+vim 编辑器
+vscode 微软出品的代码编辑器
+musicbox 网易云音乐命令行版本
+simplenote 笔记本
+https://aur.archlinux.org/packages/notion-app/
+fcitx5-rime 中文输入法
+i3-gaps 平铺窗口管理器
+clash 代理/翻墙
+mpv 视频播放器
+rofi Rofi：窗口切换器，应用程序启动器和dmenu替换
+chromium 浏览器
+dunst 轻量级和可自定义的通知守护程序
+indicator-stickynotes 指标便利贴：适用于Ubuntu桌面的便利贴
+drawing 一个画图小工具
+termite 以键盘为中心的基于VTE的终端，旨在在窗口管理器中使用，支持平铺和/或跳格。
+zsh 很好用的一个shll
+oh-my-zsh 社区驱动的框架，用于管理zsh配置。
+fzf 命令行模糊查找器
+Nordic-darker Gtk3.20 +主题
+ePapirus Linux的Papirus图标主题
+Citrus-purple-dark Linux桌面图标主题
+Cantarell 很好看的字体
+Cascadia Code 写代码和终端用的字体
+polybar 快速且易于使用的状态栏
+picom X11的窗口修改器
+picom-tryone-git picom的修改版，具有模糊效果
+lxappearance-gtk3 LXDE桌面的功能丰富的GTK +主题切换器
+https://www.archlinux.org/packages/community/x86_64/lxappearance/
+translate-shell 终端翻译工具，可以发音
+scrcpy 连接控制手机</description>
+    </item>
+    
     <item>
       <title>ArchLinux 触摸板手势调教</title>
       <link>https://twor.me/posts/archlinux_gesture/</link>
@@ -24,6 +66,17 @@ sudo pacman -S libinput-gestures libinput-gestures的文档中说了：必须是
     </item>
     
     <item>
+      <title>我的Windows终端配置</title>
+      <link>https://twor.me/posts/windows_terminal/</link>
+      <pubDate>Tue, 18 Aug 2020 16:24:27 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/windows_terminal/</guid>
+      <description>安装Git 下载
+配置主题 打开 Git Bash
+$ git clone xxxx $ cd xxxx $ cp .minttyrc ~ &amp;amp;&amp;amp; cp git-prompt.sh /etc/profile.d 安装 Tmux $ git clone https://github.com/hongwenjun/tmux_for_windows.git $ cd tmux_for_windows/ $ unzip -x tmux_for_git-bash.zip -d / tmux 启用鼠标操作 .tmux.conf 设定 # https://www.youtube.com/watch?v=xTplsyQaGFs # tmux 启用鼠标操作 setw -g mouse set-option -g history-limit 20000 set-option -g mouse on bind -n WheelUpPane select-pane -t= \; copy-mode -e \; send-keys -M bind -n WheelDownPane select-pane -t= \; send-keys -M 安装 wget 和 tree 命令 $ cp tools/* /usr/bin 其它 在 VSCode 中配置 Git Bash 在 VSCode 中使用 Git Bash 只需要在 Settings.</description>
+    </item>
+    
+    <item>
       <title>Linux上优雅的控制手机(水群)</title>
       <link>https://twor.me/posts/linux_android/</link>
       <pubDate>Sat, 07 Mar 2020 13:58:53 +0800</pubDate>
@@ -34,6 +87,15 @@ sudo pacman -S libinput-gestures libinput-gestures的文档中说了：必须是
 $ adb devices * daemon not running; starting now at tcp:5037 * daemon started successfully List of devices attached 4dcb9ad5	no permissions; see [http://developer.android.com/tools/device.html] 连接控制手机 $ sudo -b scrcpy -s 4dcb9ad5 --turn-screen-off ## 在后台并让手机保持熄屏运行 --turn-screen-off 让手机保持熄屏状态 如果不出意外，你的电脑应该可以直接显示和控制你的手机，但是这样手机就没法离电脑太远，如果你想要自由活动，往下看。
 保持手机和电脑在同一局域网，使用 adb tcpip 5555 命令。如果出现错误请打开 网络ADB调试 和 开启USB文件传输模式
 $ adb tcpip 5555 ## 如果出现下面错误，请打开 网络ADB调试 和 开启USB文件传输模式 error: insufficient permissions for device See [http://developer.</description>
+    </item>
+    
+    <item>
+      <title>linux 编译安装php</title>
+      <link>https://twor.me/posts/linux_build_php/</link>
+      <pubDate>Mon, 20 Jan 2020 16:41:18 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/linux_build_php/</guid>
+      <description>sudo pacman -Syu sudo pacman -S wget #自己指定版本下载 wget http://php.net/distributions/php-7.1.23.tar.gz tar xvf php-7.1.23.tar.gz cd php-7.1.23 sudo pacman -S gcc make bison gawk re2c libxml2 libwebp freetype2 c-client libmcrypt libxslt ./configure --prefix=/opt/php --with-config-file-path=/opt/php/etc --with-zlib-dir --with-freetype-dir --enable-mbstring --with-libxml-dir=/usr --enable-soap --enable-calendar --with-curl --with-mcrypt --with-zlib --with-gd --disable-rpath --enable-inline-optimization --with-bz2 --with-zlib --enable-sockets --enable-sysvsem --enable-sysvshm --enable-pcntl --enable-mbregex --enable-exif --enable-bcmath --with-mhash --enable-zip --with-pcre-regex --with-pdo-mysql --with-mysqli --with-mysql-sock=/var/run/mysqld/mysqld.sock --with-jpeg-dir=/usr --with-png-dir=/usr --enable-gd-native-ttf --with-openssl --with-fpm-user=http --with-fpm-group=http --enable-ftp --with-imap --with-imap-ssl --with-kerberos --with-gettext --with-xmlrpc --with-xsl --enable-opcache --enable-fpm # 最后 make &amp;amp;&amp;amp; sudo make install 如果出现 error: freetype-config not found.</description>
     </item>
     
     <item>
@@ -64,24 +126,6 @@ $ git remote -v origin git@github.com:*/flutter.git (fetch) origin git@github.co
     </item>
     
     <item>
-      <title>WSL(Windows Subsystem for Linux)安装archlinux，并配置图形化界面</title>
-      <link>https://twor.me/posts/wsl_archlinux_gui/</link>
-      <pubDate>Wed, 05 Jun 2019 13:58:53 +0800</pubDate>
-      
-      <guid>https://twor.me/posts/wsl_archlinux_gui/</guid>
-      <description>开启wsl Windows功能 &amp;raquo; 勾选适用于Linux的Windows子系统 ，重启生效。
-下载安装 Arch WSL 这里是作者的安装教程：https://github.com/yuk7/ArchWSL/wiki
-我选择的是传统方式安装 (不使用 AppX 方式)：
-在 Release 下载最新版的 Arch.zip 解压到 C 盘根目录，(一定要在 C 盘，其他位置也可以)，但是你要有该目录的读写权限，所以不能放到 Program Files 等目录中。 双击解压好的 Arch.exe 进行安装，这个 .exe 的名字 就是要创建的 WSL 实例的名字，改不同的名字就能创建多个 Arch WSL。 安装好之后，进行配置。
-Arch Linux 软件仓库国内镜像 编辑 /etc/pacman.d/mirrorlist，里面有注释了的 China 的镜像，（放在上面优先级高）
-然后更新软件包缓存，执行： pacman -Syyu
-其他跟镜像有关的可以看这里：https://wiki.archlinux.org/index.php/Mirrors_(简体中文)
-添加 ArchlinuxCN 源 Arch Linux 中文社区仓库 是由 Arch Linux 中文社区驱动的非官方用户仓库。包含中文用户常用软件、工具、字体 / 美化包等。官方仓库地址：http://repo.archlinuxcn.org
-使用方法：在 /etc/pacman.conf 文件末尾添加以下两行：
-[archlinuxcn] Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch 之后安装 archlinuxcn-keyring 包导入 GPG key:</description>
-    </item>
-    
-    <item>
       <title>Git 自动化部署网站</title>
       <link>https://twor.me/posts/git_auto_web/</link>
       <pubDate>Wed, 05 Jun 2019 09:58:53 +0800</pubDate>
@@ -95,7 +139,7 @@ $ cd /srv/git $ mkdir project.git $ cd project.git $ git init --bare Initialized
     <item>
       <title>Windows上安装ngixn php并添加服务自启动</title>
       <link>https://twor.me/posts/windows_nginx_php/</link>
-      <pubDate>Tue, 05 Mar 2019 13:58:53 +0800</pubDate>
+      <pubDate>Sun, 05 May 2019 13:58:53 +0800</pubDate>
       
       <guid>https://twor.me/posts/windows_nginx_php/</guid>
       <description>环境准备 Nginx
@@ -108,6 +152,24 @@ winsw改为php-service.exe,放入php安装文件夹，写入配置php-service.xm
 &amp;lt;service&amp;gt; &amp;lt;id&amp;gt;phpsvc&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;PHP&amp;lt;/name&amp;gt; &amp;lt;description&amp;gt;PHP-FCGI service.&amp;lt;/description&amp;gt; &amp;lt;executable&amp;gt;c:\php\php-cgi.exe&amp;lt;/executable&amp;gt; &amp;lt;logpath&amp;gt;c:\php\logs\&amp;lt;/logpath&amp;gt; &amp;lt;logmode&amp;gt;roll&amp;lt;/logmode&amp;gt; &amp;lt;depend&amp;gt;&amp;lt;/depend&amp;gt; &amp;lt;startargument&amp;gt;-b&amp;lt;/startargument&amp;gt; &amp;lt;startargument&amp;gt;127.0.0.1:9123&amp;lt;/startargument&amp;gt; &amp;lt;startargument&amp;gt;-c&amp;lt;/startargument&amp;gt; &amp;lt;startargument&amp;gt;C:\php\php.ini&amp;lt;/startargument&amp;gt; &amp;lt;/service&amp;gt; 以管理员身份打开cmd，运行
 cd \c:\svc\php php-service.exe install 修改nginx.conf
 worker_processes 1; events { worker_connections 1024; } http { include mime.types; default_type application/octet-stream; sendfile on; keepalive_timeout 65; server { listen 80; server_name localhost; location / { root html; index index.</description>
+    </item>
+    
+    <item>
+      <title>WSL(Windows Subsystem for Linux)安装archlinux，并配置图形化界面</title>
+      <link>https://twor.me/posts/wsl_archlinux_gui/</link>
+      <pubDate>Tue, 05 Mar 2019 13:58:53 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/wsl_archlinux_gui/</guid>
+      <description>开启wsl Windows功能 &amp;raquo; 勾选适用于Linux的Windows子系统 ，重启生效。
+下载安装 Arch WSL 这里是作者的安装教程：https://github.com/yuk7/ArchWSL/wiki
+我选择的是传统方式安装 (不使用 AppX 方式)：
+在 Release 下载最新版的 Arch.zip 解压到 C 盘根目录，(一定要在 C 盘，其他位置也可以)，但是你要有该目录的读写权限，所以不能放到 Program Files 等目录中。 双击解压好的 Arch.exe 进行安装，这个 .exe 的名字 就是要创建的 WSL 实例的名字，改不同的名字就能创建多个 Arch WSL。 安装好之后，进行配置。
+Arch Linux 软件仓库国内镜像 编辑 /etc/pacman.d/mirrorlist，里面有注释了的 China 的镜像，（放在上面优先级高）
+然后更新软件包缓存，执行： pacman -Syyu
+其他跟镜像有关的可以看这里：https://wiki.archlinux.org/index.php/Mirrors_(简体中文)
+添加 ArchlinuxCN 源 Arch Linux 中文社区仓库 是由 Arch Linux 中文社区驱动的非官方用户仓库。包含中文用户常用软件、工具、字体 / 美化包等。官方仓库地址：http://repo.archlinuxcn.org
+使用方法：在 /etc/pacman.conf 文件末尾添加以下两行：
+[archlinuxcn] Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch 之后安装 archlinuxcn-keyring 包导入 GPG key:</description>
     </item>
     
   </channel>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker.PHP on Twor</title>
+    <link>https://twor.me/tags/docker.php/</link>
+    <description>Recent content in Docker.PHP on Twor</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Oct 2019 16:32:25 +0800</lastBuildDate><atom:link href="https://twor.me/tags/docker.php/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker：宿主机Nginx访问docker中的php</title>
+      <link>https://twor.me/posts/docker_php/</link>
+      <pubDate>Fri, 18 Oct 2019 16:32:25 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/docker_php/</guid>
+      <description>使用宿主机nginx搭配docker多版本php。
+docker 镜像获取 docker pull php:7.1-fpm 创建容器 docker run -d --name php -p 9056:9000 -v /srv/http:/var/www/html --privileged=true php:7.1-fpm #参数说明： -name php 容器名称为 `php` -p 9056:9000 宿主机的9056端口映射到容器的9000端口 -v /srv/http:/var/www/html 宿主机的 `/srv/http` 目录挂载到容器的 `/var/www/html` 目录下 宿主机Nginx 配置 server { listen 10064; set $base /var/www/html/member-benefits; root $base/backend/public; add_header X-Frame-Options &amp;#34;SAMEORIGIN&amp;#34;; add_header X-XSS-Protection &amp;#34;1; mode=block&amp;#34;; add_header X-Content-Type-Options &amp;#34;nosniff&amp;#34;; charset utf-8; index index.html index.htm index.php; location / { if (!-e $request_filename) { rewrite ^(.*)$ /index.php?s=/$1 last; } } location = /favicon.</description>
+    </item>
+    
+  </channel>
+</rss>

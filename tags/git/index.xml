@@ -36,5 +36,16 @@ $ vim .ssh/authorized_keys $ #写入SSH公匙 创建仓库 现在我们来为开
 $ cd /srv/git $ mkdir project.git $ cd project.git $ git init --bare Initialized empty Git repository in /srv/git/project.git/ 禁用git用户shell登录 需要注意的是，目前所有（获得授权的）开发者用户都能以系统用户 git 的身份登录服务器从而获得一个普通 shell。 如果你想对此加以限制，则需要修改 /etc/passwd 文件中（git 用户所对应）的 shell 值。</description>
     </item>
     
+    <item>
+      <title>git 笔记</title>
+      <link>https://twor.me/posts/git_note/</link>
+      <pubDate>Thu, 18 Oct 2018 16:49:37 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/git_note/</guid>
+      <description>设置用户信息 git config --global user.email &amp;#34;840833458@qq.com&amp;#34; //这是设置邮箱 git config --global user.name &amp;#34;Twor&amp;#34; //这是设置用户名 设置gitee ssh-keygen -t rsa -C &amp;#34;840833458@qq.com&amp;#34; //生成密钥 然后把生成在 用户文件夹 下 .ssh/xxxxx.pub 的文件内容复制到 gitee 添加ssh key 的地方
+ssh -T git@gitee.com //测试连接 Hi twor! You&amp;rsquo;ve successfully authenticated, but GITEE.COM does not provide shell access. //输出这样内容就表示成功了
+git 操作 git add . // 表示把所有修改和添加的内容添加到暂缓区 git commit -m &amp;#34;这是twor修改的东西&amp;#34; //表示提交暂缓区的内容并添加备注 git push origin master //推送提交到 远程 master 分支 git pull origin master //拉取远程 master 分支到本地 git将当前修改提交至其他分支 在没有进行commit之前可以进行一下操作</description>
+    </item>
+    
   </channel>
 </rss>

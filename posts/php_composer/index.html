@@ -1,0 +1,544 @@
+<head>
+    <meta charset="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Twor</title>
+
+    
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/prism.css">
+    <link type="text/css" rel="stylesheet" href="/css/zoom.css">
+    <link type="text/css" rel="stylesheet" href="/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/css/all.css">
+
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="logo">
+                    <div class="header-logo">
+                        
+                        
+                        
+                        <a id="btn-menu" href="javascript:isMenu()">
+
+                            
+                            <span class="bars"><i class="fas fa-chevron-right"></i></i></span>
+                            
+                        </a>
+                        <a href="javascript:isMenu1();">
+                            
+                            <span id="menu-1" class="bf"><i class="fas fa-bars"></i></span>
+                            
+                        </a>
+                        <a href="/index.xml">
+                            
+                            <span id="menu-2" class="bf"><i class="fas fa-rss"></i></span>
+                            
+                        </a>
+
+                        <a href="javascript:isMenu3();">
+                            
+                            <span id="menu-3" class="bf"><i class="fas fa-search"></i></span>
+                            
+                        </a>
+                    </div>
+                    <div id="menu-page">
+                        <a href="/">
+                            <li>博文</li>
+                        </a><a href="/about">
+                            <li>关于</li>
+                        </a>
+                    </div>
+                    <div id="search-box">
+                        <input type="text" name="s" id="menu-search" class="inputValue" placeholder="Type something~" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><div class="container-fluid">
+    <div class="row">
+        <div id="main" class="col-12 clearfix" role="main">
+            <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                <h1 style="text-align:right;" class="post-title" itemprop="name headline">Composer 基本使用</h1>
+                <div class="post-content" itemprop="articleBody">
+                    <h3 id="写在前面">写在前面</h3>
+<p>Composer 是 PHP 的一个依赖管理工具。它允许你申明项目所依赖的代码库，它会在你的项目中为你安装他们。</p>
+<p>Composer 不是一个包管理器。是的，它涉及 &ldquo;packages&rdquo; 和 &ldquo;libraries&rdquo;，但它在每个项目的基础上进行管理，在你项目的某个目录中（例如 vendor）进行安装。默认情况下它不会在全局安装任何东西。因此，这仅仅是一个依赖管理。</p>
+<p>运行 Composer 需要 PHP 5.3.2+ 以上版本。一些敏感的 PHP 设置和编译标志也是必须的，但对于任何不兼容项安装程序都会抛出警告。</p>
+<p>我们将从包的来源直接安装，而不是简单的下载 zip 文件，你需要 git 、 svn 或者 hg ，这取决于你载入的包所使用的版本管理系统</p>
+<h3 id="安装composer">安装Composer</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ curl -sS https://getcomposer.org/installer | php
+</span></span><span style="display:flex;"><span>$ sudo mv composer.phar /usr/local/bin/composer
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#archlinux</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#sudo pacman -S composer</span>
+</span></span></code></pre></div><h3 id="修改composer镜像源">修改Composer镜像源</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#中国全量镜像</span>
+</span></span><span style="display:flex;"><span>$ composer config -g repo.packagist composer https://packagist.phpcomposer.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#阿里云全量镜像</span>
+</span></span><span style="display:flex;"><span>$ composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#解除镜象</span>
+</span></span><span style="display:flex;"><span>$ composer config -g --unset repos.packagist
+</span></span></code></pre></div><h3 id="composer使用">Composer使用</h3>
+<h4 id="包的安装更新下载和依赖">包的安装、更新下载和依赖</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#如有 composer.lock 文件，直接安装，否则从 composer.json 安装最新扩展包和依赖；</span>
+</span></span><span style="display:flex;"><span>$ composer install
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#从 composer.json 安装最新扩展包和依赖；</span>
+</span></span><span style="display:flex;"><span>$ composer update
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#从 composer.json 或者对应包的配置，并更新到最新；</span>
+</span></span><span style="display:flex;"><span>$ composer update vendor/package
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#添加安装 new/package, 可以指定版本，如： composer require new/package ~2.5.</span>
+</span></span><span style="display:flex;"><span>$ composer require new/package
+</span></span></code></pre></div><h4 id="扩展包查找和查看">扩展包查找和查看</h4>
+<p>当我们需要找一个扩展包，可以去<code>packagist</code>官网查找</p>
+<p>官网：<a href="https://packagist.org/">https://packagist.org/</a></p>
+<p>或者使用命令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#查找扩展包 monolog</span>
+</span></span><span style="display:flex;"><span>$ composer search monolog
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#显示本地安装的扩展包</span>
+</span></span><span style="display:flex;"><span>$ composer show -i
+</span></span></code></pre></div><h4 id="其他常用命令">其他常用命令</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 查看show命令的帮助文档</span>
+</span></span><span style="display:flex;"><span>$ composer show -h
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#创建项目</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#如果该目录目前不存在，则会在安装过程中自动创建。也可以指定文件项目目录</span>
+</span></span><span style="display:flex;"><span>$ composer create-project doctrine/orm path 2.2.*
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#优化自动加载，安装包的时候可以同样使用--optimize-autoloader。</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#不加这一选项，你可能会发现20%到25%的性能损失。</span>
+</span></span><span style="display:flex;"><span>$ composer dump-autoload --optimize
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#全局安装</span>
+</span></span><span style="display:flex;"><span>$ composer global require fabpot/php-cs-fixer:dev-master
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#全局更新</span>
+</span></span><span style="display:flex;"><span>$ composer global update
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#依赖检测</span>
+</span></span><span style="display:flex;"><span>$ composer depends --link-type<span style="color:#f92672">=</span>require monolog/monolog
+</span></span></code></pre></div><h3 id="使用扩展包">使用扩展包</h3>
+<p>对于库的自动加载信息，Composer 生成了一个 <code>vendor/autoload.php</code> 文件。你可以简单的引入这个文件，你会得到一个免费的自动加载支持。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">require</span> <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/autoload.php&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Curl\Curl</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$curl <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Curl</span>();
+</span></span><span style="display:flex;"><span>$curl<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//...
+</span></span></span></code></pre></div><p>这使得你可以很容易的使用第三方代码。例如：如果你的项目依赖 Curl，你就可以像这样开始使用这个类库，并且他们将被自动加载。</p>
+<blockquote>
+<p>注意： Composer 提供了自己的 autoloader。如果你不想使用它，你可以仅仅引入 vendor/composer/autoload_*.php 文件，它返回一个关联数组，你可以通过这个关联数组配置自己的 autoloader。</p>
+</blockquote>
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+    
+          <div
+            id="page-scrollspy" class="toc-nav">
+
+            <li class="nav-item pb-3 catalog">
+                <span class="font-weight-bold mb-2">- CATALOG - </span>
+            </li>
+
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%86%99%e5%9c%a8%e5%89%8d%e9%9d%a2">
+                        写在前面
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%ae%89%e8%a3%85composer">
+                        安装Composer
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e4%bf%ae%e6%94%b9composer%e9%95%9c%e5%83%8f%e6%ba%90">
+                        修改Composer镜像源
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#composer%e4%bd%bf%e7%94%a8">
+                        Composer使用
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%8c%85%e7%9a%84%e5%ae%89%e8%a3%85%e6%9b%b4%e6%96%b0%e4%b8%8b%e8%bd%bd%e5%92%8c%e4%be%9d%e8%b5%96">
+                        包的安装、更新下载和依赖
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e6%89%a9%e5%b1%95%e5%8c%85%e6%9f%a5%e6%89%be%e5%92%8c%e6%9f%a5%e7%9c%8b">
+                        扩展包查找和查看
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%85%b6%e4%bb%96%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4">
+                        其他常用命令
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e4%bd%bf%e7%94%a8%e6%89%a9%e5%b1%95%e5%8c%85">
+                        使用扩展包
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            </div>
+            
+
+            </div>
+            
+            
+<script src="https://utteranc.es/client.js" repo="Twor/blog-comment"
+    issue-term="pathname" theme="github-light" crossorigin="anonymous"
+    async>
+    </script>
+<footer id="footer" role="contentinfo">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                &copy; 2022 <a href="https://twor.me/">Twor
+                </a>.
+                <a target="_blank" href="https://gohugo.io">Hugo</a> & <a target="_blank"
+                    href="https://github.com/Twor/hugo-angus">Angus</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/prism.js"></script>
+<script src="/js/zoom-vanilla.min.js"></script>
+<script src="/js/fuse.js"></script> 
+<script src="/js/search.js"></script>
+<script>
+    var str = "TW|OR".split('').reverse().join('');
+    for (i = 0; i < str.length; i++) {
+        if (str.charAt(i) == '|') {
+            $('<a href="https:\/\/twor.me\/"><span class="w">' + str.charAt(i) + '</span></a>').prependTo($(".header-logo"));
+        } else {
+            $('<span class="b">' + str.charAt(i) + '</span>').prependTo($(".header-logo"));
+        }
+
+    }
+    ""
+    var b = document.getElementsByClassName('b');
+    var w = document.getElementsByClassName('w');
+    var menupgMargin = (b.length + w.length + 1) * 28;
+    var srhboxMargin = (b.length + w.length + 4) * 28;
+    var menusrhWidth = (b.length + w.length - 1) * 28;
+    document.getElementById('menu-page').style['margin-left'] = menupgMargin + 'px';
+    document.getElementById('search-box').style['margin-left'] = srhboxMargin + 'px';
+    document.getElementById('menu-search').style['width'] = menusrhWidth + 'px';
+    if (menusrhWidth < 140) {
+        document.getElementById('menu-search').setAttribute('placeholder', 'Search~');
+    }
+    ""
+
+    $(document).ready(function () {
+        $("#menu-search").keydown(function (e) {
+            if (e.keyCode == 13) {
+                var searchString = $("#menu-search").val();
+                var url = "https:\/\/twor.me\/" + "search?s=" + searchString;
+                window.location.href = url;
+            }
+        });
+    });
+
+    function isMenu() {
+        if (document.getElementById('menu-1').style.display == 'inline') {
+            $('#search-box').fadeOut(200);
+            $('#menu-page').fadeOut(200);
+            $('#menu-1').fadeOut(500);
+            $('#menu-2').fadeOut(400);
+            $('#menu-3').fadeOut(300);
+        } else {
+            $('#menu-1').fadeIn(150);
+            $('#menu-2').fadeIn(150);
+            $('#menu-3').fadeIn(150);
+        }
+    }
+
+    function isMenu1() {
+        if (document.getElementById('menu-page').style.display == 'block') {
+            $('#menu-page').fadeOut(400);
+        } else {
+            $('#menu-page').fadeIn(400);
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    function isMenu3() {
+        if (document.getElementById('search-box').style.display == 'block') {
+            $('#search-box').fadeOut(400);
+        } else {
+            $('#search-box').fadeIn(400);
+        }
+    }
+
+    function Search404() {
+        $('#menu-1').fadeIn(150);
+        $('#menu-2').fadeIn(150);
+        $('#menu-3').fadeIn(150);
+        $('#search-box').fadeIn(300);
+    }
+
+
+
+    
+
+    function footerPosition() {
+        $("footer").removeClass("fixed-bottom");
+        var contentHeight = document.body.scrollHeight,
+            winHeight = window.innerHeight;
+        if (document.getElementsByClassName("post-content")[0]) {
+            var winImgNum = document.getElementsByClassName("post-content")[0].getElementsByTagName("img").length;
+        } else {
+            var winImgNum = 0;
+        }
+        if (!(contentHeight > winHeight) && winImgNum == 0) {
+            $("footer").addClass("fixed-bottom");
+        }
+    }
+    footerPosition();
+    $(window).resize(footerPosition);
+</script>
+<script>
+
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,574 @@
+<head>
+    <meta charset="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Twor</title>
+
+    
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/prism.css">
+    <link type="text/css" rel="stylesheet" href="/css/zoom.css">
+    <link type="text/css" rel="stylesheet" href="/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/css/all.css">
+
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="logo">
+                    <div class="header-logo">
+                        
+                        
+                        
+                        <a id="btn-menu" href="javascript:isMenu()">
+
+                            
+                            <span class="bars"><i class="fas fa-chevron-right"></i></i></span>
+                            
+                        </a>
+                        <a href="javascript:isMenu1();">
+                            
+                            <span id="menu-1" class="bf"><i class="fas fa-bars"></i></span>
+                            
+                        </a>
+                        <a href="/index.xml">
+                            
+                            <span id="menu-2" class="bf"><i class="fas fa-rss"></i></span>
+                            
+                        </a>
+
+                        <a href="javascript:isMenu3();">
+                            
+                            <span id="menu-3" class="bf"><i class="fas fa-search"></i></span>
+                            
+                        </a>
+                    </div>
+                    <div id="menu-page">
+                        <a href="/">
+                            <li>博文</li>
+                        </a><a href="/about">
+                            <li>关于</li>
+                        </a>
+                    </div>
+                    <div id="search-box">
+                        <input type="text" name="s" id="menu-search" class="inputValue" placeholder="Type something~" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><div class="container-fluid">
+    <div class="row">
+        <div id="main" class="col-12 clearfix" role="main">
+            <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                <h1 style="text-align:right;" class="post-title" itemprop="name headline">我的Windows终端配置</h1>
+                <div class="post-content" itemprop="articleBody">
+                    <h3 id="安装git"><strong>安装Git</strong></h3>
+<p><a href="https://twor.me/%5BGit">下载</a></p>
+<h3 id="配置主题"><strong>配置主题</strong></h3>
+<p>打开 <code>Git Bash</code></p>
+<pre tabindex="0"><code>$ git clone xxxx
+
+$ cd xxxx
+
+$ cp .minttyrc ~ &amp;&amp; cp git-prompt.sh /etc/profile.d
+</code></pre><h3 id="安装-tmux"><strong>安装 Tmux</strong></h3>
+<pre tabindex="0"><code>$ git clone https://github.com/hongwenjun/tmux_for_windows.git
+$ cd tmux_for_windows/
+$ unzip -x tmux_for_git-bash.zip  -d /
+</code></pre><h3 id="tmux-启用鼠标操作"><strong>tmux 启用鼠标操作</strong></h3>
+<h3 id="tmuxconf-设定"><strong>.tmux.conf 设定</strong></h3>
+<pre tabindex="0"><code># https://www.youtube.com/watch?v=xTplsyQaGFs
+
+# tmux 启用鼠标操作
+setw -g mouse
+set-option -g history-limit 20000
+set-option -g mouse on
+bind -n WheelUpPane select-pane -t= \; copy-mode -e \; send-keys -M
+bind -n WheelDownPane select-pane -t= \; send-keys -M
+</code></pre><h3 id="安装-wget-和-tree-命令"><strong>安装 wget 和 tree 命令</strong></h3>
+<pre tabindex="0"><code>$ cp tools/* /usr/bin
+</code></pre><h2 id="其它"><strong>其它</strong></h2>
+<h3 id="在-vscode-中配置git-bash"><strong>在 VSCode 中配置 <code>Git Bash</code></strong></h3>
+<p>在 VSCode 中使用 <code>Git Bash</code> 只需要在 <code>Settings.json</code> 中添加如下两行即可，第一行中 <code>bash.exe</code> 的文件路径需要改成自己的，第二行是非必须配置，不配置无法使用 <code>alias</code>。</p>
+<pre tabindex="0"><code>{
+  &#34;terminal.integrated.shell.windows&#34;: &#34;C:\\Program Files\\Git\\bin\\bash.exe&#34;,
+  &#34;terminal.integrated.shellArgs.windows&#34;: [&#34;--login&#34;, &#34;-i&#34;]
+}
+</code></pre><h3 id="解决-win10-快捷键不能秒启动问题"><strong>解决 win10 快捷键不能秒启动问题</strong></h3>
+<p>为 <code>Git Bash</code> 设置了全局快捷键后，可能出现按下快捷键后延迟两秒左右终端才打开的现象，只需要在服务中禁用掉 <code>superFetch</code> 即可，此服务在比较新的 win10 上改名为了 <code>sysMain</code>，禁用服务后重启操作系统生效</p>
+<h3 id="终端快捷键"><strong>终端快捷键</strong></h3>
+<p>附 Git Bash 终端快捷键</p>
+<p><a href="https://www.notion.so/b6fcd4975d2c4184a407471e760bc617">Untitled</a></p>
+<h3 id="使用第三方工具"><strong>使用第三方工具</strong></h3>
+<p><a href="https://eugeny.github.io/terminus/">Terminus</a></p>
+<p>更直接，也很美观 <del>就是打开有点慢</del></p>
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+    
+          <div
+            id="page-scrollspy" class="toc-nav">
+
+            <li class="nav-item pb-3 catalog">
+                <span class="font-weight-bold mb-2">- CATALOG - </span>
+            </li>
+
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%ae%89%e8%a3%85git">
+                        安装Git
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e9%85%8d%e7%bd%ae%e4%b8%bb%e9%a2%98">
+                        配置主题
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%ae%89%e8%a3%85-tmux">
+                        安装 Tmux
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#tmux-%e5%90%af%e7%94%a8%e9%bc%a0%e6%a0%87%e6%93%8d%e4%bd%9c">
+                        tmux 启用鼠标操作
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#tmuxconf-%e8%ae%be%e5%ae%9a">
+                        .tmux.conf 设定
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%ae%89%e8%a3%85-wget-%e5%92%8c-tree-%e5%91%bd%e4%bb%a4">
+                        安装 wget 和 tree 命令
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%85%b6%e5%ae%83">
+                        其它
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%9c%a8-vscode-%e4%b8%ad%e9%85%8d%e7%bd%aegit-bash">
+                        在 VSCode 中配置 Git Bash
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e8%a7%a3%e5%86%b3-win10-%e5%bf%ab%e6%8d%b7%e9%94%ae%e4%b8%8d%e8%83%bd%e7%a7%92%e5%90%af%e5%8a%a8%e9%97%ae%e9%a2%98">
+                        解决 win10 快捷键不能秒启动问题
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e7%bb%88%e7%ab%af%e5%bf%ab%e6%8d%b7%e9%94%ae">
+                        终端快捷键
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e4%bd%bf%e7%94%a8%e7%ac%ac%e4%b8%89%e6%96%b9%e5%b7%a5%e5%85%b7">
+                        使用第三方工具
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            </div>
+            
+
+            </div>
+            
+            
+<script src="https://utteranc.es/client.js" repo="Twor/blog-comment"
+    issue-term="pathname" theme="github-light" crossorigin="anonymous"
+    async>
+    </script>
+<footer id="footer" role="contentinfo">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                &copy; 2022 <a href="https://twor.me/">Twor
+                </a>.
+                <a target="_blank" href="https://gohugo.io">Hugo</a> & <a target="_blank"
+                    href="https://github.com/Twor/hugo-angus">Angus</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/prism.js"></script>
+<script src="/js/zoom-vanilla.min.js"></script>
+<script src="/js/fuse.js"></script> 
+<script src="/js/search.js"></script>
+<script>
+    var str = "TW|OR".split('').reverse().join('');
+    for (i = 0; i < str.length; i++) {
+        if (str.charAt(i) == '|') {
+            $('<a href="https:\/\/twor.me\/"><span class="w">' + str.charAt(i) + '</span></a>').prependTo($(".header-logo"));
+        } else {
+            $('<span class="b">' + str.charAt(i) + '</span>').prependTo($(".header-logo"));
+        }
+
+    }
+    ""
+    var b = document.getElementsByClassName('b');
+    var w = document.getElementsByClassName('w');
+    var menupgMargin = (b.length + w.length + 1) * 28;
+    var srhboxMargin = (b.length + w.length + 4) * 28;
+    var menusrhWidth = (b.length + w.length - 1) * 28;
+    document.getElementById('menu-page').style['margin-left'] = menupgMargin + 'px';
+    document.getElementById('search-box').style['margin-left'] = srhboxMargin + 'px';
+    document.getElementById('menu-search').style['width'] = menusrhWidth + 'px';
+    if (menusrhWidth < 140) {
+        document.getElementById('menu-search').setAttribute('placeholder', 'Search~');
+    }
+    ""
+
+    $(document).ready(function () {
+        $("#menu-search").keydown(function (e) {
+            if (e.keyCode == 13) {
+                var searchString = $("#menu-search").val();
+                var url = "https:\/\/twor.me\/" + "search?s=" + searchString;
+                window.location.href = url;
+            }
+        });
+    });
+
+    function isMenu() {
+        if (document.getElementById('menu-1').style.display == 'inline') {
+            $('#search-box').fadeOut(200);
+            $('#menu-page').fadeOut(200);
+            $('#menu-1').fadeOut(500);
+            $('#menu-2').fadeOut(400);
+            $('#menu-3').fadeOut(300);
+        } else {
+            $('#menu-1').fadeIn(150);
+            $('#menu-2').fadeIn(150);
+            $('#menu-3').fadeIn(150);
+        }
+    }
+
+    function isMenu1() {
+        if (document.getElementById('menu-page').style.display == 'block') {
+            $('#menu-page').fadeOut(400);
+        } else {
+            $('#menu-page').fadeIn(400);
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    function isMenu3() {
+        if (document.getElementById('search-box').style.display == 'block') {
+            $('#search-box').fadeOut(400);
+        } else {
+            $('#search-box').fadeIn(400);
+        }
+    }
+
+    function Search404() {
+        $('#menu-1').fadeIn(150);
+        $('#menu-2').fadeIn(150);
+        $('#menu-3').fadeIn(150);
+        $('#search-box').fadeIn(300);
+    }
+
+
+
+    
+
+    function footerPosition() {
+        $("footer").removeClass("fixed-bottom");
+        var contentHeight = document.body.scrollHeight,
+            winHeight = window.innerHeight;
+        if (document.getElementsByClassName("post-content")[0]) {
+            var winImgNum = document.getElementsByClassName("post-content")[0].getElementsByTagName("img").length;
+        } else {
+            var winImgNum = 0;
+        }
+        if (!(contentHeight > winHeight) && winImgNum == 0) {
+            $("footer").addClass("fixed-bottom");
+        }
+    }
+    footerPosition();
+    $(window).resize(footerPosition);
+</script>
+<script>
+
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+</script>
+
+</body>
+
+</html>

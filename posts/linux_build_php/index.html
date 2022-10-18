@@ -1,0 +1,357 @@
+<head>
+    <meta charset="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Twor</title>
+
+    
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/prism.css">
+    <link type="text/css" rel="stylesheet" href="/css/zoom.css">
+    <link type="text/css" rel="stylesheet" href="/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/css/all.css">
+
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="logo">
+                    <div class="header-logo">
+                        
+                        
+                        
+                        <a id="btn-menu" href="javascript:isMenu()">
+
+                            
+                            <span class="bars"><i class="fas fa-chevron-right"></i></i></span>
+                            
+                        </a>
+                        <a href="javascript:isMenu1();">
+                            
+                            <span id="menu-1" class="bf"><i class="fas fa-bars"></i></span>
+                            
+                        </a>
+                        <a href="/index.xml">
+                            
+                            <span id="menu-2" class="bf"><i class="fas fa-rss"></i></span>
+                            
+                        </a>
+
+                        <a href="javascript:isMenu3();">
+                            
+                            <span id="menu-3" class="bf"><i class="fas fa-search"></i></span>
+                            
+                        </a>
+                    </div>
+                    <div id="menu-page">
+                        <a href="/">
+                            <li>博文</li>
+                        </a><a href="/about">
+                            <li>关于</li>
+                        </a>
+                    </div>
+                    <div id="search-box">
+                        <input type="text" name="s" id="menu-search" class="inputValue" placeholder="Type something~" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><div class="container-fluid">
+    <div class="row">
+        <div id="main" class="col-12 clearfix" role="main">
+            <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                <h1 style="text-align:right;" class="post-title" itemprop="name headline">linux 编译安装php</h1>
+                <div class="post-content" itemprop="articleBody">
+                    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -Syu
+</span></span><span style="display:flex;"><span>sudo pacman -S wget
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#自己指定版本下载</span>
+</span></span><span style="display:flex;"><span>wget http://php.net/distributions/php-7.1.23.tar.gz
+</span></span><span style="display:flex;"><span>tar xvf php-7.1.23.tar.gz
+</span></span><span style="display:flex;"><span>cd php-7.1.23
+</span></span><span style="display:flex;"><span>sudo pacman -S gcc make bison gawk re2c libxml2 libwebp freetype2 c-client libmcrypt libxslt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>./configure --prefix<span style="color:#f92672">=</span>/opt/php --with-config-file-path<span style="color:#f92672">=</span>/opt/php/etc --with-zlib-dir --with-freetype-dir --enable-mbstring --with-libxml-dir<span style="color:#f92672">=</span>/usr --enable-soap --enable-calendar --with-curl --with-mcrypt --with-zlib --with-gd --disable-rpath --enable-inline-optimization --with-bz2 --with-zlib --enable-sockets --enable-sysvsem --enable-sysvshm --enable-pcntl --enable-mbregex --enable-exif --enable-bcmath --with-mhash --enable-zip --with-pcre-regex --with-pdo-mysql --with-mysqli --with-mysql-sock<span style="color:#f92672">=</span>/var/run/mysqld/mysqld.sock --with-jpeg-dir<span style="color:#f92672">=</span>/usr --with-png-dir<span style="color:#f92672">=</span>/usr --enable-gd-native-ttf --with-openssl --with-fpm-user<span style="color:#f92672">=</span>http --with-fpm-group<span style="color:#f92672">=</span>http --enable-ftp --with-imap --with-imap-ssl --with-kerberos --with-gettext --with-xmlrpc --with-xsl --enable-opcache --enable-fpm
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 最后</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>make <span style="color:#f92672">&amp;&amp;</span> sudo make install
+</span></span></code></pre></div><p>如果出现  <code>error: freetype-config not found.</code> 错误</p>
+<blockquote>
+<p>freetype-config脚本不再默认支持，而是替换成了pkg-config，用来管理CFLAGS和库。通过这些变更就知道，我们需要把php编译脚本中的freetype-config改成pkg-config。我们可以再configure中找到freetype-config,完成替换。</p>
+</blockquote>
+<p><code> 致命错误：ft2build.h：没有那个文件或目录</code></p>
+<blockquote>
+<p>把/usr/include/freetype2/ft2build.h 复制到 php-7.1.23/ext/gd/</p>
+</blockquote>
+<h3 id="配置">配置</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cp /opt/php-7.1.23/etc/php-fpm.conf.default /opt/php-7.1.23/etc/php-fpm.conf
+</span></span><span style="display:flex;"><span>sudo nano /opt/php-7.1.23/etc/php-fpm.d/www.conf
+</span></span></code></pre></div><p>默认情况下，PHP-FPM在TCP套接字127.0.0.1:9000上侦听，二选一</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>listen = 127.0.0.1:9000
+</span></span><span style="display:flex;"><span>listen = /run/php-fpm/php7.0-fpm.sock
+</span></span></code></pre></div><p>接下来，找到以下3行并取消注释。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>listen.owner = http
+</span></span><span style="display:flex;"><span>listen.group = http
+</span></span><span style="display:flex;"><span>listen.mode = 0660
+</span></span></code></pre></div><p>保存并关闭文件。接下来复制php.ini文件。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cp ~/php-7.1.23/php.ini-production /opt/php-7.0.26/etc/php.ini
+</span></span><span style="display:flex;"><span>sudo nano /opt/php-7.1.23/etc/php.ini
+</span></span></code></pre></div><p>修改php.ini 中的<code>include_path</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>include_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/opt/php-7.0.26/lib/php&#34;</span>
+</span></span></code></pre></div><h3 id="添加service启动">添加service启动</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/systemd/system/php7.1-fpm.service
+</span></span></code></pre></div><p>内容如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span>    <span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">The PHP FastCGI Process Manager</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">network.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">simple</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">PIDFile</span><span style="color:#f92672">=</span><span style="color:#e6db74">/run/php-fpm/php7.1-fpm.pid</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/opt/php-7.1.23/sbin/php-fpm --nodaemonize --fpm-config /opt/php-7.1.23/etc/php-fpm.conf</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ExecReload</span><span style="color:#f92672">=</span><span style="color:#e6db74">/bin/kill -USR2 $MAINPID</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span>
+</span></span></code></pre></div><p>启动php-fpm</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl start php7.1-fpm
+</span></span></code></pre></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+    
+          <div
+            id="page-scrollspy" class="toc-nav">
+
+            <li class="nav-item pb-3 catalog">
+                <span class="font-weight-bold mb-2">- CATALOG - </span>
+            </li>
+
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e9%85%8d%e7%bd%ae">
+                        配置
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e6%b7%bb%e5%8a%a0service%e5%90%af%e5%8a%a8">
+                        添加service启动
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            </div>
+            
+
+            </div>
+            
+            
+<script src="https://utteranc.es/client.js" repo="Twor/blog-comment"
+    issue-term="pathname" theme="github-light" crossorigin="anonymous"
+    async>
+    </script>
+<footer id="footer" role="contentinfo">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                &copy; 2022 <a href="https://twor.me/">Twor
+                </a>.
+                <a target="_blank" href="https://gohugo.io">Hugo</a> & <a target="_blank"
+                    href="https://github.com/Twor/hugo-angus">Angus</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/prism.js"></script>
+<script src="/js/zoom-vanilla.min.js"></script>
+<script src="/js/fuse.js"></script> 
+<script src="/js/search.js"></script>
+<script>
+    var str = "TW|OR".split('').reverse().join('');
+    for (i = 0; i < str.length; i++) {
+        if (str.charAt(i) == '|') {
+            $('<a href="https:\/\/twor.me\/"><span class="w">' + str.charAt(i) + '</span></a>').prependTo($(".header-logo"));
+        } else {
+            $('<span class="b">' + str.charAt(i) + '</span>').prependTo($(".header-logo"));
+        }
+
+    }
+    ""
+    var b = document.getElementsByClassName('b');
+    var w = document.getElementsByClassName('w');
+    var menupgMargin = (b.length + w.length + 1) * 28;
+    var srhboxMargin = (b.length + w.length + 4) * 28;
+    var menusrhWidth = (b.length + w.length - 1) * 28;
+    document.getElementById('menu-page').style['margin-left'] = menupgMargin + 'px';
+    document.getElementById('search-box').style['margin-left'] = srhboxMargin + 'px';
+    document.getElementById('menu-search').style['width'] = menusrhWidth + 'px';
+    if (menusrhWidth < 140) {
+        document.getElementById('menu-search').setAttribute('placeholder', 'Search~');
+    }
+    ""
+
+    $(document).ready(function () {
+        $("#menu-search").keydown(function (e) {
+            if (e.keyCode == 13) {
+                var searchString = $("#menu-search").val();
+                var url = "https:\/\/twor.me\/" + "search?s=" + searchString;
+                window.location.href = url;
+            }
+        });
+    });
+
+    function isMenu() {
+        if (document.getElementById('menu-1').style.display == 'inline') {
+            $('#search-box').fadeOut(200);
+            $('#menu-page').fadeOut(200);
+            $('#menu-1').fadeOut(500);
+            $('#menu-2').fadeOut(400);
+            $('#menu-3').fadeOut(300);
+        } else {
+            $('#menu-1').fadeIn(150);
+            $('#menu-2').fadeIn(150);
+            $('#menu-3').fadeIn(150);
+        }
+    }
+
+    function isMenu1() {
+        if (document.getElementById('menu-page').style.display == 'block') {
+            $('#menu-page').fadeOut(400);
+        } else {
+            $('#menu-page').fadeIn(400);
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    function isMenu3() {
+        if (document.getElementById('search-box').style.display == 'block') {
+            $('#search-box').fadeOut(400);
+        } else {
+            $('#search-box').fadeIn(400);
+        }
+    }
+
+    function Search404() {
+        $('#menu-1').fadeIn(150);
+        $('#menu-2').fadeIn(150);
+        $('#menu-3').fadeIn(150);
+        $('#search-box').fadeIn(300);
+    }
+
+
+
+    
+
+    function footerPosition() {
+        $("footer").removeClass("fixed-bottom");
+        var contentHeight = document.body.scrollHeight,
+            winHeight = window.innerHeight;
+        if (document.getElementsByClassName("post-content")[0]) {
+            var winImgNum = document.getElementsByClassName("post-content")[0].getElementsByTagName("img").length;
+        } else {
+            var winImgNum = 0;
+        }
+        if (!(contentHeight > winHeight) && winImgNum == 0) {
+            $("footer").addClass("fixed-bottom");
+        }
+    }
+    footerPosition();
+    $(window).resize(footerPosition);
+</script>
+<script>
+
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+</script>
+
+</body>
+
+</html>

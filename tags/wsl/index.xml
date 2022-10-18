@@ -6,11 +6,22 @@
     <description>Recent content in WSL on Twor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Jun 2019 13:58:53 +0800</lastBuildDate><atom:link href="https://twor.me/tags/wsl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Aug 2020 16:24:27 +0800</lastBuildDate><atom:link href="https://twor.me/tags/wsl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我的Windows终端配置</title>
+      <link>https://twor.me/posts/windows_terminal/</link>
+      <pubDate>Tue, 18 Aug 2020 16:24:27 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/windows_terminal/</guid>
+      <description>安装Git 下载
+配置主题 打开 Git Bash
+$ git clone xxxx $ cd xxxx $ cp .minttyrc ~ &amp;amp;&amp;amp; cp git-prompt.sh /etc/profile.d 安装 Tmux $ git clone https://github.com/hongwenjun/tmux_for_windows.git $ cd tmux_for_windows/ $ unzip -x tmux_for_git-bash.zip -d / tmux 启用鼠标操作 .tmux.conf 设定 # https://www.youtube.com/watch?v=xTplsyQaGFs # tmux 启用鼠标操作 setw -g mouse set-option -g history-limit 20000 set-option -g mouse on bind -n WheelUpPane select-pane -t= \; copy-mode -e \; send-keys -M bind -n WheelDownPane select-pane -t= \; send-keys -M 安装 wget 和 tree 命令 $ cp tools/* /usr/bin 其它 在 VSCode 中配置 Git Bash 在 VSCode 中使用 Git Bash 只需要在 Settings.</description>
+    </item>
+    
     <item>
       <title>WSL(Windows Subsystem for Linux)安装archlinux，并配置图形化界面</title>
       <link>https://twor.me/posts/wsl_archlinux_gui/</link>
-      <pubDate>Wed, 05 Jun 2019 13:58:53 +0800</pubDate>
+      <pubDate>Tue, 05 Mar 2019 13:58:53 +0800</pubDate>
       
       <guid>https://twor.me/posts/wsl_archlinux_gui/</guid>
       <description>开启wsl Windows功能 &amp;raquo; 勾选适用于Linux的Windows子系统 ，重启生效。

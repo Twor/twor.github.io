@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Https on Twor</title>
+    <link>https://twor.me/tags/https/</link>
+    <description>Recent content in Https on Twor</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Oct 2021 16:27:34 +0800</lastBuildDate><atom:link href="https://twor.me/tags/https/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>搭建自定义域名的本地HTTPS开发服务器</title>
+      <link>https://twor.me/posts/local_https/</link>
+      <pubDate>Mon, 18 Oct 2021 16:27:34 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/local_https/</guid>
+      <description>mkcert简介 mkcert是一个使用go语言编写的生成本地自签证书的小程序，具有跨平台，使用简单，支持多域名，自动信任CA等一系列方便的特性可供本地开发时快速创建https环境使用。
+安装方式也非常简单，由于go语言的静态编译和跨平台的特性，官方提供各平台预编译的版本，直接下载到本地，给可执行权限(Linux/Unix需要)就可以了。下载地址:
+项目地址：[https://github.com/FiloSottile/mkcert](https://github.com/FiloSottile/mkcert)
+安装mkcert macOS 1. Homebrew
+brew install mkcert brew install nss # if you use Firefox 2. MacPorts.
+sudo port selfupdate sudo port install mkcert sudo port install nss # if you use Firefox Linux 首先安装 certutil. sudo apt install libnss3-tools -or- sudo yum install nss-tools -or- sudo pacman -S nss -or- sudo zypper install mozilla-nss-tools 然后安装 mkcert Linuxbrew
+brew install mkcert 或者自己编译 (requires Go 1.13+)
+git clone https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

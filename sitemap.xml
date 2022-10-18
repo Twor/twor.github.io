@@ -2,20 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://twor.me/tags/linux/</loc>
+    <lastmod>2022-10-08T16:29:35+08:00</lastmod>
+  </url><url>
+    <loc>https://twor.me/posts/</loc>
+    <lastmod>2022-10-08T16:29:35+08:00</lastmod>
+  </url><url>
+    <loc>https://twor.me/tags/</loc>
+    <lastmod>2022-10-08T16:29:35+08:00</lastmod>
+  </url><url>
+    <loc>https://twor.me/</loc>
+    <lastmod>2022-10-08T16:29:35+08:00</lastmod>
+  </url><url>
+    <loc>https://twor.me/posts/linux_apps/</loc>
+    <lastmod>2022-10-08T16:29:35+08:00</lastmod>
+  </url><url>
+    <loc>https://twor.me/tags/https/</loc>
+    <lastmod>2021-10-18T16:27:34+08:00</lastmod>
+  </url><url>
+    <loc>https://twor.me/posts/local_https/</loc>
+    <lastmod>2021-10-18T16:27:34+08:00</lastmod>
+  </url><url>
     <loc>https://twor.me/posts/archlinux_gesture/</loc>
     <lastmod>2021-03-21T23:58:53+08:00</lastmod>
   </url><url>
-    <loc>https://twor.me/tags/linux/</loc>
-    <lastmod>2021-03-21T23:58:53+08:00</lastmod>
+    <loc>https://twor.me/tags/windows/</loc>
+    <lastmod>2020-08-18T16:24:27+08:00</lastmod>
   </url><url>
-    <loc>https://twor.me/posts/</loc>
-    <lastmod>2021-03-21T23:58:53+08:00</lastmod>
+    <loc>https://twor.me/tags/wsl/</loc>
+    <lastmod>2020-08-18T16:24:27+08:00</lastmod>
   </url><url>
-    <loc>https://twor.me/tags/</loc>
-    <lastmod>2021-03-21T23:58:53+08:00</lastmod>
-  </url><url>
-    <loc>https://twor.me/</loc>
-    <lastmod>2021-03-21T23:58:53+08:00</lastmod>
+    <loc>https://twor.me/posts/windows_terminal/</loc>
+    <lastmod>2020-08-18T16:24:27+08:00</lastmod>
   </url><url>
     <loc>https://twor.me/posts/linux_android/</loc>
     <lastmod>2020-03-07T13:58:53+08:00</lastmod>
@@ -25,6 +43,18 @@
   </url><url>
     <loc>https://twor.me/tags/syncthing/</loc>
     <lastmod>2020-03-07T13:58:53+08:00</lastmod>
+  </url><url>
+    <loc>https://twor.me/posts/linux_build_php/</loc>
+    <lastmod>2020-01-20T16:41:18+08:00</lastmod>
+  </url><url>
+    <loc>https://twor.me/tags/php/</loc>
+    <lastmod>2020-01-20T16:41:18+08:00</lastmod>
+  </url><url>
+    <loc>https://twor.me/posts/docker_php/</loc>
+    <lastmod>2019-10-18T16:32:25+08:00</lastmod>
+  </url><url>
+    <loc>https://twor.me/tags/docker.php/</loc>
+    <lastmod>2019-10-18T16:32:25+08:00</lastmod>
   </url><url>
     <loc>https://twor.me/tags/git/</loc>
     <lastmod>2019-06-05T13:58:53+08:00</lastmod>
@@ -38,15 +68,6 @@
     <loc>https://twor.me/posts/oh-my-zsh_config/</loc>
     <lastmod>2019-06-05T13:58:53+08:00</lastmod>
   </url><url>
-    <loc>https://twor.me/tags/windows/</loc>
-    <lastmod>2019-06-05T13:58:53+08:00</lastmod>
-  </url><url>
-    <loc>https://twor.me/tags/wsl/</loc>
-    <lastmod>2019-06-05T13:58:53+08:00</lastmod>
-  </url><url>
-    <loc>https://twor.me/posts/wsl_archlinux_gui/</loc>
-    <lastmod>2019-06-05T13:58:53+08:00</lastmod>
-  </url><url>
     <loc>https://twor.me/tags/zsh/</loc>
     <lastmod>2019-06-05T13:58:53+08:00</lastmod>
   </url><url>
@@ -56,8 +77,20 @@
     <loc>https://twor.me/tags/web/</loc>
     <lastmod>2019-06-05T09:58:53+08:00</lastmod>
   </url><url>
+    <loc>https://twor.me/tags/composer/</loc>
+    <lastmod>2019-06-01T16:20:55+08:00</lastmod>
+  </url><url>
+    <loc>https://twor.me/posts/php_composer/</loc>
+    <lastmod>2019-06-01T16:20:55+08:00</lastmod>
+  </url><url>
     <loc>https://twor.me/posts/windows_nginx_php/</loc>
+    <lastmod>2019-05-05T13:58:53+08:00</lastmod>
+  </url><url>
+    <loc>https://twor.me/posts/wsl_archlinux_gui/</loc>
     <lastmod>2019-03-05T13:58:53+08:00</lastmod>
+  </url><url>
+    <loc>https://twor.me/posts/git_note/</loc>
+    <lastmod>2018-10-18T16:49:37+08:00</lastmod>
   </url><url>
     <loc>https://twor.me/categories/</loc>
   </url><url>

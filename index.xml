@@ -7,10 +7,210 @@
     <description>Recent content on Twor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Mar 2021 23:58:53 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 08 Oct 2022 16:29:35 +0800</lastBuildDate>
     
         <atom:link href="https://twor.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>我的 Linux 软件清单</title>
+      <link>https://twor.me/posts/linux_apps/</link>
+      <pubDate>Sat, 08 Oct 2022 16:29:35 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/linux_apps/</guid>
+      <description>&lt;h4 id=&#34;nautilus&#34;&gt;Nautilus&lt;/h4&gt;
+&lt;p&gt;它是GNOME的文件管理器。比较好用，简洁图形化操作&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/GNOME/nautilus&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/GNOME/nautilus.png&#34; alt=&#34;GNOME/nautilus - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;ranger&#34;&gt;ranger&lt;/h4&gt;
+&lt;p&gt;Ranger是具有VI键绑定的控制台文件管理器&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/GNOME/nautilus&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/GNOME/nautilus.png&#34; alt=&#34;GNOME/nautilus - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;obs-studio&#34;&gt;obs-studio&lt;/h4&gt;
+&lt;p&gt;OBS Studio是为高效捕获，合成，编码，记录和流传输视频内容而设计的软件。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/obsproject/obs-studio&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/obsproject/obs-studio.png&#34; alt=&#34;obsproject/obs-studio - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;feh&#34;&gt;feh&lt;/h4&gt;
+&lt;p&gt;快速轻巧的图像查看器&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/derf/feh&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/derf/feh.png&#34; alt=&#34;derf/feh - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;vim&#34;&gt;vim&lt;/h4&gt;
+&lt;p&gt;编辑器&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vim/vim&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/vim/vim.png&#34; alt=&#34;vim/vim - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;vscode&#34;&gt;vscode&lt;/h4&gt;
+&lt;p&gt;微软出品的代码编辑器&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/microsoft/vscode&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/microsoft/vscode.png&#34; alt=&#34;microsoft/vscode - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;musicbox&#34;&gt;musicbox&lt;/h4&gt;
+&lt;p&gt;网易云音乐命令行版本&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/darknessomi/musicbox&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/darknessomi/musicbox.png&#34; alt=&#34;darknessomi/musicbox - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;simplenote&#34;&gt;simplenote&lt;/h4&gt;
+&lt;p&gt;笔记本&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aur.archlinux.org/packages/notion-app/&#34;&gt;https://aur.archlinux.org/packages/notion-app/&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;fcitx5-rime&#34;&gt;fcitx5-rime&lt;/h4&gt;
+&lt;p&gt;中文输入法&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/fcitx/fcitx5-rime&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/fcitx/fcitx5-rime.png&#34; alt=&#34;fcitx/fcitx5-rime - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;i3-gaps&#34;&gt;i3-gaps&lt;/h4&gt;
+&lt;p&gt;平铺窗口管理器&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Airblader/i3&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/Airblader/i3.png&#34; alt=&#34;Airblader/i3 - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;clash&#34;&gt;clash&lt;/h4&gt;
+&lt;p&gt;代理/翻墙&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Dreamacro/clash&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/Dreamacro/clash.png&#34; alt=&#34;Dreamacro/clash - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;mpv&#34;&gt;mpv&lt;/h4&gt;
+&lt;p&gt;视频播放器&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/mpv-player/mpv&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/mpv-player/mpv.png&#34; alt=&#34;mpv-player/mpv - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;rofi&#34;&gt;rofi&lt;/h4&gt;
+&lt;p&gt;Rofi：窗口切换器，应用程序启动器和dmenu替换&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/davatorium/rofi&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/davatorium/rofi.png&#34; alt=&#34;davatorium/rofi - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;chromium&#34;&gt;chromium&lt;/h4&gt;
+&lt;p&gt;浏览器&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/chromium/chromium&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/chromium/chromium.png&#34; alt=&#34;chromium/chromium - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;dunst&#34;&gt;dunst&lt;/h4&gt;
+&lt;p&gt;轻量级和可自定义的通知守护程序&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/dunst-project/dunst&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/dunst-project/dunst.png&#34; alt=&#34;dunst-project/dunst - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;indicator-stickynotes&#34;&gt;indicator-stickynotes&lt;/h4&gt;
+&lt;p&gt;指标便利贴：适用于Ubuntu桌面的便利贴&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/umangv/indicator-stickynotes&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/umangv/indicator-stickynotes.png&#34; alt=&#34;umangv/indicator-stickynotes - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;drawing&#34;&gt;drawing&lt;/h4&gt;
+&lt;p&gt;一个画图小工具&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/maoschanz/drawing&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/maoschanz/drawing.svg&#34; alt=&#34;maoschanz/drawing - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;termite&#34;&gt;termite&lt;/h4&gt;
+&lt;p&gt;以键盘为中心的基于VTE的终端，旨在在窗口管理器中使用，支持平铺和/或跳格。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/thestinger/termite&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/thestinger/termite.png&#34; alt=&#34;thestinger/termite - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;zsh&#34;&gt;zsh&lt;/h4&gt;
+&lt;p&gt;很好用的一个shll&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/zsh-users/zsh&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/zsh-users/zsh.png&#34; alt=&#34;zsh-users/zsh - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;oh-my-zsh&#34;&gt;oh-my-zsh&lt;/h4&gt;
+&lt;p&gt;社区驱动的框架，用于管理zsh配置。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ohmyzsh/ohmyzsh&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/ohmyzsh/ohmyzsh.png&#34; alt=&#34;ohmyzsh/ohmyzsh - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;fzf&#34;&gt;fzf&lt;/h4&gt;
+&lt;p&gt;命令行模糊查找器&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/junegunn/fzf&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/junegunn/fzf.png&#34; alt=&#34;junegunn/fzf - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;nordic-darker&#34;&gt;Nordic-darker&lt;/h4&gt;
+&lt;p&gt;Gtk3.20 +主题&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/EliverLara/Nordic&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/EliverLara/Nordic.png&#34; alt=&#34;EliverLara/Nordic - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;epapirus&#34;&gt;ePapirus&lt;/h4&gt;
+&lt;p&gt;Linux的Papirus图标主题&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/PapirusDevelopmentTeam/papirus-icon-theme&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/PapirusDevelopmentTeam/papirus-icon-theme.png&#34; alt=&#34;PapirusDevelopmentTeam/papirus-icon-theme - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;citrus-purple-dark&#34;&gt;Citrus-purple-dark&lt;/h4&gt;
+&lt;p&gt;Linux桌面图标主题&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/yeyushengfan258/Citrus-icon-theme&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/yeyushengfan258/Citrus-icon-theme.png&#34; alt=&#34;yeyushengfan258/Citrus-icon-theme - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;cantarell&#34;&gt;Cantarell&lt;/h4&gt;
+&lt;p&gt;很好看的字体&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/GNOME/cantarell-fonts&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/GNOME/cantarell-fonts.png&#34; alt=&#34;GNOME/cantarell-fonts - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;cascadia-code&#34;&gt;Cascadia Code&lt;/h4&gt;
+&lt;p&gt;写代码和终端用的字体&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/microsoft/cascadia-code&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/microsoft/cascadia-code.png&#34; alt=&#34;microsoft/cascadia-code - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;polybar&#34;&gt;polybar&lt;/h4&gt;
+&lt;p&gt;快速且易于使用的状态栏&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/polybar/polybar&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/polybar/polybar.png&#34; alt=&#34;polybar/polybar - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;picom&#34;&gt;picom&lt;/h4&gt;
+&lt;p&gt;X11的窗口修改器&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/yshui/picom&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/yshui/picom.png&#34; alt=&#34;yshui/picom - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;picom-tryone-git&#34;&gt;picom-tryone-git&lt;/h4&gt;
+&lt;p&gt;picom的修改版，具有模糊效果&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/frebib/picom-tryone-git&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/frebib/picom-tryone-git.png&#34; alt=&#34;frebib/picom-tryone-git - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;lxappearance-gtk3&#34;&gt;lxappearance-gtk3&lt;/h4&gt;
+&lt;p&gt;LXDE桌面的功能丰富的GTK +主题切换器&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.archlinux.org/packages/community/x86_64/lxappearance/&#34;&gt;https://www.archlinux.org/packages/community/x86_64/lxappearance/&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;translate-shell&#34;&gt;translate-shell&lt;/h4&gt;
+&lt;p&gt;终端翻译工具，可以发音&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/soimort/translate-shell&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/soimort/translate-shell.svg&#34; alt=&#34;soimort/translate-shell - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;scrcpy&#34;&gt;scrcpy&lt;/h4&gt;
+&lt;p&gt;连接控制手机&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Genymobile/scrcpy&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/Genymobile/scrcpy.svg&#34; alt=&#34;Genymobile/scrcpy - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;syncthing&#34;&gt;syncthing&lt;/h4&gt;
+&lt;p&gt;文件同步&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/syncthing/syncthing&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/syncthing/syncthing.svg&#34; alt=&#34;syncthing/syncthing - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;gotohttp&#34;&gt;gotohttp&lt;/h4&gt;
+&lt;p&gt;远程网页端控制&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gotohttp.com/&#34;&gt;https://gotohttp.com/&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;insomnia&#34;&gt;insomnia&lt;/h4&gt;
+&lt;p&gt;api 调试&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://insomnia.rest/&#34;&gt;insomnia&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;数据库管理&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.beekeeperstudio.io/&#34;&gt;beekeeper studio&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>搭建自定义域名的本地HTTPS开发服务器</title>
+      <link>https://twor.me/posts/local_https/</link>
+      <pubDate>Mon, 18 Oct 2021 16:27:34 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/local_https/</guid>
+      <description>&lt;h3 id=&#34;mkcert简介&#34;&gt;mkcert简介&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FFiloSottile%2Fmkcert&#34;&gt;mkcert&lt;/a&gt;是一个使用go语言编写的生成本地自签证书的小程序，具有跨平台，使用简单，支持多域名，自动信任CA等一系列方便的特性可供本地开发时快速创建https环境使用。&lt;/p&gt;
+&lt;p&gt;安装方式也非常简单，由于go语言的静态编译和跨平台的特性，官方提供各平台预编译的版本，直接下载到本地，给可执行权限(Linux/Unix需要)就可以了。下载地址:&lt;/p&gt;
+&lt;p&gt;项目地址：[&lt;a href=&#34;https://github.com/FiloSottile/mkcert/releases/latest&#34;&gt;https://github.com/FiloSottile/mkcert&lt;/a&gt;](&lt;a href=&#34;https://github.com/FiloSottile/mkcert/releases/latest&#34;&gt;https://github.com/FiloSottile/mkcert&lt;/a&gt;)&lt;/p&gt;
+&lt;h3 id=&#34;安装mkcert&#34;&gt;安装mkcert&lt;/h3&gt;
+&lt;h3 id=&#34;macos&#34;&gt;&lt;strong&gt;macOS&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;1. &lt;a href=&#34;https://brew.sh/&#34;&gt;Homebrew&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install mkcert
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install nss &lt;span style=&#34;color:#75715e&#34;&gt;# if you use Firefox&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2. &lt;a href=&#34;https://www.macports.org/&#34;&gt;MacPorts&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo port selfupdate
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo port install mkcert
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo port install nss &lt;span style=&#34;color:#75715e&#34;&gt;# if you use Firefox&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;linux&#34;&gt;&lt;strong&gt;Linux&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;首先安装certutil&#34;&gt;首先安装 &lt;code&gt;certutil&lt;/code&gt;.&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install libnss3-tools
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    -or-
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo yum install nss-tools
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    -or-
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -S nss
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    -or-
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo zypper install mozilla-nss-tools
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;然后安装-mkcerthttpsgithubcomfilosottilemkcert&#34;&gt;然后安装  &lt;a href=&#34;https://github.com/FiloSottile/mkcert&#34;&gt;mkcert&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;http://linuxbrew.sh/&#34;&gt;Linuxbrew&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install mkcert
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;或者自己编译 (requires Go 1.13+)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/FiloSottile/mkcert &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; cd mkcert
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go build -ldflags &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-X main.Version=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;git describe --tags&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;也可以下载编译好的包 &lt;a href=&#34;https://github.com/FiloSottile/mkcert/releases&#34;&gt;the pre-built binaries&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Arch Linux , &lt;code&gt;[mkcert](https://www.archlinux.org/packages/community/x86_64/mkcert/)&lt;/code&gt; &lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -Syu mkcert
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;windows&#34;&gt;&lt;strong&gt;Windows&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;1.&lt;a href=&#34;https://chocolatey.org/&#34;&gt;Chocolatey&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;choco install mkcert
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Scoop&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;scoop bucket add extras
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;scoop install mkcert
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;也可以下载编译好的包 &lt;a href=&#34;https://github.com/FiloSottile/mkcert/releases&#34;&gt;the pre-built binaries&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;生成证书&#34;&gt;生成证书&lt;/h3&gt;
+&lt;p&gt;需要首先在系统信任库中安装本地CA.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mkcert -install                                                                                                                                                                                                       ~
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Using the local CA at &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/home/angus/.local/share/mkcert&amp;#34;&lt;/span&gt; ✨
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;The local CA is already installed in the system trust store! 👍
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;The local CA is already installed in the Firefox and/or Chrome/Chromium trust store! 👍
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;完成后，您可以开始为您的域生成SSL证书。例如，我将生成一个对以下名称有效的新证书：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mkcert myapp.net
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkcert localhost                                                                                                                                                                                              ~/.ssl
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Using the local CA at &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/home/angus/.local/share/mkcert&amp;#34;&lt;/span&gt; ✨
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Created a new certificate valid &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; the following names 📜
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; - &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;myapp.net&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;The certificate is at &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;./myapp.net.pem&amp;#34;&lt;/span&gt; and the key at &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;./myapp.net-key.pem&amp;#34;&lt;/span&gt; ✅
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;测试mkcert证书&#34;&gt;&lt;strong&gt;测试mkcert证书&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;现在让我们使用一个简单的Nginx配置文件测试mkcert证书。&lt;/p&gt;
+&lt;h3 id=&#34;创建一个简单的网页&#34;&gt;&lt;strong&gt;创建一个简单的网页&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# cat /etc/nginx/conf.d/test.conf&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;server &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   listen 80;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   server_name localhost;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   root /var/www/test;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;server &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   listen *:443 ssl http2;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   root /var/www/test;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   server_name localhost;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   ssl_certificate /home/angus/localhost.pem;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   ssl_certificate_key /home/angus/localhost-key.pem;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;确保&lt;code&gt;/etc/hosts&lt;/code&gt;文件包含已使用域的记录。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;127.0.0.1 myapp.net
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;打开浏览器并使用提供的域名，你应该得到一个绿色栏。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ArchLinux 触摸板手势调教</title>
@@ -111,6 +311,55 @@ gesture pinch out 2 xdotool key ctrl+plus # 2指张: 放大%
     </item>
     
     <item>
+      <title>我的Windows终端配置</title>
+      <link>https://twor.me/posts/windows_terminal/</link>
+      <pubDate>Tue, 18 Aug 2020 16:24:27 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/windows_terminal/</guid>
+      <description>&lt;h3 id=&#34;安装git&#34;&gt;&lt;strong&gt;安装Git&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://twor.me/%5BGit&#34;&gt;下载&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置主题&#34;&gt;&lt;strong&gt;配置主题&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;打开 &lt;code&gt;Git Bash&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ git clone xxxx
+
+$ cd xxxx
+
+$ cp .minttyrc ~ &amp;amp;&amp;amp; cp git-prompt.sh /etc/profile.d
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;安装-tmux&#34;&gt;&lt;strong&gt;安装 Tmux&lt;/strong&gt;&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ git clone https://github.com/hongwenjun/tmux_for_windows.git
+$ cd tmux_for_windows/
+$ unzip -x tmux_for_git-bash.zip  -d /
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;tmux-启用鼠标操作&#34;&gt;&lt;strong&gt;tmux 启用鼠标操作&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;tmuxconf-设定&#34;&gt;&lt;strong&gt;.tmux.conf 设定&lt;/strong&gt;&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# https://www.youtube.com/watch?v=xTplsyQaGFs
+
+# tmux 启用鼠标操作
+setw -g mouse
+set-option -g history-limit 20000
+set-option -g mouse on
+bind -n WheelUpPane select-pane -t= \; copy-mode -e \; send-keys -M
+bind -n WheelDownPane select-pane -t= \; send-keys -M
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;安装-wget-和-tree-命令&#34;&gt;&lt;strong&gt;安装 wget 和 tree 命令&lt;/strong&gt;&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ cp tools/* /usr/bin
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;其它&#34;&gt;&lt;strong&gt;其它&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;在-vscode-中配置git-bash&#34;&gt;&lt;strong&gt;在 VSCode 中配置 &lt;code&gt;Git Bash&lt;/code&gt;&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;在 VSCode 中使用 &lt;code&gt;Git Bash&lt;/code&gt; 只需要在 &lt;code&gt;Settings.json&lt;/code&gt; 中添加如下两行即可，第一行中 &lt;code&gt;bash.exe&lt;/code&gt; 的文件路径需要改成自己的，第二行是非必须配置，不配置无法使用 &lt;code&gt;alias&lt;/code&gt;。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{
+  &amp;#34;terminal.integrated.shell.windows&amp;#34;: &amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34;,
+  &amp;#34;terminal.integrated.shellArgs.windows&amp;#34;: [&amp;#34;--login&amp;#34;, &amp;#34;-i&amp;#34;]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;解决-win10-快捷键不能秒启动问题&#34;&gt;&lt;strong&gt;解决 win10 快捷键不能秒启动问题&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;为 &lt;code&gt;Git Bash&lt;/code&gt; 设置了全局快捷键后，可能出现按下快捷键后延迟两秒左右终端才打开的现象，只需要在服务中禁用掉 &lt;code&gt;superFetch&lt;/code&gt; 即可，此服务在比较新的 win10 上改名为了 &lt;code&gt;sysMain&lt;/code&gt;，禁用服务后重启操作系统生效&lt;/p&gt;
+&lt;h3 id=&#34;终端快捷键&#34;&gt;&lt;strong&gt;终端快捷键&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;附 Git Bash 终端快捷键&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.notion.so/b6fcd4975d2c4184a407471e760bc617&#34;&gt;Untitled&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;使用第三方工具&#34;&gt;&lt;strong&gt;使用第三方工具&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://eugeny.github.io/terminus/&#34;&gt;Terminus&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;更直接，也很美观 &lt;del&gt;就是打开有点慢&lt;/del&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Linux上优雅的控制手机(水群)</title>
       <link>https://twor.me/posts/linux_android/</link>
       <pubDate>Sat, 07 Mar 2020 13:58:53 +0800</pubDate>
@@ -183,6 +432,144 @@ gesture pinch out 2 xdotool key ctrl+plus # 2指张: 放大%
 &lt;p&gt;自己找摸索一下，找教程看一下，去B站搜，都有教程的&lt;/p&gt;
 &lt;p&gt;把电脑截图保存的位置和手机文件夹同步一下，这样你电脑截图的图片就会自动同步到你的手机。这样就可以在手机分享你电脑的截图了&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>linux 编译安装php</title>
+      <link>https://twor.me/posts/linux_build_php/</link>
+      <pubDate>Mon, 20 Jan 2020 16:41:18 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/linux_build_php/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -Syu
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -S wget
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#自己指定版本下载&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget http://php.net/distributions/php-7.1.23.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tar xvf php-7.1.23.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd php-7.1.23
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -S gcc make bison gawk re2c libxml2 libwebp freetype2 c-client libmcrypt libxslt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./configure --prefix&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/opt/php --with-config-file-path&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/opt/php/etc --with-zlib-dir --with-freetype-dir --enable-mbstring --with-libxml-dir&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/usr --enable-soap --enable-calendar --with-curl --with-mcrypt --with-zlib --with-gd --disable-rpath --enable-inline-optimization --with-bz2 --with-zlib --enable-sockets --enable-sysvsem --enable-sysvshm --enable-pcntl --enable-mbregex --enable-exif --enable-bcmath --with-mhash --enable-zip --with-pcre-regex --with-pdo-mysql --with-mysqli --with-mysql-sock&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/var/run/mysqld/mysqld.sock --with-jpeg-dir&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/usr --with-png-dir&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/usr --enable-gd-native-ttf --with-openssl --with-fpm-user&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;http --with-fpm-group&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;http --enable-ftp --with-imap --with-imap-ssl --with-kerberos --with-gettext --with-xmlrpc --with-xsl --enable-opcache --enable-fpm
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 最后&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo make install
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果出现  &lt;code&gt;error: freetype-config not found.&lt;/code&gt; 错误&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;freetype-config脚本不再默认支持，而是替换成了pkg-config，用来管理CFLAGS和库。通过这些变更就知道，我们需要把php编译脚本中的freetype-config改成pkg-config。我们可以再configure中找到freetype-config,完成替换。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt; 致命错误：ft2build.h：没有那个文件或目录&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;把/usr/include/freetype2/ft2build.h 复制到 php-7.1.23/ext/gd/&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;配置&#34;&gt;配置&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo cp /opt/php-7.1.23/etc/php-fpm.conf.default /opt/php-7.1.23/etc/php-fpm.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nano /opt/php-7.1.23/etc/php-fpm.d/www.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;默认情况下，PHP-FPM在TCP套接字127.0.0.1:9000上侦听，二选一&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;listen = 127.0.0.1:9000
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;listen = /run/php-fpm/php7.0-fpm.sock
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;接下来，找到以下3行并取消注释。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;listen.owner = http
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;listen.group = http
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;listen.mode = 0660
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;保存并关闭文件。接下来复制php.ini文件。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo cp ~/php-7.1.23/php.ini-production /opt/php-7.0.26/etc/php.ini
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nano /opt/php-7.1.23/etc/php.ini
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改php.ini 中的&lt;code&gt;include_path&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;include_path &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/opt/php-7.0.26/lib/php&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;添加service启动&#34;&gt;添加service启动&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nano /etc/systemd/system/php7.1-fpm.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;内容如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-systemd&#34; data-lang=&#34;systemd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;[Unit]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;Description&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;The PHP FastCGI Process Manager&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;After&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;network.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;[Service]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;Type&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;simple&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;PIDFile&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/run/php-fpm/php7.1-fpm.pid&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;ExecStart&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/opt/php-7.1.23/sbin/php-fpm --nodaemonize --fpm-config /opt/php-7.1.23/etc/php-fpm.conf&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;ExecReload&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/bin/kill -USR2 $MAINPID&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;[Install]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;WantedBy&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;multi-user.target&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;启动php-fpm&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl start php7.1-fpm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker：宿主机Nginx访问docker中的php</title>
+      <link>https://twor.me/posts/docker_php/</link>
+      <pubDate>Fri, 18 Oct 2019 16:32:25 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/docker_php/</guid>
+      <description>&lt;p&gt;使用宿主机nginx搭配docker多版本php。&lt;/p&gt;
+&lt;h3 id=&#34;docker-镜像获取&#34;&gt;docker 镜像获取&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker pull php:7.1-fpm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;创建容器&#34;&gt;创建容器&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -d --name php -p 9056:9000 -v /srv/http:/var/www/html --privileged&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;true php:7.1-fpm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#参数说明：
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-name php       容器名称为 `php`
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-p 9056:9000        宿主机的9056端口映射到容器的9000端口
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-v /srv/http:/var/www/html              宿主机的 `/srv/http` 目录挂载到容器的 `/var/www/html` 目录下
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;宿主机nginx-配置&#34;&gt;宿主机Nginx 配置&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-nginx&#34; data-lang=&#34;nginx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;server&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;listen&lt;/span&gt;      &lt;span style=&#34;color:#ae81ff&#34;&gt;10064&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;set&lt;/span&gt;         $base &lt;span style=&#34;color:#e6db74&#34;&gt;/var/www/html/member-benefits&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;root&lt;/span&gt;        $base/backend/public;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;add_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Frame-Options&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;SAMEORIGIN&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;add_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-XSS-Protection&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1&lt;/span&gt;; &lt;span style=&#34;color:#f92672&#34;&gt;mode=block&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;add_header&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;X-Content-Type-Options&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;nosniff&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;charset&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;utf-8&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;index&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;index.html&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;index.htm&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;index.php&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;(!-e&lt;/span&gt; $request_filename&lt;span style=&#34;color:#e6db74&#34;&gt;)&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;rewrite&lt;/span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;^(.*)&lt;/span&gt;$  &lt;span style=&#34;color:#e6db74&#34;&gt;/index.php?s=/&lt;/span&gt;$1  &lt;span style=&#34;color:#e6db74&#34;&gt;last&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;/favicon.ico&lt;/span&gt; { &lt;span style=&#34;color:#f92672&#34;&gt;access_log&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;off&lt;/span&gt;; &lt;span style=&#34;color:#f92672&#34;&gt;log_not_found&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;off&lt;/span&gt;; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;/robots.txt&lt;/span&gt;  { &lt;span style=&#34;color:#f92672&#34;&gt;access_log&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;off&lt;/span&gt;; &lt;span style=&#34;color:#f92672&#34;&gt;log_not_found&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;off&lt;/span&gt;; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;error_page&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;404&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/index.php&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; ~ &lt;span style=&#34;color:#e6db74&#34;&gt;\.php(.*)$&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;fastcgi_pass&lt;/span&gt;   127.0.0.1:&lt;span style=&#34;color:#ae81ff&#34;&gt;9056&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;fastcgi_index&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;index.php&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;fastcgi_split_path_info&lt;/span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;^((?U).+\.php)(/?.+)&lt;/span&gt;$;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;fastcgi_param&lt;/span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;SCRIPT_FILENAME&lt;/span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;/var/www/html/member-benefits/backend/public&lt;/span&gt;$fastcgi_script_name;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;fastcgi_param&lt;/span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;PATH_INFO&lt;/span&gt;  $fastcgi_path_info;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;fastcgi_param&lt;/span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;REQUEST_URI&lt;/span&gt;  $fastcgi_script_name$fastcgi_path_info;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;include&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;fastcgi_params&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; ~ &lt;span style=&#34;color:#e6db74&#34;&gt;/\.(?!well-known).*&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;deny&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;all&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;容器配置以及扩展安装&#34;&gt;容器配置以及扩展安装&lt;/h3&gt;
+&lt;p&gt;容器主要需要安装一些扩展和一些项目需要的东西&lt;/p&gt;
+&lt;h4 id=&#34;扩展安装&#34;&gt;扩展安装&lt;/h4&gt;
+&lt;p&gt;进入容器&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker exec -it php /bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;gd&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#依赖&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apt-get install -y build-essential libssl-dev zlib1g-dev libpng-dev libjpeg-dev libfreetype6-dev
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#指定目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker-php-ext-configure gd --with-freetype-dir&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/usr/include/ --with-jpeg-dir&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/usr/include/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#安装gd扩展&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker-php-ext-install gd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;mysqli pdo-mysql zip &amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker-php-ext-install pdo pdo_mysql mysqli
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -440,9 +827,238 @@ command-not-found cp dirhistory autojump sudo zsh-syntax-highlighting)
     </item>
     
     <item>
+      <title>Git 自动化部署网站</title>
+      <link>https://twor.me/posts/git_auto_web/</link>
+      <pubDate>Wed, 05 Jun 2019 09:58:53 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/git_auto_web/</guid>
+      <description>&lt;h3 id=&#34;安装配置git服务端&#34;&gt;安装配置Git服务端&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo yum install git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo adduser git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ su git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mkdir .ssh &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;700&lt;/span&gt; .ssh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ touch .ssh/authorized_keys &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt; .ssh/authorized_keys
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;写入ssh公匙&#34;&gt;写入SSH公匙&lt;/h3&gt;
+&lt;p&gt;接着，我们需要为系统用户 git 的 &lt;code&gt;authorized_keys&lt;/code&gt; 文件添加一些开发者 SSH 公钥。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ vim .ssh/authorized_keys
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ &lt;span style=&#34;color:#75715e&#34;&gt;#写入SSH公匙&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;创建仓库&#34;&gt;创建仓库&lt;/h3&gt;
+&lt;p&gt;现在我们来为开发者新建一个空仓库。可以借助带 &lt;code&gt;--bare&lt;/code&gt; 选项的 &lt;code&gt;git init&lt;/code&gt; 命令来做到这一点，该命令在初始化仓库时不会创建工作目录：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd /srv/git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mkdir project.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd project.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git init --bare
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Initialized empty Git repository in /srv/git/project.git/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;禁用git用户shell登录&#34;&gt;禁用git用户shell登录&lt;/h3&gt;
+&lt;p&gt;需要注意的是，目前所有（获得授权的）开发者用户都能以系统用户 &lt;code&gt;git&lt;/code&gt; 的身份登录服务器从而获得一个普通 shell。 如果你想对此加以限制，则需要修改 &lt;code&gt;/etc/passwd&lt;/code&gt; 文件中（&lt;code&gt;git&lt;/code&gt; 用户所对应）的 shell 值。&lt;/p&gt;
+&lt;p&gt;借助一个名为 &lt;code&gt;git-shell&lt;/code&gt; 的受限 shell 工具，你可以方便地将用户 &lt;code&gt;git&lt;/code&gt; 的活动限制在与 Git 相关的范围内。 该工具随 Git 软件包一同提供。如果将 &lt;code&gt;git-shell&lt;/code&gt; 设置为用户 &lt;code&gt;git&lt;/code&gt; 的登录 shell（login shell）， 那么该用户便不能获得此服务器的普通 shell 访问权限。 若要使用 &lt;code&gt;git-shell&lt;/code&gt;，需要用它替换掉 bash 或 csh，使其成为该用户的登录 shell。 为进行上述操作，首先你必须确保 &lt;code&gt;git-shell&lt;/code&gt; 的完整路径名已存在于 &lt;code&gt;/etc/shells&lt;/code&gt; 文件中：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cat /etc/shells &lt;span style=&#34;color:#75715e&#34;&gt;# see if git-shell is already in there. If not...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ which git-shell &lt;span style=&#34;color:#75715e&#34;&gt;# make sure git-shell is installed on your system.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo -e /etc/shells &lt;span style=&#34;color:#75715e&#34;&gt;# and add the path to git-shell from last command&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;现在你可以使用 &lt;code&gt;chsh &amp;lt;username&amp;gt; -s &amp;lt;shell&amp;gt;&lt;/code&gt; 命令修改任一系统用户的 shell：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo chsh git -s &lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;which git-shell&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#如果提示没有chsh这个命令，可以去/etc/passwd将目标用户的bash shell更改为所需的内容，或者安装util-linux-user这个包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样，用户 &lt;code&gt;git&lt;/code&gt; 就只能利用 SSH 连接对 Git 仓库进行推送和拉取操作，而不能登录机器并取得普通 shell。 如果试图登录，你会发现尝试被拒绝，像这样：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ssh git@gitserver
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fatal: Interactive git shell is not enabled.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hint: ~/git-shell-commands should exist and have read and execute access.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Connection to gitserver closed.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此时，用户仍可通过 SSH 端口转发来访问任何可达的 git 服务器。 如果你想要避免它，可编辑 &lt;code&gt;authorized_keys&lt;/code&gt; 文件并在所有想要限制的公钥之前添加以下选项：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其结果如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cat ~/.ssh/authorized_keys
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AAAAB3NzaC1yc2EAAAADAQABAAABAQCB007n/ww+ouN4gSLKssMxXnBOvf9LGt4LojG6rs6h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PB09j9R/T17/x4lhJA0F3FR1rP6kYBRsWj2aThGw6HXLm9/5zytK6Ztg3RPKK+4kYjh6541N
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;YsnEAZuXz0jTTyAUfrtU3Z5E003C4oxOj6H0rfIF1kKI9MAQLMdpGW1GYEIgS9EzSdfd8AcC
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;现在，网络相关的 Git 命令依然能够正常工作，但是开发者用户已经无法得到一个普通 shell 了。 正如输出信息所提示的，你也可以在 git 用户的主目录下建立一个目录，来对 git-shell 命令进行一定程度的自定义。 比如，你可以限制掉某些本应被服务器接受的 Git 命令，或者对刚才的 SSH 拒绝登录信息进行自定义，这样，当有开发者用户以类似方式尝试登录时，便会看到你的信息。 要了解更多有关自定义 shell 的信息，请运行 &lt;code&gt;git help shell&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;利用git-push向服务器一键部署代码&#34;&gt;利用git push向服务器一键部署代码&lt;/h3&gt;
+&lt;p&gt;进入我们创建的项目仓库&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd /srv/git/project.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd hooks
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ vim post-receive
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;写入如下代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/sh
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;git --work-tree&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/srv/web/xxx.com checkout -f master &lt;span style=&#34;color:#75715e&#34;&gt;#这个目录是代码存放目录不是仓库目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;The project has been successfully deployed to this server!&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ chmod +x post-receive
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个挂钩本质是一个脚本，当这个文件在repo/hooks/文件夹内，名字为 &lt;code&gt;post-receive&lt;/code&gt; 并且&lt;code&gt;linux的x属性&lt;/code&gt;（可执行）为真的时候，git会在收到push后执行它&lt;/p&gt;
+&lt;p&gt;OK！现在上传的代码会在 &lt;code&gt;/srv/web/xxx.com&lt;/code&gt; 这个目录里面看见，我们只需要把网站根目录设置在这里就可以了&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Composer 基本使用</title>
+      <link>https://twor.me/posts/php_composer/</link>
+      <pubDate>Sat, 01 Jun 2019 16:20:55 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/php_composer/</guid>
+      <description>&lt;h3 id=&#34;写在前面&#34;&gt;写在前面&lt;/h3&gt;
+&lt;p&gt;Composer 是 PHP 的一个依赖管理工具。它允许你申明项目所依赖的代码库，它会在你的项目中为你安装他们。&lt;/p&gt;
+&lt;p&gt;Composer 不是一个包管理器。是的，它涉及 &amp;ldquo;packages&amp;rdquo; 和 &amp;ldquo;libraries&amp;rdquo;，但它在每个项目的基础上进行管理，在你项目的某个目录中（例如 vendor）进行安装。默认情况下它不会在全局安装任何东西。因此，这仅仅是一个依赖管理。&lt;/p&gt;
+&lt;p&gt;运行 Composer 需要 PHP 5.3.2+ 以上版本。一些敏感的 PHP 设置和编译标志也是必须的，但对于任何不兼容项安装程序都会抛出警告。&lt;/p&gt;
+&lt;p&gt;我们将从包的来源直接安装，而不是简单的下载 zip 文件，你需要 git 、 svn 或者 hg ，这取决于你载入的包所使用的版本管理系统&lt;/p&gt;
+&lt;h3 id=&#34;安装composer&#34;&gt;安装Composer&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ curl -sS https://getcomposer.org/installer | php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo mv composer.phar /usr/local/bin/composer
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#archlinux&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#sudo pacman -S composer&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;修改composer镜像源&#34;&gt;修改Composer镜像源&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#中国全量镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ composer config -g repo.packagist composer https://packagist.phpcomposer.com
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#阿里云全量镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#解除镜象&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ composer config -g --unset repos.packagist
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;composer使用&#34;&gt;Composer使用&lt;/h3&gt;
+&lt;h4 id=&#34;包的安装更新下载和依赖&#34;&gt;包的安装、更新下载和依赖&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#如有 composer.lock 文件，直接安装，否则从 composer.json 安装最新扩展包和依赖；&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ composer install
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#从 composer.json 安装最新扩展包和依赖；&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ composer update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#从 composer.json 或者对应包的配置，并更新到最新；&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ composer update vendor/package
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#添加安装 new/package, 可以指定版本，如： composer require new/package ~2.5.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ composer require new/package
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;扩展包查找和查看&#34;&gt;扩展包查找和查看&lt;/h4&gt;
+&lt;p&gt;当我们需要找一个扩展包，可以去&lt;code&gt;packagist&lt;/code&gt;官网查找&lt;/p&gt;
+&lt;p&gt;官网：&lt;a href=&#34;https://packagist.org/&#34;&gt;https://packagist.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或者使用命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#查找扩展包 monolog&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ composer search monolog
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#显示本地安装的扩展包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ composer show -i
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;其他常用命令&#34;&gt;其他常用命令&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 查看show命令的帮助文档&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ composer show -h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#创建项目&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#如果该目录目前不存在，则会在安装过程中自动创建。也可以指定文件项目目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ composer create-project doctrine/orm path 2.2.*
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#优化自动加载，安装包的时候可以同样使用--optimize-autoloader。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#不加这一选项，你可能会发现20%到25%的性能损失。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ composer dump-autoload --optimize
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#全局安装&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ composer global require fabpot/php-cs-fixer:dev-master
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#全局更新&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ composer global update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#依赖检测&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ composer depends --link-type&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;require monolog/monolog
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;使用扩展包&#34;&gt;使用扩展包&lt;/h3&gt;
+&lt;p&gt;对于库的自动加载信息，Composer 生成了一个 &lt;code&gt;vendor/autoload.php&lt;/code&gt; 文件。你可以简单的引入这个文件，你会得到一个免费的自动加载支持。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;require&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;__DIR__&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/vendor/autoload.php&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Curl\Curl&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$curl &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Curl&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$curl&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;get&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这使得你可以很容易的使用第三方代码。例如：如果你的项目依赖 Curl，你就可以像这样开始使用这个类库，并且他们将被自动加载。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意： Composer 提供了自己的 autoloader。如果你不想使用它，你可以仅仅引入 vendor/composer/autoload_*.php 文件，它返回一个关联数组，你可以通过这个关联数组配置自己的 autoloader。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Windows上安装ngixn php并添加服务自启动</title>
+      <link>https://twor.me/posts/windows_nginx_php/</link>
+      <pubDate>Sun, 05 May 2019 13:58:53 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/windows_nginx_php/</guid>
+      <description>&lt;h3 id=&#34;环境准备&#34;&gt;环境准备&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://nginx.org/download/nginx-1.16.1.zip&#34;&gt;Nginx&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://windows.php.net/downloads/releases/php-7.4.1-Win32-vc15-x64.zip&#34;&gt;php&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/kohsuke/winsw/releases/download/winsw-v2.3.0/WinSW.NET4.exe&#34;&gt;winsw&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装ngixn服务&#34;&gt;&lt;strong&gt;安装Ngixn服务&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;把下载的winsw放入ngixn安装文件夹，重命名为&lt;code&gt;nginx-service.exe&lt;/code&gt;,新建&lt;code&gt;nginx-service.xml&lt;/code&gt;,写入配置&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;service&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;nginxsvc&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;name&amp;gt;&lt;/span&gt;Nginx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;Nginx Web Server service.&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;executable&amp;gt;&lt;/span&gt;c:\nginx\nginx.exe&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/executable&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;logpath&amp;gt;&lt;/span&gt;c:\nginx\logs\&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/logpath&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;logmode&amp;gt;&lt;/span&gt;roll&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/logmode&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;depend&amp;gt;&lt;/span&gt;phpsvc&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/depend&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;-p&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;c:\nginx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stopexecutable&amp;gt;&lt;/span&gt;c:\nginx\nginx.exe&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stopexecutable&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stopargument&amp;gt;&lt;/span&gt;-p&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stopargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stopargument&amp;gt;&lt;/span&gt;c:\nginx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stopargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stopargument&amp;gt;&lt;/span&gt;-s&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stopargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stopargument&amp;gt;&lt;/span&gt;stop&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stopargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/service&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以管理员身份打开cmd，运行&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd \c:\svc\nginx
+nginx-service.exe install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;安装PHP服务&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;winsw改为&lt;code&gt;php-service.exe&lt;/code&gt;,放入php安装文件夹，写入配置&lt;code&gt;php-service.xml&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;service&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;phpsvc&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;name&amp;gt;&lt;/span&gt;PHP&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;PHP-FCGI service.&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;executable&amp;gt;&lt;/span&gt;c:\php\php-cgi.exe&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/executable&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;logpath&amp;gt;&lt;/span&gt;c:\php\logs\&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/logpath&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;logmode&amp;gt;&lt;/span&gt;roll&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/logmode&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;depend&amp;gt;&amp;lt;/depend&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;-b&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;127.0.0.1:9123&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;-c&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;C:\php\php.ini&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/service&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以管理员身份打开cmd，运行&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd \c:\svc\php
+php-service.exe install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改&lt;code&gt;nginx.conf&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+    keepalive_timeout  65;
+
+    server {
+        listen       80;
+        server_name  localhost;
+
+        location / {
+            root   html;
+            index  index.php index.html index.htm;
+        }
+
+        location ~ \.php$ {
+            fastcgi_pass   127.0.0.1:9123;
+            fastcgi_index  index.php;
+            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+            include        fastcgi_params;
+        }
+
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
       <title>WSL(Windows Subsystem for Linux)安装archlinux，并配置图形化界面</title>
       <link>https://twor.me/posts/wsl_archlinux_gui/</link>
-      <pubDate>Wed, 05 Jun 2019 13:58:53 +0800</pubDate>
+      <pubDate>Tue, 05 Mar 2019 13:58:53 +0800</pubDate>
       
       <guid>https://twor.me/posts/wsl_archlinux_gui/</guid>
       <description>&lt;h3 id=&#34;开启wsl&#34;&gt;&lt;strong&gt;开启wsl&lt;/strong&gt;&lt;/h3&gt;
@@ -550,151 +1166,58 @@ shell.Run &amp;#34;C:\Arch\Arch.exe run &amp;#34;&amp;#34;~/.scripts/wlaunch&amp
     </item>
     
     <item>
-      <title>Git 自动化部署网站</title>
-      <link>https://twor.me/posts/git_auto_web/</link>
-      <pubDate>Wed, 05 Jun 2019 09:58:53 +0800</pubDate>
+      <title>git 笔记</title>
+      <link>https://twor.me/posts/git_note/</link>
+      <pubDate>Thu, 18 Oct 2018 16:49:37 +0800</pubDate>
       
-      <guid>https://twor.me/posts/git_auto_web/</guid>
-      <description>&lt;h3 id=&#34;安装配置git服务端&#34;&gt;安装配置Git服务端&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo yum install git
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo adduser git
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ su git
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mkdir .ssh &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;700&lt;/span&gt; .ssh
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ touch .ssh/authorized_keys &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt; .ssh/authorized_keys
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;写入ssh公匙&#34;&gt;写入SSH公匙&lt;/h3&gt;
-&lt;p&gt;接着，我们需要为系统用户 git 的 &lt;code&gt;authorized_keys&lt;/code&gt; 文件添加一些开发者 SSH 公钥。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ vim .ssh/authorized_keys
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ &lt;span style=&#34;color:#75715e&#34;&gt;#写入SSH公匙&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;创建仓库&#34;&gt;创建仓库&lt;/h3&gt;
-&lt;p&gt;现在我们来为开发者新建一个空仓库。可以借助带 &lt;code&gt;--bare&lt;/code&gt; 选项的 &lt;code&gt;git init&lt;/code&gt; 命令来做到这一点，该命令在初始化仓库时不会创建工作目录：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd /srv/git
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mkdir project.git
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd project.git
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git init --bare
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Initialized empty Git repository in /srv/git/project.git/
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;禁用git用户shell登录&#34;&gt;禁用git用户shell登录&lt;/h3&gt;
-&lt;p&gt;需要注意的是，目前所有（获得授权的）开发者用户都能以系统用户 &lt;code&gt;git&lt;/code&gt; 的身份登录服务器从而获得一个普通 shell。 如果你想对此加以限制，则需要修改 &lt;code&gt;/etc/passwd&lt;/code&gt; 文件中（&lt;code&gt;git&lt;/code&gt; 用户所对应）的 shell 值。&lt;/p&gt;
-&lt;p&gt;借助一个名为 &lt;code&gt;git-shell&lt;/code&gt; 的受限 shell 工具，你可以方便地将用户 &lt;code&gt;git&lt;/code&gt; 的活动限制在与 Git 相关的范围内。 该工具随 Git 软件包一同提供。如果将 &lt;code&gt;git-shell&lt;/code&gt; 设置为用户 &lt;code&gt;git&lt;/code&gt; 的登录 shell（login shell）， 那么该用户便不能获得此服务器的普通 shell 访问权限。 若要使用 &lt;code&gt;git-shell&lt;/code&gt;，需要用它替换掉 bash 或 csh，使其成为该用户的登录 shell。 为进行上述操作，首先你必须确保 &lt;code&gt;git-shell&lt;/code&gt; 的完整路径名已存在于 &lt;code&gt;/etc/shells&lt;/code&gt; 文件中：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cat /etc/shells &lt;span style=&#34;color:#75715e&#34;&gt;# see if git-shell is already in there. If not...&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ which git-shell &lt;span style=&#34;color:#75715e&#34;&gt;# make sure git-shell is installed on your system.&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo -e /etc/shells &lt;span style=&#34;color:#75715e&#34;&gt;# and add the path to git-shell from last command&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;现在你可以使用 &lt;code&gt;chsh &amp;lt;username&amp;gt; -s &amp;lt;shell&amp;gt;&lt;/code&gt; 命令修改任一系统用户的 shell：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo chsh git -s &lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;which git-shell&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#如果提示没有chsh这个命令，可以去/etc/passwd将目标用户的bash shell更改为所需的内容，或者安装util-linux-user这个包&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样，用户 &lt;code&gt;git&lt;/code&gt; 就只能利用 SSH 连接对 Git 仓库进行推送和拉取操作，而不能登录机器并取得普通 shell。 如果试图登录，你会发现尝试被拒绝，像这样：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ssh git@gitserver
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fatal: Interactive git shell is not enabled.
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hint: ~/git-shell-commands should exist and have read and execute access.
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Connection to gitserver closed.
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此时，用户仍可通过 SSH 端口转发来访问任何可达的 git 服务器。 如果你想要避免它，可编辑 &lt;code&gt;authorized_keys&lt;/code&gt; 文件并在所有想要限制的公钥之前添加以下选项：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其结果如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cat ~/.ssh/authorized_keys
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AAAAB3NzaC1yc2EAAAADAQABAAABAQCB007n/ww+ouN4gSLKssMxXnBOvf9LGt4LojG6rs6h
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PB09j9R/T17/x4lhJA0F3FR1rP6kYBRsWj2aThGw6HXLm9/5zytK6Ztg3RPKK+4kYjh6541N
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;YsnEAZuXz0jTTyAUfrtU3Z5E003C4oxOj6H0rfIF1kKI9MAQLMdpGW1GYEIgS9EzSdfd8AcC
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;现在，网络相关的 Git 命令依然能够正常工作，但是开发者用户已经无法得到一个普通 shell 了。 正如输出信息所提示的，你也可以在 git 用户的主目录下建立一个目录，来对 git-shell 命令进行一定程度的自定义。 比如，你可以限制掉某些本应被服务器接受的 Git 命令，或者对刚才的 SSH 拒绝登录信息进行自定义，这样，当有开发者用户以类似方式尝试登录时，便会看到你的信息。 要了解更多有关自定义 shell 的信息，请运行 &lt;code&gt;git help shell&lt;/code&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;利用git-push向服务器一键部署代码&#34;&gt;利用git push向服务器一键部署代码&lt;/h3&gt;
-&lt;p&gt;进入我们创建的项目仓库&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd /srv/git/project.git
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd hooks
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ vim post-receive
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;写入如下代码：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/sh
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;git --work-tree&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/srv/web/xxx.com checkout -f master &lt;span style=&#34;color:#75715e&#34;&gt;#这个目录是代码存放目录不是仓库目录&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;The project has been successfully deployed to this server!&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ chmod +x post-receive
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个挂钩本质是一个脚本，当这个文件在repo/hooks/文件夹内，名字为 &lt;code&gt;post-receive&lt;/code&gt; 并且&lt;code&gt;linux的x属性&lt;/code&gt;（可执行）为真的时候，git会在收到push后执行它&lt;/p&gt;
-&lt;p&gt;OK！现在上传的代码会在 &lt;code&gt;/srv/web/xxx.com&lt;/code&gt; 这个目录里面看见，我们只需要把网站根目录设置在这里就可以了&lt;/p&gt;
+      <guid>https://twor.me/posts/git_note/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;设置用户信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config --global user.email &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;840833458@qq.com&amp;#34;&lt;/span&gt;   //这是设置邮箱
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config --global user.name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Twor&amp;#34;&lt;/span&gt;   //这是设置用户名
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;设置gitee&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-keygen -t rsa -C &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;840833458@qq.com&amp;#34;&lt;/span&gt;  //生成密钥
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后把生成在 &lt;code&gt;用户文件夹&lt;/code&gt; 下  &lt;code&gt;.ssh/xxxxx.pub&lt;/code&gt; 的文件内容复制到 gitee 添加ssh key 的地方&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ssh -T &lt;a href=&#34;mailto:git@gitee.com&#34;&gt;git@gitee.com&lt;/a&gt;    //测试连接
+Hi twor! You&amp;rsquo;ve successfully authenticated, but GITEE.COM does not provide shell access.  //输出这样内容就表示成功了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;git-操作&#34;&gt;git 操作&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git add .    // 表示把所有修改和添加的内容添加到暂缓区
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git commit -m &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;这是twor修改的东西&amp;#34;&lt;/span&gt;  //表示提交暂缓区的内容并添加备注
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push origin master  //推送提交到 远程 master 分支
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git pull origin master //拉取远程 master 分支到本地
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;git将当前修改提交至其他分支&#34;&gt;git将当前修改提交至其他分支&lt;/h3&gt;
+&lt;p&gt;在没有进行commit之前可以进行一下操作&lt;/p&gt;
+&lt;p&gt;1、通过git stash将工作区恢复到上次提交的内容，同时备份本地所做的修改
+git stash
+2、然后切换至B分支
+git checkout B
+3、从git栈中获取到最近一次stash进去的内容，恢复工作区的内容，获取之后，会删除栈中对应的stash
+git stash pop
+4、在进行正常的提交代码步骤即可
+git add /src/main/..
+5、git commit -m &amp;ldquo;功能开发&amp;rdquo;
+6、git pull origin   分支名称
+7、git push origin   分支名称&lt;/p&gt;
+&lt;h3 id=&#34;git-commit之后想撤销commit&#34;&gt;git commit之后，想撤销commit&lt;/h3&gt;
+&lt;p&gt;git reset &amp;ndash;soft HEAD^&lt;/p&gt;
+&lt;p&gt;至于这几个参数：
+&amp;ndash;mixed
+意思是：不删除工作空间改动代码，撤销commit，并且撤销git add . 操作
+这个为默认参数,git reset &amp;ndash;mixed HEAD^ 和 git reset HEAD^ 效果是一样的。&lt;/p&gt;
+&lt;p&gt;&amp;ndash;soft
+不删除工作空间改动代码，撤销commit，不撤销git add .&lt;/p&gt;
+&lt;p&gt;&amp;ndash;hard
+删除工作空间改动代码，撤销commit，撤销git add .&lt;/p&gt;
+&lt;p&gt;注意完成这个操作后，就恢复到了上一次的commit状态。&lt;/p&gt;
+&lt;p&gt;顺便说一下，如果commit注释写错了，只是想改一下注释，只需要：
+git commit &amp;ndash;amend&lt;/p&gt;
+&lt;p&gt;此时会进入默认vim编辑器，修改注释完毕后保存就好了。&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Windows上安装ngixn php并添加服务自启动</title>
-      <link>https://twor.me/posts/windows_nginx_php/</link>
-      <pubDate>Tue, 05 Mar 2019 13:58:53 +0800</pubDate>
-      
-      <guid>https://twor.me/posts/windows_nginx_php/</guid>
-      <description>&lt;h3 id=&#34;环境准备&#34;&gt;环境准备&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://nginx.org/download/nginx-1.16.1.zip&#34;&gt;Nginx&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://windows.php.net/downloads/releases/php-7.4.1-Win32-vc15-x64.zip&#34;&gt;php&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/kohsuke/winsw/releases/download/winsw-v2.3.0/WinSW.NET4.exe&#34;&gt;winsw&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;安装ngixn服务&#34;&gt;&lt;strong&gt;安装Ngixn服务&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;把下载的winsw放入ngixn安装文件夹，重命名为&lt;code&gt;nginx-service.exe&lt;/code&gt;,新建&lt;code&gt;nginx-service.xml&lt;/code&gt;,写入配置&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;service&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;nginxsvc&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;name&amp;gt;&lt;/span&gt;Nginx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;Nginx Web Server service.&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;executable&amp;gt;&lt;/span&gt;c:\nginx\nginx.exe&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/executable&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;logpath&amp;gt;&lt;/span&gt;c:\nginx\logs\&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/logpath&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;logmode&amp;gt;&lt;/span&gt;roll&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/logmode&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;depend&amp;gt;&lt;/span&gt;phpsvc&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/depend&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;-p&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;c:\nginx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stopexecutable&amp;gt;&lt;/span&gt;c:\nginx\nginx.exe&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stopexecutable&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stopargument&amp;gt;&lt;/span&gt;-p&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stopargument&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stopargument&amp;gt;&lt;/span&gt;c:\nginx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stopargument&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stopargument&amp;gt;&lt;/span&gt;-s&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stopargument&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stopargument&amp;gt;&lt;/span&gt;stop&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stopargument&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/service&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以管理员身份打开cmd，运行&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd \c:\svc\nginx
-nginx-service.exe install
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;安装PHP服务&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;winsw改为&lt;code&gt;php-service.exe&lt;/code&gt;,放入php安装文件夹，写入配置&lt;code&gt;php-service.xml&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;service&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;phpsvc&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;name&amp;gt;&lt;/span&gt;PHP&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;PHP-FCGI service.&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;executable&amp;gt;&lt;/span&gt;c:\php\php-cgi.exe&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/executable&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;logpath&amp;gt;&lt;/span&gt;c:\php\logs\&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/logpath&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;logmode&amp;gt;&lt;/span&gt;roll&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/logmode&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;depend&amp;gt;&amp;lt;/depend&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;-b&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;127.0.0.1:9123&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;-c&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;startargument&amp;gt;&lt;/span&gt;C:\php\php.ini&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/startargument&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/service&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以管理员身份打开cmd，运行&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd \c:\svc\php
-php-service.exe install
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改&lt;code&gt;nginx.conf&lt;/code&gt;&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;worker_processes  1;
-
-events {
-    worker_connections  1024;
-}
-
-http {
-    include       mime.types;
-    default_type  application/octet-stream;
-
-    sendfile        on;
-    keepalive_timeout  65;
-
-    server {
-        listen       80;
-        server_name  localhost;
-
-        location / {
-            root   html;
-            index  index.php index.html index.htm;
-        }
-
-        location ~ \.php$ {
-            fastcgi_pass   127.0.0.1:9123;
-            fastcgi_index  index.php;
-            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-            include        fastcgi_params;
-        }
-
-    }
-
-}
-&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>

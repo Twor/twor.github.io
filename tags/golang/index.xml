@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Composer on Twor</title>
-    <link>https://twor.me/tags/composer/</link>
-    <description>Recent content in Composer on Twor</description>
+    <title>Golang on Twor</title>
+    <link>https://twor.me/tags/golang/</link>
+    <description>Recent content in Golang on Twor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Nov 2022 15:59:34 +0800</lastBuildDate><atom:link href="https://twor.me/tags/composer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Nov 2022 15:59:34 +0800</lastBuildDate><atom:link href="https://twor.me/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PHP转GO</title>
       <link>https://twor.me/posts/php_to_go/</link>
@@ -20,19 +20,6 @@ go get gorm.io/gorm 更新 使用第三方包，假设需要更新，在 PHP 中
 composer update w7corp/easywechat Go 的话还是 go get 指定一个 -u 参数即可
 go get -u gorm.io/gorm 理论上更新的话需要慎重一些，下版本更新无所谓
 清理缓存 在装这些依赖包的时候有时候会遇到各种稀奇古怪的问题，怎么办呢，问题有很多，但是很多时候清除一下缓存就好使了。 在 PHP 中 清除 composer 缓存，使用 clear-cache</description>
-    </item>
-    
-    <item>
-      <title>Composer 基本使用</title>
-      <link>https://twor.me/posts/php_composer/</link>
-      <pubDate>Sat, 01 Jun 2019 16:20:55 +0800</pubDate>
-      
-      <guid>https://twor.me/posts/php_composer/</guid>
-      <description>写在前面 Composer 是 PHP 的一个依赖管理工具。它允许你申明项目所依赖的代码库，它会在你的项目中为你安装他们。
-Composer 不是一个包管理器。是的，它涉及 &amp;ldquo;packages&amp;rdquo; 和 &amp;ldquo;libraries&amp;rdquo;，但它在每个项目的基础上进行管理，在你项目的某个目录中（例如 vendor）进行安装。默认情况下它不会在全局安装任何东西。因此，这仅仅是一个依赖管理。
-运行 Composer 需要 PHP 5.3.2+ 以上版本。一些敏感的 PHP 设置和编译标志也是必须的，但对于任何不兼容项安装程序都会抛出警告。
-我们将从包的来源直接安装，而不是简单的下载 zip 文件，你需要 git 、 svn 或者 hg ，这取决于你载入的包所使用的版本管理系统
-安装Composer $ curl -sS https://getcomposer.org/installer | php $ sudo mv composer.phar /usr/local/bin/composer #archlinux #sudo pacman -S composer 修改Composer镜像源 #中国全量镜像 $ composer config -g repo.packagist composer https://packagist.phpcomposer.com #阿里云全量镜像 $ composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/ #解除镜象 $ composer config -g --unset repos.packagist Composer使用 包的安装、更新下载和依赖 #如有 composer.</description>
     </item>
     
   </channel>

@@ -1,0 +1,1109 @@
+<head>
+    <meta charset="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Twor</title>
+
+    
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/prism.css">
+    <link type="text/css" rel="stylesheet" href="/css/zoom.css">
+    <link type="text/css" rel="stylesheet" href="/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/css/all.css">
+
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="logo">
+                    <div class="header-logo">
+                        
+                        
+                        
+                        <a id="btn-menu" href="javascript:isMenu()">
+
+                            
+                            <span class="bars"><i class="fas fa-chevron-right"></i></i></span>
+                            
+                        </a>
+                        <a href="javascript:isMenu1();">
+                            
+                            <span id="menu-1" class="bf"><i class="fas fa-bars"></i></span>
+                            
+                        </a>
+                        <a href="/index.xml">
+                            
+                            <span id="menu-2" class="bf"><i class="fas fa-rss"></i></span>
+                            
+                        </a>
+
+                        <a href="javascript:isMenu3();">
+                            
+                            <span id="menu-3" class="bf"><i class="fas fa-search"></i></span>
+                            
+                        </a>
+                    </div>
+                    <div id="menu-page">
+                        <a href="/">
+                            <li>博文</li>
+                        </a><a href="/about">
+                            <li>关于</li>
+                        </a>
+                    </div>
+                    <div id="search-box">
+                        <input type="text" name="s" id="menu-search" class="inputValue" placeholder="Type something~" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><div class="container-fluid">
+    <div class="row">
+        <div id="main" class="col-12 clearfix" role="main">
+            <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
+                <h1 style="text-align:right;" class="post-title" itemprop="name headline">PHP转GO</h1>
+                <div class="post-content" itemprop="articleBody">
+                    <p>最近在转语言，想从一名 PHPer 转成 Gopher，感觉我长时间搞 PHP，很多思想转不过来（究其原因还是太菜了）
+今天就说说两者之间相似之处，亦或是不同的地方，说的对与不对完全是自己的理解
+那么首先从依赖管理说起吧，我们知道 PHP 的依赖管理是 Composer。而 Go 目前大致差不多是 go mod 了，至于以前的 vendor 或者其他就不学也罢吧。
+这里仅仅是说下两者的区别，至于更多高级用法，还是自己去看各自的依赖管理吧，这两个东西，拿出来讲 我觉得内容也不少，也是一个很重要的部分。有时间的话就再写一篇文章出来&hellip;.</p>
+<h3 id="依赖管理">依赖管理</h3>
+<h4 id="安装">安装</h4>
+<p>在 PHP 中我们安装一个组件是 composer require xxx/xxx , 例如我们安装 超哥的 EasyWecaht</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer require w7corp/easywechat
+</span></span></code></pre></div><p>而在 Go 中 我们使用 go get -u xxx, 例如安装 GORM</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go get gorm.io/gorm
+</span></span></code></pre></div><h4 id="更新">更新</h4>
+<p>使用第三方包，假设需要更新，在 PHP 中我们可以使用 composer update xxx</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer update w7corp/easywechat
+</span></span></code></pre></div><p>Go 的话还是 go get 指定一个 -u 参数即可</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go get -u gorm.io/gorm
+</span></span></code></pre></div><p>理论上更新的话需要慎重一些，下版本更新无所谓</p>
+<h4 id="清理缓存">清理缓存</h4>
+<p>在装这些依赖包的时候有时候会遇到各种稀奇古怪的问题，怎么办呢，问题有很多，但是很多时候清除一下缓存就好使了。
+在 PHP 中 清除 composer 缓存，使用 clear-cache</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer clear-cache
+</span></span></code></pre></div><p>Go 的话</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go clean --modcache
+</span></span></code></pre></div><h4 id="自动加载更新依赖">自动加载更新依赖</h4>
+<p>PHP</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer dump-autoload
+</span></span></code></pre></div><p>Go go mod tidy 会自动更新当前 module 的依赖关系</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go mod tidy
+</span></span></code></pre></div><h3 id="代理镜像">代理、镜像</h3>
+<p>众所周知，我们在安装这些依赖的时候很大原因安装不上就是因为有堵墙。所以需要配置镜像，以便于加速下载
+PHP 设置镜像，目前最好用的无非就是阿里云了，虽然不定时抽风。另外还有 华为、腾讯、安畅等镜像，这些我只有在阿里云抽风的情况下做个备选方案。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
+</span></span></code></pre></div><p>Go 也有一些镜像，比如七牛、阿里等</p>
+<h4 id="启用-go-modules-功能">启用 Go Modules 功能</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go env -w GO111MODULE<span style="color:#f92672">=</span>on
+</span></span></code></pre></div><h4 id="配置-goproxy-环境变量以下三选一">配置 GOPROXY 环境变量，以下三选一</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#七牛 CDN</span>
+</span></span><span style="display:flex;"><span>go env -w  GOPROXY<span style="color:#f92672">=</span>https://goproxy.cn,direct
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#阿里云</span>
+</span></span><span style="display:flex;"><span>go env -w GOPROXY<span style="color:#f92672">=</span>https://mirrors.aliyun.com/goproxy/,direct
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#官方</span>
+</span></span><span style="display:flex;"><span>go env -w  GOPROXY<span style="color:#f92672">=</span>https://goproxy.io,direct
+</span></span></code></pre></div><h3 id="数组">数组</h3>
+<p>在 PHP 中 数组即 Array，可以存储几乎任意类型，即使他们直接数据类型都不相同也无妨
+例如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$array <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#39;A&#39;</span>,<span style="color:#e6db74">&#39;B&#39;</span>,<span style="color:#e6db74">&#39;c&#39;</span>,<span style="color:#e6db74">&#34;hello 你好&#34;</span>,<span style="color:#ae81ff">34.56</span>,<span style="color:#66d9ef">true</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">print_r</span>($array);
+</span></span></code></pre></div><p>而在 Go 语言中数组则有很大的不同，首先必须申明数组长度、其次必须指明类型，只能赋值实现申明好的类型。例如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">arr</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">5</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">arr</span>)
+</span></span></code></pre></div><p>而如果你多添加了元素这在 Go 中是不允许的。以下方式不允许，且编译都不会通过</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">arr</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">5</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">arr</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// array index 5 out of bounds [0:5]
+</span></span></span></code></pre></div><p>如果给定的元素不够事先申明的长度，那么默认会是当前类型的零值，例如 int 的零值是 0</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">arr</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">5</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">arr</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// [1 2 3 4 0]
+</span></span></span></code></pre></div><p>当然如果你赋值的是其他类型 ，这在 Go 中也是行不通的</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">arr</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">5</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;string&#34;</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">arr</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// cannot use &#34;string&#34; (type untyped string) as type int in array literal
+</span></span></span></code></pre></div><p>在 Go 这一强类型中，必须事先申明类型，那么申明了类型就代表以后只允许这一类型的赋值。其他类型赋值则不允许。如果事先没申明 那么采用简短申明 ，Go 则会进行类型推断，同理也是 后续也只能赋值这一种类型</p>
+<h3 id="值类型--引用类型">值类型 &amp; 引用类型</h3>
+<p>在 PHP 中值类型包括：bool、int、string、float、以及 复杂数据类型 array 都是值类型
+PHP 的对象则为引用类型:
+例如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> $name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getName</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setName</span>($name)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> $name;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$p1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Person</span>();
+</span></span><span style="display:flex;"><span>$p1<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setName</span>(<span style="color:#e6db74">&#34;php&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$p2 <span style="color:#f92672">=</span> $p1;
+</span></span><span style="display:flex;"><span>$p2<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setName</span>(<span style="color:#e6db74">&#34;go&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">var_dump</span>($p1);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">var_dump</span>($p2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">var_dump</span>($p1 <span style="color:#f92672">===</span> $p2);
+</span></span></code></pre></div><p>可以猜想一下以上内容会输出啥？</p>
+<pre tabindex="0"><code class="language-obj" data-lang="obj">object(Person)#1 (1) {
+  [&#34;name&#34;]=&gt;
+  string(2) &#34;go&#34;
+}
+object(Person)#1 (1) {
+  [&#34;name&#34;]=&gt;
+  string(2) &#34;go&#34;
+}
+bool(true)
+</code></pre><p>其实如果用 PHPStorm 最后的 $p1 === $p2 已经给出警告了，Condition is always &rsquo;true&rsquo; because &lsquo;$p2&rsquo; is evaluated at this point
+那么，如何解决此类型的问题呢？如果想得到对象的一个副本（将复制旧变量的所有属性）， 在 PHP 中我们可以使用 clone</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> $name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getName</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setName</span>($name)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> $name;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$p1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Person</span>();
+</span></span><span style="display:flex;"><span>$p1<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setName</span>(<span style="color:#e6db74">&#34;php&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$p2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">clone</span> $p1;
+</span></span><span style="display:flex;"><span>$p2<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setName</span>(<span style="color:#e6db74">&#34;go&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">var_dump</span>($p1);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">var_dump</span>($p2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">var_dump</span>($p1 <span style="color:#f92672">===</span> $p2);
+</span></span></code></pre></div><p>同样的内容，我们把 $p2 = $p1; 改成 $p2 = clone $p1; 即可解决此类问题，输出会变成以下内容</p>
+<pre tabindex="0"><code class="language-obj" data-lang="obj">object(Person)#1 (1) {
+  [&#34;name&#34;]=&gt;
+  string(3) &#34;php&#34;
+}
+object(Person)#2 (1) {
+  [&#34;name&#34;]=&gt;
+  string(2) &#34;go&#34;
+}
+bool(false)
+</code></pre><p>Go 语言值类型包括 int 系列、float 系列、bool、string、数组、结构体（struct）
+引用类型包括：指针、slice 切片、map、管道 chan、interface
+上面给出了，Go 语言值类型、引用类型，其实在 Go 语言面向对象的概念微乎其微，但是我们可以采用 struct 结构体来对标 PHP 中的 class</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p1</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Person</span>{}
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p1</span>.<span style="color:#a6e22e">Name</span> = <span style="color:#e6db74">&#34;John&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">p1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p2</span>.<span style="color:#a6e22e">Name</span> = <span style="color:#e6db74">&#34;Jane&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;p1:%+v p2:%+v\n&#34;</span>, <span style="color:#a6e22e">p1</span>, <span style="color:#a6e22e">p2</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>猜想一下 以上内容会出啥？</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p1:{Name:John} p2:{Name:Jane}
+</span></span></code></pre></div><p>如果将它 变成引用类型怎么办呢？答案是使用指针。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p1</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Person</span>{}
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p1</span>.<span style="color:#a6e22e">Name</span> = <span style="color:#e6db74">&#34;John&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p2</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">p1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p2</span>.<span style="color:#a6e22e">Name</span> = <span style="color:#e6db74">&#34;Jane&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;p1:%+v p2:%+v\n&#34;</span>, <span style="color:#a6e22e">p1</span>, <span style="color:#a6e22e">p2</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>只更改了 p2 := p1 为 p2 := &amp;p1, 加了一个 &amp; 符号，那么就会输出如下内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p1:{Name:Jane} p2:&amp;{Name:Jane}
+</span></span></code></pre></div><p>把上面的例子简单改造一下，改造成否和面向对象的方式，比如我们更改 Name 只能通过 setName，获取 Name 是 getName</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#a6e22e">Person</span>) <span style="color:#a6e22e">getName</span>() <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Name</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Person</span>) <span style="color:#a6e22e">setName</span>(<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Name</span> = <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p1</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Person</span>{}
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p1</span>.<span style="color:#a6e22e">setName</span>(<span style="color:#e6db74">&#34;John&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">p1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p2</span>.<span style="color:#a6e22e">setName</span>(<span style="color:#e6db74">&#34;Jane&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">p1</span>.<span style="color:#a6e22e">getName</span>())
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">p2</span>.<span style="color:#a6e22e">getName</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>同理如果 将 p1 赋值 给 p2 还是使用指针 p2 := &amp;p1</p>
+<h3 id="接口-interface">接口 Interface</h3>
+<p>PHP 如果实现接口则需要定义一个 接口 类，然后子类中使用关键字 implements 来实现该接口的 所有方法。注意是 所有，例如我们有一个接口，暂定为 A，该接口规定了两个方法，foo() 以及 bar()</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">A</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>($foo);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">bar</span>($bar);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>继续用上面的 Person 类来实现这个接口</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">A</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> $name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getName</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setName</span>($name)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> $name;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>而如果我们使用了 implements A ，但是并没有实现其中的两个方法，则在运行的时候 PHP 会报出致命性错误</p>
+<blockquote>
+<p>PHP Fatal error:  Class Person contains 2 abstract methods and must therefore be declared abstract or implement the remaining methods (A::foo, A::bar)
+Fatal error: Class Person contains 2 abstract methods and must therefore be declared abstract or implement the remaining methods (A::foo, A::bar)</p>
+</blockquote>
+<p>可以看到必须同时实现两个方法</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">A</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>($foo);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">bar</span>($bar);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">A</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> $name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getName</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setName</span>($name)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> $name;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>($foo)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// TODO: Implement foo() method.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> $foo;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">bar</span>($bar)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// TODO: Implement bar() method.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> $bar;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$p1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Person</span>();
+</span></span><span style="display:flex;"><span>$p1<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setName</span>(<span style="color:#e6db74">&#34;php&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> $p1<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">foo</span>(<span style="color:#e6db74">&#34;php&#34;</span>),$p1<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">bar</span>(<span style="color:#ae81ff">123</span>);
+</span></span></code></pre></div><p>这两个方法接收任意类型的数据类型，但是在 Go 中必须指明类型，但是 PHP 7 ，我们同样可以强制参数为具体的类型，例如 foo(int $foo) , 表示只允许接收 int 类型，同样如果给定的不是 int 运行时则会报错
+而 在 Go 语言中 则不需要 使用什么 implements 等关键字了，在 Go 语言中接口是隐式的，对于一个接口类型，我们并不需要知道它实现了哪个接口，只要它实现了接口中的所有方法即可</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">A</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">foo</span>(<span style="color:#a6e22e">foo</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">bar</span>(<span style="color:#a6e22e">bar</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#a6e22e">Person</span>) <span style="color:#a6e22e">foo</span>(<span style="color:#a6e22e">foo</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%s %s&#34;</span>, <span style="color:#a6e22e">foo</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Name</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#a6e22e">Person</span>) <span style="color:#a6e22e">bar</span>(<span style="color:#a6e22e">bar</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">A</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">a</span> = <span style="color:#a6e22e">Person</span>{<span style="color:#e6db74">&#34;Bob&#34;</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">foo</span>(<span style="color:#e6db74">&#34;Hello&#34;</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">bar</span>(<span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="结构体初始化">结构体初始化</h3>
+<p>PHP 有些钩子函数，例如：__construct 用与初始化</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> $name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct($name)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> $name;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$p1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Person</span>(<span style="color:#e6db74">&#34;John&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">var_dump</span>($p1);
+</span></span></code></pre></div><p>在 Go 则没有这类方法，大家差不多都是定义一个 func 函数，函数名为 NewXXX 开头。例如:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NewPerson</span>(<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Person</span>{<span style="color:#a6e22e">Name</span>: <span style="color:#a6e22e">name</span>}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">person</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">NewPerson</span>(<span style="color:#e6db74">&#34;John&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">Name</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="异常处理">异常处理</h3>
+<p>PHP 中处理异常我们可以采用 try catch 进行捕获</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">inverse</span>($a,$b) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$b) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Exception</span>(<span style="color:#e6db74">&#39;Division by zero.&#39;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> $a <span style="color:#f92672">/</span>$b;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$t <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Test</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">var_dump</span>($t<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">inverse</span>(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">var_dump</span>($t<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">inverse</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>));
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">Exception</span> $e) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">var_dump</span>($e<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">var_dump</span>(<span style="color:#e6db74">&#34;hello&#34;</span>);
+</span></span></code></pre></div><p>则会输出</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>float(0.8)
+</span></span><span style="display:flex;"><span>string(17) &#34;Division by zero.&#34;
+</span></span><span style="display:flex;"><span>string(5) &#34;hello&#34;
+</span></span></code></pre></div><p>可以看到，$t-&gt;inverse (1, 0) ，我们捕获了异常，输出了错误，但是并不影响后续的执行
+但是在 Go 中并没有异常处理的方式。错误只能我们进行手动处理，大概可以看到 满屏的 if err != nil 例如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">inverse</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">int</span>) (<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;b cannot be zero&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">b</span>, <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">inverse</span>(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Error: %v\n&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>还有就是 我们的程序可能引发 panic, 一旦遇到 panic，我们的程序可能就会立马终止了，这时我们可以使用 defer + recover() 进行捕获。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">inverse</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">int</span>) (<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> <span style="color:#66d9ef">func</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> recover(); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Panic recover, Err =&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">b</span>, <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">inverse</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">5</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">inverse</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">inverse</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Over&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>输出的内容如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>2 &lt;nil&gt;
+</span></span><span style="display:flex;"><span>Panic recover, Err = runtime error: integer divide by zero
+</span></span><span style="display:flex;"><span>0 &lt;nil&gt;
+</span></span><span style="display:flex;"><span>5 &lt;nil&gt;
+</span></span><span style="display:flex;"><span>Over
+</span></span></code></pre></div><h3 id="json-处理">JSON 处理</h3>
+<p>在 PHP 中几乎所有的东西 都是 array 一把锁，md 在 Go 中又分数组、切片、map 等等&hellip;..
+在 PHP 中 array 和 json 相互转换是一件非常 easy 的事，我们可以使用 json_encode 以及 json_decode
+例如 将数组转为 json</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$array <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;hedeqiang&#34;</span>,<span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#ae81ff">18</span>];
+</span></span><span style="display:flex;"><span>$json <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_encode</span>($array);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">var_dump</span>($json);     <span style="color:#75715e">// string(29) &#34;{&#34;name&#34;:&#34;hedeqiang&#34;,&#34;age&#34;:18}&#34;
+</span></span></span></code></pre></div><p>将 json 转为 数组</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$array <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;hedeqiang&#34;</span>,<span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#ae81ff">18</span>];
+</span></span><span style="display:flex;"><span>$json <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_encode</span>($array);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">var_dump</span>(<span style="color:#a6e22e">json_decode</span>($json,<span style="color:#66d9ef">true</span>));
+</span></span></code></pre></div><p>即可转为数组:</p>
+<pre tabindex="0"><code class="language-array" data-lang="array">array(2) {
+  [&#34;name&#34;]=&gt;
+  string(9) &#34;hedeqiang&#34;
+  [&#34;age&#34;]=&gt;
+  int(18)
+}
+</code></pre><p>转为对象呢，将 json_decode 第二个参数设置为 true</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$array <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;hedeqiang&#34;</span>,<span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#ae81ff">18</span>];
+</span></span><span style="display:flex;"><span>$json <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_encode</span>($array);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">var_dump</span>(<span style="color:#a6e22e">json_decode</span>($json));
+</span></span></code></pre></div><p>即可转为对象：</p>
+<pre tabindex="0"><code class="language-obj" data-lang="obj">object(stdClass)#1 (2) {
+  [&#34;name&#34;]=&gt;
+  string(9) &#34;hedeqiang&#34;
+  [&#34;age&#34;]=&gt;
+  int(18)
+}
+</code></pre><p>而在 Go 中似乎就没这么方便了，需要配合 struct 再结合 json 包的 Marshal 以及 Unmarshal 来进行处理
+结构体序列化成 json:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;encoding/json&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`json:&#34;name&#34;`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Age</span>  <span style="color:#66d9ef">int</span>    <span style="color:#e6db74">`json:&#34;age&#34;`</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Person</span>{<span style="color:#a6e22e">Name</span>: <span style="color:#e6db74">&#34;John&#34;</span>, <span style="color:#a6e22e">Age</span>: <span style="color:#ae81ff">30</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">p</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(string(<span style="color:#a6e22e">b</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>json 转化为 结构体</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;encoding/json&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`json:&#34;name&#34;`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Age</span>  <span style="color:#66d9ef">int</span>    <span style="color:#e6db74">`json:&#34;age&#34;`</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">jsonString</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">`{&#34;name&#34;:&#34;hedeqiang&#34;,&#34;age&#34;:18}`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">person</span> <span style="color:#a6e22e">Person</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Unmarshal</span>([]byte(<span style="color:#a6e22e">jsonString</span>), <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">person</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%+v\n&#34;</span>, <span style="color:#a6e22e">person</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>当然 json 包很强大，不仅局限于 结构体
+好了 ，这次就先到这吧，感觉还有很多，等着有时间再介绍吧&hellip;&hellip;(不知道下次啥时候..)</p>
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+    
+          <div
+            id="page-scrollspy" class="toc-nav">
+
+            <li class="nav-item pb-3 catalog">
+                <span class="font-weight-bold mb-2">- CATALOG - </span>
+            </li>
+
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e4%be%9d%e8%b5%96%e7%ae%a1%e7%90%86">
+                        依赖管理
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%ae%89%e8%a3%85">
+                        安装
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e6%9b%b4%e6%96%b0">
+                        更新
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e6%b8%85%e7%90%86%e7%bc%93%e5%ad%98">
+                        清理缓存
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e8%87%aa%e5%8a%a8%e5%8a%a0%e8%bd%bd%e6%9b%b4%e6%96%b0%e4%be%9d%e8%b5%96">
+                        自动加载更新依赖
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e4%bb%a3%e7%90%86%e9%95%9c%e5%83%8f">
+                        代理、镜像
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%90%af%e7%94%a8-go-modules-%e5%8a%9f%e8%83%bd">
+                        启用 Go Modules 功能
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e9%85%8d%e7%bd%ae-goproxy-%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f%e4%bb%a5%e4%b8%8b%e4%b8%89%e9%80%89%e4%b8%80">
+                        配置 GOPROXY 环境变量，以下三选一
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e6%95%b0%e7%bb%84">
+                        数组
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%80%bc%e7%b1%bb%e5%9e%8b--%e5%bc%95%e7%94%a8%e7%b1%bb%e5%9e%8b">
+                        值类型 &amp; 引用类型
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e6%8e%a5%e5%8f%a3-interface">
+                        接口 Interface
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e7%bb%93%e6%9e%84%e4%bd%93%e5%88%9d%e5%a7%8b%e5%8c%96">
+                        结构体初始化
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+                        异常处理
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <ul class="nav">
+                
+            <ul class="nav">
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#json-%e5%a4%84%e7%90%86">
+                        JSON 处理
+                    </a>
+                </li>
+
+                
+                
+            </ul>
+            
+            </ul>
+            
+            
+            
+            
+            </div>
+            
+
+            </div>
+            
+            
+<script src="https://utteranc.es/client.js" repo="Twor/blog-comment"
+    issue-term="pathname" theme="github-light" crossorigin="anonymous"
+    async>
+    </script>
+<footer id="footer" role="contentinfo">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                &copy; 2022 <a href="https://twor.me/">Twor
+                </a>.
+                <a target="_blank" href="https://gohugo.io">Hugo</a> & <a target="_blank"
+                    href="https://github.com/Twor/hugo-angus">Angus</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/prism.js"></script>
+<script src="/js/zoom-vanilla.min.js"></script>
+<script src="/js/fuse.js"></script> 
+<script src="/js/search.js"></script>
+<script>
+    var str = "TW|OR".split('').reverse().join('');
+    for (i = 0; i < str.length; i++) {
+        if (str.charAt(i) == '|') {
+            $('<a href="https:\/\/twor.me\/"><span class="w">' + str.charAt(i) + '</span></a>').prependTo($(".header-logo"));
+        } else {
+            $('<span class="b">' + str.charAt(i) + '</span>').prependTo($(".header-logo"));
+        }
+
+    }
+    ""
+    var b = document.getElementsByClassName('b');
+    var w = document.getElementsByClassName('w');
+    var menupgMargin = (b.length + w.length + 1) * 28;
+    var srhboxMargin = (b.length + w.length + 4) * 28;
+    var menusrhWidth = (b.length + w.length - 1) * 28;
+    document.getElementById('menu-page').style['margin-left'] = menupgMargin + 'px';
+    document.getElementById('search-box').style['margin-left'] = srhboxMargin + 'px';
+    document.getElementById('menu-search').style['width'] = menusrhWidth + 'px';
+    if (menusrhWidth < 140) {
+        document.getElementById('menu-search').setAttribute('placeholder', 'Search~');
+    }
+    ""
+
+    $(document).ready(function () {
+        $("#menu-search").keydown(function (e) {
+            if (e.keyCode == 13) {
+                var searchString = $("#menu-search").val();
+                var url = "https:\/\/twor.me\/" + "search?s=" + searchString;
+                window.location.href = url;
+            }
+        });
+    });
+
+    function isMenu() {
+        if (document.getElementById('menu-1').style.display == 'inline') {
+            $('#search-box').fadeOut(200);
+            $('#menu-page').fadeOut(200);
+            $('#menu-1').fadeOut(500);
+            $('#menu-2').fadeOut(400);
+            $('#menu-3').fadeOut(300);
+        } else {
+            $('#menu-1').fadeIn(150);
+            $('#menu-2').fadeIn(150);
+            $('#menu-3').fadeIn(150);
+        }
+    }
+
+    function isMenu1() {
+        if (document.getElementById('menu-page').style.display == 'block') {
+            $('#menu-page').fadeOut(400);
+        } else {
+            $('#menu-page').fadeIn(400);
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    function isMenu3() {
+        if (document.getElementById('search-box').style.display == 'block') {
+            $('#search-box').fadeOut(400);
+        } else {
+            $('#search-box').fadeIn(400);
+        }
+    }
+
+    function Search404() {
+        $('#menu-1').fadeIn(150);
+        $('#menu-2').fadeIn(150);
+        $('#menu-3').fadeIn(150);
+        $('#search-box').fadeIn(300);
+    }
+
+
+
+    
+
+    function footerPosition() {
+        $("footer").removeClass("fixed-bottom");
+        var contentHeight = document.body.scrollHeight,
+            winHeight = window.innerHeight;
+        if (document.getElementsByClassName("post-content")[0]) {
+            var winImgNum = document.getElementsByClassName("post-content")[0].getElementsByTagName("img").length;
+        } else {
+            var winImgNum = 0;
+        }
+        if (!(contentHeight > winHeight) && winImgNum == 0) {
+            $("footer").addClass("fixed-bottom");
+        }
+    }
+    footerPosition();
+    $(window).resize(footerPosition);
+</script>
+<script>
+
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+</script>
+
+</body>
+
+</html>

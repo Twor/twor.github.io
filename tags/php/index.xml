@@ -6,7 +6,22 @@
     <description>Recent content in PHP on Twor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jan 2020 16:41:18 +0800</lastBuildDate><atom:link href="https://twor.me/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Nov 2022 15:59:34 +0800</lastBuildDate><atom:link href="https://twor.me/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PHP转GO</title>
+      <link>https://twor.me/posts/php_to_go/</link>
+      <pubDate>Wed, 16 Nov 2022 15:59:34 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/php_to_go/</guid>
+      <description>最近在转语言，想从一名 PHPer 转成 Gopher，感觉我长时间搞 PHP，很多思想转不过来（究其原因还是太菜了） 今天就说说两者之间相似之处，亦或是不同的地方，说的对与不对完全是自己的理解 那么首先从依赖管理说起吧，我们知道 PHP 的依赖管理是 Composer。而 Go 目前大致差不多是 go mod 了，至于以前的 vendor 或者其他就不学也罢吧。 这里仅仅是说下两者的区别，至于更多高级用法，还是自己去看各自的依赖管理吧，这两个东西，拿出来讲 我觉得内容也不少，也是一个很重要的部分。有时间的话就再写一篇文章出来&amp;hellip;.
+依赖管理 安装 在 PHP 中我们安装一个组件是 composer require xxx/xxx , 例如我们安装 超哥的 EasyWecaht
+composer require w7corp/easywechat 而在 Go 中 我们使用 go get -u xxx, 例如安装 GORM
+go get gorm.io/gorm 更新 使用第三方包，假设需要更新，在 PHP 中我们可以使用 composer update xxx
+composer update w7corp/easywechat Go 的话还是 go get 指定一个 -u 参数即可
+go get -u gorm.io/gorm 理论上更新的话需要慎重一些，下版本更新无所谓
+清理缓存 在装这些依赖包的时候有时候会遇到各种稀奇古怪的问题，怎么办呢，问题有很多，但是很多时候清除一下缓存就好使了。 在 PHP 中 清除 composer 缓存，使用 clear-cache</description>
+    </item>
+    
     <item>
       <title>linux 编译安装php</title>
       <link>https://twor.me/posts/linux_build_php/</link>

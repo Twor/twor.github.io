@@ -17,23 +17,20 @@
 ranger Ranger是具有VI键绑定的控制台文件管理器
 obs-studio OBS Studio是为高效捕获，合成，编码，记录和流传输视频内容而设计的软件。
 feh 快速轻巧的图像查看器
-vim 编辑器
 vscode 微软出品的代码编辑器
-musicbox 网易云音乐命令行版本
 simplenote 笔记本
 https://aur.archlinux.org/packages/notion-app/
-fcitx5-rime 中文输入法
+ibus-rime 中文输入法
 i3-gaps 平铺窗口管理器
 clash 代理/翻墙
 mpv 视频播放器
 rofi Rofi：窗口切换器，应用程序启动器和dmenu替换
-chromium 浏览器
 dunst 轻量级和可自定义的通知守护程序
 indicator-stickynotes 指标便利贴：适用于Ubuntu桌面的便利贴
 drawing 一个画图小工具
-termite 以键盘为中心的基于VTE的终端，旨在在窗口管理器中使用，支持平铺和/或跳格。
+kitty 基于GPU的跨平台、快速、功能丰富的终端
 zsh 很好用的一个shll
-oh-my-zsh 社区驱动的框架，用于管理zsh配置。
+zsh-snap 快速、易用的Zsh dotfiles 和插件工具，以及git repos
 fzf 命令行模糊查找器
 Nordic-darker Gtk3.20 +主题
 ePapirus Linux的Papirus图标主题
@@ -42,11 +39,13 @@ Cantarell 很好看的字体
 Cascadia Code 写代码和终端用的字体
 polybar 快速且易于使用的状态栏
 picom X11的窗口修改器
-picom-tryone-git picom的修改版，具有模糊效果
 lxappearance-gtk3 LXDE桌面的功能丰富的GTK +主题切换器
 https://www.archlinux.org/packages/community/x86_64/lxappearance/
 translate-shell 终端翻译工具，可以发音
-scrcpy 连接控制手机</description>
+scrcpy 连接控制手机
+syncthing 文件同步
+gotohttp 远程网页端控制
+https://gotohttp.com/</description>
     </item>
     
     <item>

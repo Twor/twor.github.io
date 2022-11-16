@@ -583,21 +583,15 @@ Fatal error: Class Person contains 2 abstract methods and must therefore be decl
 &lt;h4 id=&#34;feh&#34;&gt;feh&lt;/h4&gt;
 &lt;p&gt;快速轻巧的图像查看器&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/derf/feh&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/derf/feh.png&#34; alt=&#34;derf/feh - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;vim&#34;&gt;vim&lt;/h4&gt;
-&lt;p&gt;编辑器&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/vim/vim&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/vim/vim.png&#34; alt=&#34;vim/vim - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;vscode&#34;&gt;vscode&lt;/h4&gt;
 &lt;p&gt;微软出品的代码编辑器&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/microsoft/vscode&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/microsoft/vscode.png&#34; alt=&#34;microsoft/vscode - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;musicbox&#34;&gt;musicbox&lt;/h4&gt;
-&lt;p&gt;网易云音乐命令行版本&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/darknessomi/musicbox&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/darknessomi/musicbox.png&#34; alt=&#34;darknessomi/musicbox - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;simplenote&#34;&gt;simplenote&lt;/h4&gt;
 &lt;p&gt;笔记本&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://aur.archlinux.org/packages/notion-app/&#34;&gt;https://aur.archlinux.org/packages/notion-app/&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;fcitx5-rime&#34;&gt;fcitx5-rime&lt;/h4&gt;
+&lt;h4 id=&#34;ibus-rime&#34;&gt;ibus-rime&lt;/h4&gt;
 &lt;p&gt;中文输入法&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/fcitx/fcitx5-rime&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/fcitx/fcitx5-rime.png&#34; alt=&#34;fcitx/fcitx5-rime - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/rime/ibus-rime&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/rime/ibus-rime.png&#34; alt=&#34;rime/ibus-rime - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;i3-gaps&#34;&gt;i3-gaps&lt;/h4&gt;
 &lt;p&gt;平铺窗口管理器&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/Airblader/i3&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/Airblader/i3.png&#34; alt=&#34;Airblader/i3 - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -610,9 +604,6 @@ Fatal error: Class Person contains 2 abstract methods and must therefore be decl
 &lt;h4 id=&#34;rofi&#34;&gt;rofi&lt;/h4&gt;
 &lt;p&gt;Rofi：窗口切换器，应用程序启动器和dmenu替换&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/davatorium/rofi&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/davatorium/rofi.png&#34; alt=&#34;davatorium/rofi - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;chromium&#34;&gt;chromium&lt;/h4&gt;
-&lt;p&gt;浏览器&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/chromium/chromium&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/chromium/chromium.png&#34; alt=&#34;chromium/chromium - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;dunst&#34;&gt;dunst&lt;/h4&gt;
 &lt;p&gt;轻量级和可自定义的通知守护程序&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/dunst-project/dunst&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/dunst-project/dunst.png&#34; alt=&#34;dunst-project/dunst - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -622,15 +613,15 @@ Fatal error: Class Person contains 2 abstract methods and must therefore be decl
 &lt;h4 id=&#34;drawing&#34;&gt;drawing&lt;/h4&gt;
 &lt;p&gt;一个画图小工具&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/maoschanz/drawing&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/maoschanz/drawing.svg&#34; alt=&#34;maoschanz/drawing - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;termite&#34;&gt;termite&lt;/h4&gt;
-&lt;p&gt;以键盘为中心的基于VTE的终端，旨在在窗口管理器中使用，支持平铺和/或跳格。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/thestinger/termite&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/thestinger/termite.png&#34; alt=&#34;thestinger/termite - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;kitty&#34;&gt;kitty&lt;/h4&gt;
+&lt;p&gt;基于GPU的跨平台、快速、功能丰富的终端&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/kovidgoyal/kitty&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/kovidgoyal/kitty.png&#34; alt=&#34;kovidgoyal/kitty - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;zsh&#34;&gt;zsh&lt;/h4&gt;
 &lt;p&gt;很好用的一个shll&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/zsh-users/zsh&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/zsh-users/zsh.png&#34; alt=&#34;zsh-users/zsh - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;oh-my-zsh&#34;&gt;oh-my-zsh&lt;/h4&gt;
-&lt;p&gt;社区驱动的框架，用于管理zsh配置。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/ohmyzsh/ohmyzsh&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/ohmyzsh/ohmyzsh.png&#34; alt=&#34;ohmyzsh/ohmyzsh - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;zsh-snap&#34;&gt;zsh-snap&lt;/h4&gt;
+&lt;p&gt;快速、易用的Zsh dotfiles 和插件工具，以及git repos&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/marlonrichert/zsh-snap&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/marlonrichert/zsh-snap.png&#34; alt=&#34;marlonrichert/zsh-snap - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;fzf&#34;&gt;fzf&lt;/h4&gt;
 &lt;p&gt;命令行模糊查找器&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/junegunn/fzf&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/junegunn/fzf.png&#34; alt=&#34;junegunn/fzf - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -655,9 +646,6 @@ Fatal error: Class Person contains 2 abstract methods and must therefore be decl
 &lt;h4 id=&#34;picom&#34;&gt;picom&lt;/h4&gt;
 &lt;p&gt;X11的窗口修改器&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/yshui/picom&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/yshui/picom.png&#34; alt=&#34;yshui/picom - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;picom-tryone-git&#34;&gt;picom-tryone-git&lt;/h4&gt;
-&lt;p&gt;picom的修改版，具有模糊效果&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/frebib/picom-tryone-git&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/frebib/picom-tryone-git.png&#34; alt=&#34;frebib/picom-tryone-git - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;lxappearance-gtk3&#34;&gt;lxappearance-gtk3&lt;/h4&gt;
 &lt;p&gt;LXDE桌面的功能丰富的GTK +主题切换器&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.archlinux.org/packages/community/x86_64/lxappearance/&#34;&gt;https://www.archlinux.org/packages/community/x86_64/lxappearance/&lt;/a&gt;&lt;/p&gt;
@@ -676,8 +664,12 @@ Fatal error: Class Person contains 2 abstract methods and must therefore be decl
 &lt;h4 id=&#34;insomnia&#34;&gt;insomnia&lt;/h4&gt;
 &lt;p&gt;api 调试&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://insomnia.rest/&#34;&gt;insomnia&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;beekeeperstudio&#34;&gt;beekeeperstudio&lt;/h4&gt;
 &lt;p&gt;数据库管理&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.beekeeperstudio.io/&#34;&gt;beekeeper studio&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;flameshot&#34;&gt;flameshot&lt;/h4&gt;
+&lt;p&gt;截图工具&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/flameshot-org/flameshot&#34;&gt;&lt;img src=&#34;https://gh-card.dev/repos/flameshot-org/flameshot.png&#34; alt=&#34;flameshot-org/flameshot - GitHub&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

@@ -6,7 +6,24 @@
     <description>Recent content in Posts on Twor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Nov 2022 15:59:34 +0800</lastBuildDate><atom:link href="https://twor.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Dec 2022 14:36:02 +0800</lastBuildDate><atom:link href="https://twor.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloudflared</title>
+      <link>https://twor.me/posts/cloudflared/</link>
+      <pubDate>Sun, 18 Dec 2022 14:36:02 +0800</pubDate>
+      
+      <guid>https://twor.me/posts/cloudflared/</guid>
+      <description>cloudflared 免备案使用国内服务器
+需要下载 cloudflared 并拥有一个 Cloudflare 帐号，域名解析在cloudflare
+下载cloudflare https://github.com/cloudflare/cloudflared
+授权域名 运行 cloudflared tunnel login，登录cloudflare帐号，并在浏览器中选择一个域名来授权。 你的家目录中会出现 ~/.cloudflared/cert.pem。在我们创建隧道和设置 DNS 解析的时候，我们会用到这个文件。
+创建隧道 运行 cloudflared tunnel create [名字]，创建一个隧道。这条命令需要之前的 cert.pem 用来验证身份。 你的家目录中会出现 ~/.cloudflared/[一长串UUID].json，里面保存这运行这条隧道所需要的授权信息。
+配置路由 创建了隧道之后，我们还需要让它可以被访问。Cloudflare 支持将其部署到负载均衡器后端，或者通过 DNS 直接访问。这里只介绍后者的使用方法。
+cloudflared tunnel route dns [名字或者 UUID] [想要绑定到的域名或其二级域名] 你会发现这个域名被设置了一个指向 [UUID].cfargotunnel.com 的 CNAME 记录，并且通过 Cloudflare 进行代理（即橙云）。
+范例 例如，创建一条隧道，设置隧道名字为 twor.me，并将其绑定到 paste.twor.me：
+运行 cloudflare tunnel login，并在网页中授权 twor.me 运行 cloudflare tunnel create twor.me ，创建一个名为twor.me的隧道，隧道名可以随意 运行 cloudflared tunnel route dns twor.me paste.twor.me ，配置路由 其他 cloudflared &amp;ndash;h</description>
+    </item>
+    
     <item>
       <title>PHP转GO</title>
       <link>https://twor.me/posts/php_to_go/</link>

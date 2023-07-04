@@ -64,7 +64,10 @@
     <div class="row">
         <div id="main" class="col-12 clearfix" role="main">
             <article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
-                <h1 style="text-align:right;" class="post-title" itemprop="name headline">PHP转GO</h1>
+                <h1 style="text-align:right;" class="post-title" itemprop="name headline">
+                    <meta property="og:title" content="PHP转GO" />
+                    PHP转GO
+                </h1>
                 <div class="post-content" itemprop="articleBody">
                     <p>最近在转语言，想从一名 PHPer 转成 Gopher，感觉我长时间搞 PHP，很多思想转不过来（究其原因还是太菜了）
 今天就说说两者之间相似之处，亦或是不同的地方，说的对与不对完全是自己的理解
@@ -948,15 +951,28 @@ Fatal error: Class Person contains 2 abstract methods and must therefore be decl
             </div>
             
             
-<script src="https://utteranc.es/client.js" repo="Twor/blog-comment"
-    issue-term="pathname" theme="github-light" crossorigin="anonymous"
-    async>
-    </script>
-<footer id="footer" role="contentinfo">
+<div class="comment">
+<script src="https://giscus.app/client.js"
+        data-repo="Twor/blog-comment"
+        data-repo-id="R_kgDOGsZ7Hg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOGsZ7Hs4CXqa6"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="0"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+</div><footer id="footer" role="contentinfo">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                &copy; 2022 <a href="https://twor.me/">Twor
+                &copy; 2023 <a href="https://twor.me/">Twor
                 </a>.
                 <a target="_blank" href="https://gohugo.io">Hugo</a> & <a target="_blank"
                     href="https://github.com/Twor/hugo-angus">Angus</a>
